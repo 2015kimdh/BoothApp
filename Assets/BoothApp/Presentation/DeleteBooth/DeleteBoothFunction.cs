@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -6,6 +7,12 @@ namespace BoothApp.Presentation.DeleteBooth
 {
     public class DeleteBoothFunction : MonoBehaviour
     {
+        #region UnityEvents
+
+        public UnityEvent onDeleteBooth;
+
+        #endregion
+
         #region Serialize Fields
 
         [SerializeField] private BoothColumnGroup boothColumnGroup;
@@ -14,11 +21,17 @@ namespace BoothApp.Presentation.DeleteBooth
 
         #region Private Fields
 
+        private BoothDataPresenter _presenter;
         private List<BoothItemSelectToggle> _boothItemSelectToggle = new();
 
         #endregion
 
         #region Method
+
+        private void Awake()
+        {
+            _presenter = FindObjectOfType<BoothDataPresenter>();
+        }
 
         public void RefreshItemSelectToggle()
         {
@@ -29,9 +42,8 @@ namespace BoothApp.Presentation.DeleteBooth
 
         public void AbleDeleteFunction(bool isOn)
         {
-            if (isOn)
-                RefreshItemSelectToggle();
-            
+            RefreshItemSelectToggle();
+
             foreach (var toggleItem in _boothItemSelectToggle)
             {
                 if (isOn)
@@ -40,23 +52,30 @@ namespace BoothApp.Presentation.DeleteBooth
                 }
                 else
                     toggleItem.SetDisableToggle();
-
             }
         }
-        
+
         public void DeleteSelectedBooth()
         {
             List<BoothItemSelectToggle> selected = new();
             foreach (var toggleItem in _boothItemSelectToggle)
             {
-                if (toggleItem.toggleValue)
+                if (toggleItem.toggleValue == true)
                     selected.Add(toggleItem);
             }
-            
-            
 
+            foreach (var item in selected)
+            {
+                _boothItemSelectToggle.Remove(item);
+                var target = _presenter.boothInfo
+                    .Find(x => x.boothInformationInfo.boothName == item.itemNameValue);
+                _presenter.boothInfo.Remove(target);
+            }
+
+            _presenter.SaveDataAtDisk();
+            onDeleteBooth.Invoke();
         }
-        
+
         #endregion
     }
 }

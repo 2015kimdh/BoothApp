@@ -5,26 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="757b00b3-7067-410e-bc2c-c7df74a4ffa2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothItemSelectToggle.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothItemSelectToggle.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/CreateBooth/BoothCreator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/CreateBooth/BoothCreator.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/DeleteBooth.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/DeleteBooth/DeleteBoothFunction.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/DeleteBooth/DeleteBoothFunction.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Utility/DateTimeUtil.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Utility/DateTimeUtil.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Data/BoothInformationData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Data/BoothInformationData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Mapper/BoothItemDataMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Mapper/BoothItemDataMapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Nody/Flow Graph.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Nody/Flow Graph.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Prefab/BoothItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Prefab/BoothItem.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDataPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDataPresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDataService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/BoothInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/BoothInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/BoothInformationInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/BoothInformationInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/BoothItemWithAmountInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/BoothItemWithAmountInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/PurchaseReceiptInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/PurchaseReceiptInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Doozy/Editor/Data/NodySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Doozy/Editor/Data/NodySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothColumnGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothColumnGroup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothItemSelectToggle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothItemSelectToggle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/CreateBooth/BoothCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/CreateBooth/BoothCreator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/DeleteBooth/DeleteBoothFunction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/DeleteBooth/DeleteBoothFunction.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Doozy/Editor/Data/UIButtonIdDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Doozy/Editor/Data/UIButtonIdDatabase.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Doozy/Editor/Data/UIViewIdDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Doozy/Editor/Data/UIViewIdDatabase.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/ComicworldBoothApp.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ComicworldBoothApp.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,10 +87,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="37784">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="37784" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -118,7 +107,7 @@
       <option name="presentableId" value="Default" />
       <updated>1742890978537</updated>
       <workItem from="1742890981182" duration="4149000" />
-      <workItem from="1742954019723" duration="3967000" />
+      <workItem from="1742954019723" duration="9760000" />
     </task>
     <servers />
   </component>
@@ -134,24 +123,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/BoothApp/Presentation/CreateBooth/BoothCreator.cs</url>
-          <line>51</line>
-          <properties documentPath="F:\URPTest\My project (2)\Assets\BoothApp\Presentation\CreateBooth\BoothCreator.cs" containingFunctionPresentation="Method 'TryToMakeBooth'">
-            <startOffsets>
-              <option value="1264" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1321" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

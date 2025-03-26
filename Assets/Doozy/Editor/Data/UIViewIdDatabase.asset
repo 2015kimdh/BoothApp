@@ -17,6 +17,8 @@ MonoBehaviour:
     - Category: AppView
       Name: CreateBoothMenu
     - Category: AppView
+      Name: DeleteBooth
+    - Category: AppView
       Name: Main
     - Category: None
       Name: None

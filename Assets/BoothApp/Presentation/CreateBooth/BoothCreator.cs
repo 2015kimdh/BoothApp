@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using BoothApp.Presentation.Info;
 using BoothApp.Utility;
@@ -28,6 +29,12 @@ namespace BoothApp.Presentation.CreateBooth
         {
             // 기존 부스 정보를 가져오기 위해서 필요함
             _presenter = FindObjectOfType<BoothDataPresenter>();
+        }
+
+        private void OnEnable()
+        {
+            inputField.text = "";
+            boothImage.texture = null;
         }
 
         #endregion

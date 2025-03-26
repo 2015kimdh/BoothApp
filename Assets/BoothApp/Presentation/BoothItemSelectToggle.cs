@@ -9,6 +9,7 @@ namespace BoothApp.Presentation
         #region Property
         
         public bool toggleValue => toggle.isOn;
+        public string itemNameValue => itemName.text;
 
         #endregion
         

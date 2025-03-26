@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using BoothApp.Presentation.Info;
+using BoothApp.Utility;
 using UnityEngine;
 
 namespace BoothApp.Presentation
@@ -23,33 +25,76 @@ namespace BoothApp.Presentation
 
         public void RefreshBoothColumnObject()
         {
-            if (_presenter.boothInfo.Count > boothColumns.Count)
+            var needToMake = new List<BoothInfo>();
+            
+            foreach (var item in _presenter.boothInfo)
             {
-                int gap = _presenter.boothInfo.Count - boothColumns.Count;
-                for (int i = gap; i > 0; i--)
-                    boothColumns.Add(columnMaker.MakeBoothColumn());
+                if (boothColumns.Find(x
+                        => x.boothName.text == item.boothInformationInfo.boothName) == null)
+                    needToMake.Add(item);
             }
 
+            foreach (var make in needToMake)
+            {
+                var newColumn = columnMaker.MakeBoothColumn();
+                newColumn.boothName.text = make.boothInformationInfo.boothName;
+                newColumn.createdAt.text = make.boothInformationInfo.createdAt;
+                newColumn.updatedAt.text = make.boothInformationInfo.modifyAt;
+                
+                boothColumns.Add(newColumn);
+            }
+            
             if (_presenter.boothInfo.Count < boothColumns.Count)
             {
-                int gap = boothColumns.Count - _presenter.boothInfo.Count;
-                for (int i = gap; i > 0; i -=1)
+                List<BoothColumn> deleteBooth = new();
+                foreach (var booth in boothColumns)
                 {
-                    var item = boothColumns.Last();
+                    var answer =
+                        _presenter.boothInfo.Find(x => x.boothInformationInfo.boothName == booth.boothName.text);
+                    if (answer == null)
+                        deleteBooth.Add(booth);
+                }
+
+                foreach (var item in deleteBooth)
+                {
                     boothColumns.Remove(item);
                     Destroy(item.gameObject);
                 }
             }
 
-            for (int i = 0; i < _presenter.boothInfo.Count(); i++)
+            RefreshOldData();
+            ArrayBoothItemByCreatedAt();
+        }
+
+        private void RefreshOldData()
+        {
+            foreach (var presenter in _presenter.boothInfo)
             {
-                var presenterInfo = _presenter.boothInfo[i].boothInformationInfo;
-                boothColumns[i].boothName.text = presenterInfo.boothName;
-                boothColumns[i].createdAt.text = presenterInfo.createdAt;
-                boothColumns[i].updatedAt.text = presenterInfo.modifyAt;
+                var booth = boothColumns.Find(x => x.boothName.text == presenter.boothInformationInfo.boothName);
+                if(booth == null)
+                    continue;
+                
+                // 변경된 사항이 있을 경우
+                if (DateTimeUtil.DateTimeStringToDateTime(booth.updatedAt.text)
+                    < DateTimeUtil.DateTimeStringToDateTime(presenter.boothInformationInfo.modifyAt))
+                {
+                    booth.updatedAt.text = presenter.boothInformationInfo.modifyAt;
+                }
             }
         }
 
+        private void ArrayBoothItemByCreatedAt()
+        {
+            boothColumns.Sort(((infoA, infoB) =>
+            {
+                return DateTimeUtil.DateTimeStringToDateTime(infoA.createdAt.text)
+                    .CompareTo(DateTimeUtil.DateTimeStringToDateTime(infoB.createdAt.text));
+            }));
+
+            for (int i = 0; i < boothColumns.Count; i++)
+                boothColumns[i].gameObject.transform.SetAsFirstSibling();
+        }
+        
         public void DeleteBoothColumnObject(string boothName)
         {
         }

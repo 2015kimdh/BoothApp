@@ -4,9 +4,13 @@ using BoothApp.Data;
 
 namespace BoothApp.Presentation.Info
 {
+    [Serializable]
     public class BoothInformationInfo
     {
         public string boothName;
+        
+        public string imageName;
+
         /// <summary>
         /// 최초 아이템 세팅 상태
         /// </summary>

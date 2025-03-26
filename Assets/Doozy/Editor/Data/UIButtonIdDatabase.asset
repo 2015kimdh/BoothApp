@@ -13,4 +13,10 @@ MonoBehaviour:
   m_Name: UIButtonIdDatabase
   m_EditorClassIdentifier: 
   Database:
-    Items: []
+    Items:
+    - Category: None
+      Name: None
+    - Category: ViewChangeButton
+      Name: ToCreateBooth
+    - Category: ViewChangeButton
+      Name: ToMain

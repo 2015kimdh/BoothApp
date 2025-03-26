@@ -7,6 +7,8 @@ namespace BoothApp.Data
     public class BoothInformationData
     {
         public string boothName;
+
+        public string imageName;
         /// <summary>
         /// 최초 아이템 세팅 상태
         /// </summary>

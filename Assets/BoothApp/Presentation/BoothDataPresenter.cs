@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using BoothApp.Data;
 using BoothApp.Mapper;
 using BoothApp.Presentation.Info;
+using BoothApp.Utility;
 using UnityEngine;
 
 namespace BoothApp.Presentation
@@ -37,10 +38,15 @@ namespace BoothApp.Presentation
         /// </summary>
         private void GetDataFromService()
         {
-            if(isInitialize)
+            if (isInitialize)
                 return;
             foreach (var data in boothDataService.data)
                 boothInfo.Add(data.ToInfo());
+            boothInfo.Sort(((infoA, infoB) =>
+            {
+                return DateTimeUtil.DateTimeStringToDateTime(infoA.boothInformationInfo.createdAt)
+                    .CompareTo(DateTimeUtil.DateTimeStringToDateTime(infoB.boothInformationInfo.createdAt));
+            }));
             isInitialize = true;
         }
 
@@ -60,9 +66,10 @@ namespace BoothApp.Presentation
         public void SaveDataAtDisk()
         {
             SetDataAtService();
+            boothDataService.DeleteNoExistData();
             boothDataService.SaveData();
         }
-        
+
         #endregion
     }
 }

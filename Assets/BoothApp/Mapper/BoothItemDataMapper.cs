@@ -69,6 +69,7 @@ namespace BoothApp.Mapper
             BoothInformationInfo informationInfo = new()
             {
                 boothName = data.boothInformationData.boothName,
+                imageName = data.boothInformationData.imageName,
                 createdAt = data.boothInformationData.createdAt,
                 modifyAt = data.boothInformationData.modifyAt
             };
@@ -104,9 +105,11 @@ namespace BoothApp.Mapper
             BoothInformationData informationData = new()
             {
                 boothName = info.boothInformationInfo.boothName,
+                imageName = info.boothInformationInfo.imageName,
                 createdAt = info.boothInformationInfo.createdAt,
                 modifyAt = info.boothInformationInfo.modifyAt
             };
+            data.boothInformationData = informationData;
             data.savedAt = info.savedAt;
 
             // 판매기록 매핑

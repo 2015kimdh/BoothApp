@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using BoothApp.Data;
+using BoothApp.Utility;
 using Newtonsoft.Json;
 using UnityEngine;
 
@@ -23,6 +25,7 @@ namespace BoothApp.Presentation
         #region Public Fields
 
         public const string FileExtension = ".json";
+        public const string MetaExtension = ".meta";
         public const string FolderPath = "\\boothData";
 
         public List<BoothData> data = new();
@@ -72,7 +75,7 @@ namespace BoothApp.Presentation
         #endregion
 
         #region Public Methods
-        
+
         [Button("Save")]
         public void SaveData()
         {
@@ -80,12 +83,44 @@ namespace BoothApp.Presentation
             {
                 //if (item.boothInformation.modifyAt > item.savedAt)
                 {
-                    item.savedAt = DateTime.Now.ToString("yyyy-MM-ddTHH\\:mm\\:sszzz");
+                    item.savedAt = DateTimeUtil.DateTimeNowToString();
                     File.WriteAllText(
                         _applicationFilePath + FolderPath + "\\" + item.boothInformationData.boothName + FileExtension,
                         JsonConvert.SerializeObject(item));
                 }
             }
+        }
+
+        public void DeleteNoExistData()
+        {
+            DirectoryInfo directory = new DirectoryInfo(_applicationFilePath + FolderPath);
+            var fileNames = directory.GetFiles();
+
+            List<string> delete = new();
+
+            foreach (var files in fileNames)
+            {
+                var fileSearchAnswer = data
+                    .Where(x => x.boothInformationData.boothName + FileExtension == files.Name);
+                if (!fileSearchAnswer.Any())
+                    delete.Add(files.Name);
+            }
+
+            foreach (var beDelete in delete)
+                DeleteData(beDelete);
+        }
+
+        public void DeleteData(string fileName)
+        {
+            DirectoryInfo directory = new DirectoryInfo(_applicationFilePath + FolderPath);
+            var fileNames = directory.GetFiles();
+            var fileSearchAnswer = fileNames.Where(x => x.Name == fileName);
+
+            if (!fileSearchAnswer.Any())
+                return;
+
+            File.Delete(
+                _applicationFilePath + FolderPath + "\\" + fileName);
         }
 
         #endregion

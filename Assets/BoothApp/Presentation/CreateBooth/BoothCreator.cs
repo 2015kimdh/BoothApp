@@ -64,7 +64,6 @@ namespace BoothApp.Presentation.CreateBooth
             }
 
             BoothInfo newInfo = new();
-            Debug.Log("TryToMakeBooth");
             
             newInfo.boothInformationInfo = new BoothInformationInfo();
             newInfo.savedAt = DateTimeUtil.DateTimeNowToString();

@@ -20,5 +20,7 @@ MonoBehaviour:
       Name: DeleteBooth
     - Category: AppView
       Name: Main
+    - Category: AppView
+      Name: SelectedBooth
     - Category: None
       Name: None

@@ -26,7 +26,7 @@ namespace BoothApp.Presentation
 
         public const string FileExtension = ".json";
         public const string MetaExtension = ".meta";
-        public const string FolderPath = "\\boothData";
+        public const string FolderPath = "/boothData";
 
         public List<BoothData> data = new();
 
@@ -66,7 +66,7 @@ namespace BoothApp.Presentation
             {
                 if (file.Extension.ToLower().CompareTo(FileExtension) == 0)
                 {
-                    var fileData = File.ReadAllText(_applicationFilePath + FolderPath + "\\" + file.Name);
+                    var fileData = File.ReadAllText(_applicationFilePath + FolderPath + "/" + file.Name);
                     data.Add(JsonConvert.DeserializeObject<BoothData>(fileData));
                 }
             }
@@ -76,7 +76,9 @@ namespace BoothApp.Presentation
 
         #region Public Methods
 
+        #if UNITY_EDITOR
         [Button("Save")]
+        #endif
         public void SaveData()
         {
             foreach (var item in data)
@@ -85,7 +87,7 @@ namespace BoothApp.Presentation
                 {
                     item.savedAt = DateTimeUtil.DateTimeNowToString();
                     File.WriteAllText(
-                        _applicationFilePath + FolderPath + "\\" + item.boothInformationData.boothName + FileExtension,
+                        _applicationFilePath + FolderPath + "/" + item.boothInformationData.boothName + FileExtension,
                         JsonConvert.SerializeObject(item));
                 }
             }
@@ -120,7 +122,7 @@ namespace BoothApp.Presentation
                 return;
 
             File.Delete(
-                _applicationFilePath + FolderPath + "\\" + fileName);
+                _applicationFilePath + FolderPath + "/" + fileName);
         }
 
         #endregion

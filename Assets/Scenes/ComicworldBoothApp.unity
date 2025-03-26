@@ -762,6 +762,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284415759}
   m_CullTransparentMesh: 1
+--- !u!1 &307809259
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 307809261}
+  - component: {fileID: 307809260}
+  m_Layer: 0
+  m_Name: SelectedBooth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &307809260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307809259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 077cf99e03f9450d9ad96ca7cfd5a431, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onSelected:
+    m_PersistentCalls:
+      m_Calls: []
+  selectedBooth:
+    boothInformationInfo:
+      boothName: 
+      imageName: 
+      originalItemStatus: []
+      purchasedItemStatus: []
+      purchasedHistory: []
+      createdAt: 
+      modifyAt: 
+    savedAt: 
+--- !u!4 &307809261
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307809259}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 825.11273, y: 1869.1125, z: -9.40404}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &401054855
 GameObject:
   m_ObjectHideFlags: 0
@@ -6115,10 +6172,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIView - AppData
       objectReference: {fileID: 0}
+    - target: {fileID: 5916241715714150082, guid: 546c770abe1708648a620bff97e69d75, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6684675402322444073, guid: 546c770abe1708648a620bff97e69d75, type: 3}
       propertyPath: m_text
       value: "\uC571 \uC81C\uBAA9 : \uBD80\uC2A4 \uC815\uC0B0\uC571\\n\uC9C0\uC6D0
-        \uC5B8\uC5B4 : \uD55C\uAD6D\uC5B4\\n\uB9CC\uB4E0\uC774 : JonasMK"
+        \uC5B8\uC5B4 : \uD55C\uAD6D\uC5B4\\n\uC81C\uC791\uC790 : JonasMK"
       objectReference: {fileID: 0}
     - target: {fileID: 6684675402322444073, guid: 546c770abe1708648a620bff97e69d75, type: 3}
       propertyPath: m_fontSize
@@ -8916,7 +8977,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -9837,6 +9898,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 772057723}
   - {fileID: 225089357}
+  - {fileID: 307809261}
   - {fileID: 483966612}
   - {fileID: 50437748}
   - {fileID: 2028101508}

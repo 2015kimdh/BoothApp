@@ -4,12 +4,20 @@ using BoothApp.Presentation.Info;
 using BoothApp.Utility;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace BoothApp.Presentation.CreateBooth
 {
     public class BoothCreator : MonoBehaviour
     {
+        #region Unity Events
+
+        public UnityEvent onCreationSuccess;
+        public UnityEvent onCreationFail;
+
+        #endregion
+        
         #region Serialize Field
 
         [SerializeField] private TMP_InputField inputField;
@@ -50,7 +58,11 @@ namespace BoothApp.Presentation.CreateBooth
         {
             bool isValid = CheckBoothNameValidation();
             if (!isValid)
+            {
+                onCreationFail.Invoke();
                 return;
+            }
+
             BoothInfo newInfo = new();
             Debug.Log("TryToMakeBooth");
             
@@ -66,6 +78,7 @@ namespace BoothApp.Presentation.CreateBooth
             _presenter.boothInfo.Add(newInfo);
             _presenter.SaveDataAtDisk();
             
+            onCreationSuccess.Invoke();
             return;
         }
 
@@ -85,6 +98,12 @@ namespace BoothApp.Presentation.CreateBooth
             return isValid;
         }
 
+        public void InitInputData()
+        {
+            inputField.text = "";
+            boothImage.texture = null;
+        }
+        
         #endregion
     }
 }

@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="757b00b3-7067-410e-bc2c-c7df74a4ffa2" name="Changes" comment="" />
+    <list default="true" id="757b00b3-7067-410e-bc2c-c7df74a4ffa2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddNewItemButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddNewItemButton.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchasableItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchasableItem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/SelectedBoothNameSetting.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/SelectedBoothNameSetting.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/SelectedBoothView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/SelectedBoothView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/SelectedBoothViewStatus.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/SelectedBoothViewStatus.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Data/BoothItemData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Data/BoothItemData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Data/PurchaseItemData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Data/PurchaseItemData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Mapper/BoothItemDataMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Mapper/BoothItemDataMapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Nody/Flow Graph.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Nody/Flow Graph.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Prefab/BoothItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Prefab/BoothItem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/BoothInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/BoothInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/BoothItemInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/BoothItemInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/PurchaseItemInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/PurchaseItemInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Doozy/Editor/Data/UIButtonIdDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Doozy/Editor/Data/UIButtonIdDatabase.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ComicworldBoothApp.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ComicworldBoothApp.unity" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +34,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchasableItem.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -97,7 +122,10 @@
       <updated>1742890978537</updated>
       <workItem from="1742890981182" duration="4149000" />
       <workItem from="1742954019723" duration="9814000" />
-      <workItem from="1742973871531" duration="1000" />
+      <workItem from="1742973870317" duration="11231000" />
+      <workItem from="1742989220711" duration="82000" />
+      <workItem from="1742989321271" duration="78000" />
+      <workItem from="1743126701194" duration="9011000" />
     </task>
     <servers />
   </component>

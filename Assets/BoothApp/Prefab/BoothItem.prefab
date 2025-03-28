@@ -1734,11 +1734,11 @@ MonoBehaviour:
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
-      FromValue: {x: 1, y: 1, z: 1}
-      ToValue: {x: 1, y: 1, z: 1}
+      FromValue: {x: 0.9989349, y: 0.9989349, z: 1}
+      ToValue: {x: 0.9989349, y: 0.9989349, z: 1}
       CurrentValue: {x: 1, y: 1, z: 1}
       Enabled: 1
-      StartScale: {x: 1, y: 1, z: 1}
+      StartScale: {x: 0.9989349, y: 0.9989349, z: 1}
       FromReferenceValue: 1
       ToReferenceValue: 0
       FromCustomValue: {x: 1, y: 1, z: 1}
@@ -2004,11 +2004,11 @@ MonoBehaviour:
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
-      FromValue: {x: 1, y: 1, z: 1}
-      ToValue: {x: 1, y: 1, z: 1}
+      FromValue: {x: 0.9989349, y: 0.9989349, z: 1}
+      ToValue: {x: 0.9989349, y: 0.9989349, z: 1}
       CurrentValue: {x: 1, y: 1, z: 1}
       Enabled: 0
-      StartScale: {x: 1, y: 1, z: 1}
+      StartScale: {x: 0.9989349, y: 0.9989349, z: 1}
       FromReferenceValue: 1
       ToReferenceValue: 0
       FromCustomValue: {x: 1, y: 1, z: 1}
@@ -2223,7 +2223,7 @@ MonoBehaviour:
       ToOffset: {x: 0, y: 0, z: 0}
     Scale:
       Settings:
-        PlayMode: 0
+        PlayMode: 1
         EaseMode: 1
         Ease: 1
         Curve:
@@ -2277,8 +2277,8 @@ MonoBehaviour:
       FromValue: {x: 1, y: 1, z: 1}
       ToValue: {x: 0.95, y: 0.95, z: 1}
       CurrentValue: {x: 0.9989349, y: 0.9989349, z: 1}
-      Enabled: 1
-      StartScale: {x: 1, y: 1, z: 1}
+      Enabled: 0
+      StartScale: {x: 0.9989349, y: 0.9989349, z: 1}
       FromReferenceValue: 2
       ToReferenceValue: 2
       FromCustomValue: {x: 1, y: 1, z: 1}
@@ -2287,17 +2287,17 @@ MonoBehaviour:
       ToOffset: {x: 0, y: 0, z: 0}
     Fade:
       Settings:
-        PlayMode: 0
+        PlayMode: 1
         EaseMode: 0
         Ease: 1
         Curve:
           serializedVersion: 2
           m_Curve:
           - serializedVersion: 3
-            time: 0
-            value: 0
+            time: 0.012500763
+            value: 0.9929199
             inSlope: 0
-            outSlope: 1
+            outSlope: 0
             tangentMode: 0
             weightedMode: 0
             inWeight: 0
@@ -2306,7 +2306,7 @@ MonoBehaviour:
             time: 1
             value: 1
             inSlope: 1
-            outSlope: 0
+            outSlope: 1
             tangentMode: 0
             weightedMode: 0
             inWeight: 0
@@ -2338,16 +2338,16 @@ MonoBehaviour:
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
-      FromValue: 0.2
+      FromValue: 1
       ToValue: 1
       CurrentValue: 1
-      Enabled: 0
+      Enabled: 1
       StartAlpha: 1
       FromReferenceValue: 2
       ToReferenceValue: 2
-      FromCustomValue: 0.2
-      ToCustomValue: 1
-      FromOffset: 0
+      FromCustomValue: 1
+      ToCustomValue: 0.8
+      FromOffset: 1
       ToOffset: 0
   SelectedAnimation:
     OnPlayCallback:
@@ -2544,11 +2544,11 @@ MonoBehaviour:
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
-      FromValue: {x: 1, y: 1, z: 1}
-      ToValue: {x: 1, y: 1, z: 1}
+      FromValue: {x: 0.9989349, y: 0.9989349, z: 1}
+      ToValue: {x: 0.9989349, y: 0.9989349, z: 1}
       CurrentValue: {x: 1, y: 1, z: 1}
       Enabled: 0
-      StartScale: {x: 1, y: 1, z: 1}
+      StartScale: {x: 0.9989349, y: 0.9989349, z: 1}
       FromReferenceValue: 1
       ToReferenceValue: 0
       FromCustomValue: {x: 1, y: 1, z: 1}
@@ -2814,11 +2814,11 @@ MonoBehaviour:
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
-      FromValue: {x: 1, y: 1, z: 1}
-      ToValue: {x: 1, y: 1, z: 1}
+      FromValue: {x: 0.9989349, y: 0.9989349, z: 1}
+      ToValue: {x: 0.9989349, y: 0.9989349, z: 1}
       CurrentValue: {x: 1, y: 1, z: 1}
       Enabled: 0
-      StartScale: {x: 1, y: 1, z: 1}
+      StartScale: {x: 0.9989349, y: 0.9989349, z: 1}
       FromReferenceValue: 1
       ToReferenceValue: 0
       FromCustomValue: {x: 1, y: 1, z: 1}

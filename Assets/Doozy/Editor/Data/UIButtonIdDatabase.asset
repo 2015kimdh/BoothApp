@@ -16,6 +16,8 @@ MonoBehaviour:
     Items:
     - Category: BasicButton
       Name: Back
+    - Category: BoothItemButton
+      Name: TryAddNewItem
     - Category: None
       Name: None
     - Category: ViewChangeButton
@@ -24,3 +26,5 @@ MonoBehaviour:
       Name: ToDeleteBooth
     - Category: ViewChangeButton
       Name: ToMain
+    - Category: ViewChangeButton
+      Name: ToSelecetedBooth

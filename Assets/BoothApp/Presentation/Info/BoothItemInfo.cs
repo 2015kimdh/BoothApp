@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace BoothApp.Presentation.Info
@@ -7,6 +8,7 @@ namespace BoothApp.Presentation.Info
         public string name = "";
         public int price = 0;
         public string owner = "";
+        public List<string> itemTag = new();
         public string imageName;
         public Sprite image;
     }

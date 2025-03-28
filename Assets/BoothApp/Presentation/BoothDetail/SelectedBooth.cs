@@ -1,4 +1,3 @@
-using System;
 using BoothApp.Presentation.Info;
 using UnityEngine;
 using UnityEngine.Events;
@@ -8,6 +7,7 @@ namespace BoothApp.Presentation.BoothDetail
     public class SelectedBooth : MonoBehaviour
     {
         public UnityEvent<string> onSelected;
+        public UnityEvent onSelectedVoid;
 
         public BoothInfo selectedBooth = new();
 
@@ -22,6 +22,7 @@ namespace BoothApp.Presentation.BoothDetail
         private void SetSelectedBoothName(string boothName)
         {
             selectedBooth = _presenter.boothInfo.Find(x => x.boothInformationInfo.boothName == boothName);
+            onSelectedVoid.Invoke();
         }
     }
 }

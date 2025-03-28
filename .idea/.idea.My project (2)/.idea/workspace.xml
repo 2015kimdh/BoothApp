@@ -5,15 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="757b00b3-7067-410e-bc2c-c7df74a4ffa2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Utility/RandomString.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Utility/RandomString.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchasableItemGroup.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchasableItemGroup.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchasableItemMaker.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchasableItemMaker.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Utility/DataPath.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Utility/DataPath.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Utility/ImageLoader.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Utility/ImageLoader.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Data/BoothInformationData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Data/BoothInformationData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Data/BoothItemData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Data/BoothItemData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Data/PurchaseItemData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Data/PurchaseItemData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Mapper/BoothItemDataMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Mapper/BoothItemDataMapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/BoothItemInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/BoothItemInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/PurchaseItemInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/PurchaseItemInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchasableItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchasableItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/SelectedBooth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/SelectedBooth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/BoothInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/BoothInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/ComicworldBoothApp.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ComicworldBoothApp.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +117,7 @@
       <workItem from="1742973870317" duration="11231000" />
       <workItem from="1742989220711" duration="82000" />
       <workItem from="1742989321271" duration="78000" />
-      <workItem from="1743126701194" duration="10395000" />
+      <workItem from="1743126701194" duration="17112000" />
     </task>
     <servers />
   </component>

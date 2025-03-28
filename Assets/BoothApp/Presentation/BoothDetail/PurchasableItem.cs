@@ -12,9 +12,11 @@ namespace BoothApp.Presentation.BoothDetail
         public Image itemImage;
         public TMP_Text itemName;
         public TMP_Text remainAmount;
-        public TMP_Text tryToPurchaseAmount;
+        public TMP_Text purchaseAmountText;
         public List<string> itemTag = new();
         public string owner = "";
+        public string hash = "";
+        public int tryToPurchaseAmount = 0;
 
         #endregion
 

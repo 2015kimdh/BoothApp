@@ -20,7 +20,7 @@ namespace BoothApp.Data
         public List<BoothItemWithAmountData> purchasedItemStatus = new();
 
         public List<PurchaseReceiptData> purchasedHistory = new();
-
+        
         /// <summary>
         /// 생성된 시간
         /// </summary>

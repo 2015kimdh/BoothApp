@@ -1,10 +1,10 @@
+using System.Collections.Generic;
+
 namespace BoothApp.Presentation.Info
 {
     public class PurchaseItemInfo
     {
-        public string name = "";
-        public string owner = "";
-        public int price = 0;
+        public string hash = "";
         public int amount = 0;
     }
 }

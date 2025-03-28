@@ -11,5 +11,6 @@ namespace BoothApp.Presentation.Info
         public List<string> itemTag = new();
         public string imageName;
         public Sprite image;
+        public string hash = "";
     }
 }

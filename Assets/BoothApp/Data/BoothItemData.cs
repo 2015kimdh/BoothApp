@@ -17,5 +17,7 @@ namespace BoothApp.Data
         public List<string> itemTag = new();
 
         public string imageName;
+
+        public string hash = "";
     }
 }

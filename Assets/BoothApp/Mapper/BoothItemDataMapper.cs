@@ -49,10 +49,8 @@ namespace BoothApp.Mapper
         {
             return new PurchaseItemInfo()
             {
-                name = data.name,
-                amount = data.amount,
-                owner = data.owner,
-                price = data.price
+                hash = data.hash,
+                amount = data.amount
             };
         }
 
@@ -60,10 +58,8 @@ namespace BoothApp.Mapper
         {
             return new PurchaseItemData()
             {
-                name = info.name,
-                amount = info.amount,
-                owner = info.owner,
-                price = info.price
+                hash = info.hash,
+                amount = info.amount
             };
         }
 

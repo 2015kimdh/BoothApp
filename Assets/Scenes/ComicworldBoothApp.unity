@@ -6726,7 +6726,7 @@ GameObject:
   - component: {fileID: 1329706911}
   - component: {fileID: 1329706912}
   m_Layer: 0
-  m_Name: Button - AppData
+  m_Name: Button - ToMain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6751,7 +6751,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 100, y: 0}
-  m_SizeDelta: {x: 200, y: -40}
+  m_SizeDelta: {x: 300, y: -40}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1329706912
 MonoBehaviour:
@@ -12706,7 +12706,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC571 \uC815\uBCF4"
+  m_text: "\uBA54\uC778 \uD654\uBA74\uC73C\uB85C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 35ec8327fc2e0f544b666e351c88aa4a, type: 2}
   m_sharedMaterial: {fileID: -6944901443644724939, guid: 35ec8327fc2e0f544b666e351c88aa4a, type: 2}

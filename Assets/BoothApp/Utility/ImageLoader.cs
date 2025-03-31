@@ -23,5 +23,11 @@ namespace BoothApp.Utility
             Rect rect = new Rect(0, 0, tex.width, tex.height);
             return Sprite.Create(tex, rect,new Vector2(0.5f, 0.5f));
         }
+
+        public static Sprite TextureToSprite(Texture2D texture2D)
+        {
+            Rect rect = new Rect(0, 0, texture2D.width, texture2D.height);
+            return Sprite.Create(texture2D, rect,new Vector2(0.5f, 0.5f));
+        }
     }
 }

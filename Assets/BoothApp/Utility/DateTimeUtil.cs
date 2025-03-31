@@ -13,5 +13,10 @@ namespace BoothApp.Utility
         {
             return DateTime.ParseExact(dateTime, "yyyy-MM-ddTHH\\:mm\\:sszzz", null);
         }
+
+        public static string DateTimeStringForFileName(DateTime time)
+        {
+            return DateTime.Now.ToString("yyyyMMddHHmmss");
+        }
     }
 }

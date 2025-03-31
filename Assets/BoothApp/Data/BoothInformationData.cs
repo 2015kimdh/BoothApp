@@ -9,6 +9,12 @@ namespace BoothApp.Data
         public string boothName;
 
         public string imageName;
+
+        /// <summary>
+        /// 존재하는 아이템 태그들
+        /// </summary>
+        public List<string> itemTags = new();
+        
         /// <summary>
         /// 최초 아이템 세팅 상태
         /// </summary>

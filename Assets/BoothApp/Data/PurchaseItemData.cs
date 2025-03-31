@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine.Serialization;
 
 namespace BoothApp.Data
 {
@@ -8,5 +9,6 @@ namespace BoothApp.Data
     {
         public string hash = "";
         public int amount = 0;
+        public int pricePerItem = 0;
     }
 }

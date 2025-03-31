@@ -1,21 +1,24 @@
-using System.Threading.Tasks;
 using BoothApp.Utility;
 using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace BoothApp.Presentation.Android
 {
     public class ImageGetter : MonoBehaviour
     {
-        public RawImage rawImage;
+        public Image image;
         [SerializeField]
         private GalleryImageGetter imageGetter;
 
+        public UnityEvent<Sprite> onSpriteChange;
+
         public void GetImage()
         {
-            imageGetter.rawImage = rawImage;
+            imageGetter.imageComponent = image;
             StartCoroutine(imageGetter.GetImageFromGallery());
+            
+            onSpriteChange.Invoke(image.sprite);
         }
     }
 }

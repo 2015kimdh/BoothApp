@@ -11,8 +11,10 @@ namespace BoothApp.Presentation.Info
         
         public string imageName;
 
+        public List<string> itemTags = new();
+        
         /// <summary>
-        /// 최초 아이템 세팅 상태
+        /// 아이템 세팅 상태
         /// </summary>
         public List<BoothItemWithAmountInfo> originalItemStatus = new();
         

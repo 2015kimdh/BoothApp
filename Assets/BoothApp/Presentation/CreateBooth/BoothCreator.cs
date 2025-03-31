@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using BoothApp.Presentation.Info;
 using BoothApp.Utility;
@@ -21,7 +20,7 @@ namespace BoothApp.Presentation.CreateBooth
         #region Serialize Field
 
         [SerializeField] private TMP_InputField inputField;
-        [SerializeField] private RawImage boothImage;
+        [SerializeField] private Image boothImage;
 
         #endregion
 
@@ -41,8 +40,7 @@ namespace BoothApp.Presentation.CreateBooth
 
         private void OnEnable()
         {
-            inputField.text = "";
-            boothImage.texture = null;
+            InitInputData();
         }
 
         #endregion
@@ -71,8 +69,8 @@ namespace BoothApp.Presentation.CreateBooth
             newInfo.boothInformationInfo.createdAt = newInfo.savedAt;
             newInfo.boothInformationInfo.modifyAt = newInfo.savedAt;
             
-            if(boothImage.texture != null)
-                newInfo.boothInformationInfo.imageName = boothImage.texture.name;
+            if(boothImage.sprite != null)
+                newInfo.boothInformationInfo.imageName = boothImage.sprite.name;
 
             _presenter.boothInfo.Add(newInfo);
             _presenter.SaveDataAtDisk();
@@ -100,7 +98,7 @@ namespace BoothApp.Presentation.CreateBooth
         public void InitInputData()
         {
             inputField.text = "";
-            boothImage.texture = null;
+            boothImage.sprite = null;
         }
         
         #endregion

@@ -84,7 +84,7 @@ namespace BoothApp.Presentation
             foreach (var item in data)
             {
                 if (DateTimeUtil.DateTimeStringToDateTime(item.boothInformationData.modifyAt) 
-                    > DateTimeUtil.DateTimeStringToDateTime(item.savedAt))
+                    >= DateTimeUtil.DateTimeStringToDateTime(item.savedAt))
                 {
                     item.savedAt = DateTimeUtil.DateTimeNowToString();
                     File.WriteAllText(

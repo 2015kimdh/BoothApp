@@ -1,14 +1,17 @@
+using System;
 using System.Collections;
 using System.IO;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace BoothApp.Utility
 {
     public class GalleryImageGetter : MonoBehaviour
     {
-        public RawImage rawImage;
+        public Image imageComponent;
         private const int FileSizeLimit = 1024 * 1024 * 5; // 5MB
+        public UnityEvent onFailToGet;
 
         public IEnumerator GetImageFromGallery()
         {
@@ -27,32 +30,38 @@ namespace BoothApp.Utility
                 }
             });
             if (!successToGet)
+            {
+                onFailToGet.Invoke();
                 yield break;
+            }
 
             if (!string.IsNullOrEmpty(image1))
             {
-                AsyncLoadImage(image1);
-                Debug.Log("이미지 가져오기 + " + rawImage.texture.name);
+                LoadImage(image1);
+                Debug.Log("이미지 가져오기 + " + imageComponent.sprite.name);
                 yield return null;
             }
         }
 
-        public void AsyncLoadImage(string path)
+        public void LoadImage(string path)
         {
             byte[] fileData = File.ReadAllBytes(path);
             string fileName = Path.GetFileName(path).Split('.')[0];
-            string savePath = Application.persistentDataPath + "/Image";
 
-            if (!Directory.Exists(savePath))
+            if (!Directory.Exists(DataPath.ImagePath))
             {
-                Directory.CreateDirectory(savePath);
+                Directory.CreateDirectory(DataPath.ImagePath);
             }
 
             Texture2D tex = new Texture2D(0, 0);
             tex.LoadImage(fileData);
-            tex = ResizeTexture(tex, tex.width/4, tex.height/4);
-            File.WriteAllBytes(savePath + "/" + fileName + ".png", tex.EncodeToPNG());
-            rawImage.texture = tex;
+            tex = ResizeTexture(tex, tex.width / 4, tex.height / 4);
+            tex.name = fileName + DateTimeUtil.DateTimeStringForFileName(DateTime.Now);
+            File.WriteAllBytes(
+                DataPath.ImagePath + "/" + tex.name + ".png",
+                tex.EncodeToPNG());
+            imageComponent.sprite = ImageLoader.TextureToSprite(tex);
+            imageComponent.sprite.name = tex.name;
         }
 
         private Texture2D ResizeTexture(Texture2D original, int width, int height)
@@ -74,13 +83,13 @@ namespace BoothApp.Utility
                     resizedPixels[y * width + x] = pixels[srcY * original.width + srcX];
                 }
             }
-        
+
             newTexture.SetPixels(resizedPixels);
             newTexture.Apply();
 
             return newTexture;
         }
-        
+
         public Texture2D ResizeTexture(Texture2D old)
         {
             Texture2D copy = DuplicateTexture(old);

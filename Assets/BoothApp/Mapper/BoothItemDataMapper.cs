@@ -50,7 +50,8 @@ namespace BoothApp.Mapper
             return new PurchaseItemInfo()
             {
                 hash = data.hash,
-                amount = data.amount
+                amount = data.amount,
+                pricePerPrice = data.pricePerItem
             };
         }
 
@@ -59,7 +60,8 @@ namespace BoothApp.Mapper
             return new PurchaseItemData()
             {
                 hash = info.hash,
-                amount = info.amount
+                amount = info.amount,
+                pricePerItem = info.pricePerPrice
             };
         }
 
@@ -107,7 +109,7 @@ namespace BoothApp.Mapper
                 boothName = info.boothInformationInfo.boothName,
                 imageName = info.boothInformationInfo.imageName,
                 createdAt = info.boothInformationInfo.createdAt,
-                modifyAt = info.boothInformationInfo.modifyAt
+                modifyAt = info.boothInformationInfo.modifyAt,
             };
             data.boothInformationData = informationData;
             data.savedAt = info.savedAt;

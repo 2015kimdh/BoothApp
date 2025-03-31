@@ -21,6 +21,11 @@ namespace BoothApp.Utility
 
             NativeGallery.GetImageFromGallery((image) =>
             {
+                if (image == null)
+                {
+                    successToGet = false;
+                    return;
+                }
                 FileInfo selectedImage = new FileInfo(image);
                 image1 = image;
                 if (selectedImage.Length > FileSizeLimit)
@@ -62,6 +67,7 @@ namespace BoothApp.Utility
                 tex.EncodeToPNG());
             imageComponent.sprite = ImageLoader.TextureToSprite(tex);
             imageComponent.sprite.name = tex.name;
+            ImageHub.LoadedImage.Add(imageComponent.sprite);
         }
 
         private Texture2D ResizeTexture(Texture2D original, int width, int height)

@@ -48,8 +48,8 @@ namespace BoothApp.Presentation
 
         private bool CheckDataFolder()
         {
-            DirectoryInfo directory = new DirectoryInfo(_applicationFilePath + FolderPath);
-            Debug.Log(_applicationFilePath + FolderPath);
+            DirectoryInfo directory = new DirectoryInfo(DataPath.BoothPath);
+            Debug.Log(DataPath.BoothPath);
             if (!directory.Exists)
             {
                 directory.Create();
@@ -61,12 +61,12 @@ namespace BoothApp.Presentation
 
         private void GetData()
         {
-            DirectoryInfo directory = new DirectoryInfo(_applicationFilePath + FolderPath);
+            DirectoryInfo directory = new DirectoryInfo(DataPath.BoothPath);
             foreach (var file in directory.GetFiles())
             {
                 if (file.Extension.ToLower().CompareTo(FileExtension) == 0)
                 {
-                    var fileData = File.ReadAllText(_applicationFilePath + FolderPath + "/" + file.Name);
+                    var fileData = File.ReadAllText(DataPath.BoothPath + "/" + file.Name);
                     data.Add(JsonConvert.DeserializeObject<BoothData>(fileData));
                 }
             }
@@ -88,7 +88,7 @@ namespace BoothApp.Presentation
                 {
                     item.savedAt = DateTimeUtil.DateTimeNowToString();
                     File.WriteAllText(
-                        _applicationFilePath + FolderPath + "/" + item.boothInformationData.boothName + FileExtension,
+                        DataPath.BoothPath + "/" + item.boothInformationData.boothName + FileExtension,
                         JsonConvert.SerializeObject(item));
                 }
             }
@@ -96,7 +96,7 @@ namespace BoothApp.Presentation
 
         public void DeleteNoExistData()
         {
-            DirectoryInfo directory = new DirectoryInfo(_applicationFilePath + FolderPath);
+            DirectoryInfo directory = new DirectoryInfo(DataPath.BoothPath);
             var fileNames = directory.GetFiles();
 
             List<string> delete = new();
@@ -115,7 +115,7 @@ namespace BoothApp.Presentation
 
         public void DeleteData(string fileName)
         {
-            DirectoryInfo directory = new DirectoryInfo(_applicationFilePath + FolderPath);
+            DirectoryInfo directory = new DirectoryInfo(DataPath.BoothPath);
             var fileNames = directory.GetFiles();
             var fileSearchAnswer = fileNames.Where(x => x.Name == fileName);
 
@@ -123,7 +123,7 @@ namespace BoothApp.Presentation
                 return;
 
             File.Delete(
-                _applicationFilePath + FolderPath + "/" + fileName);
+                DataPath.BoothPath + "/" + fileName);
         }
 
         #endregion

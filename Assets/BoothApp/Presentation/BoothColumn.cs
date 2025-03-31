@@ -13,7 +13,7 @@ namespace BoothApp.Presentation
         public TMP_Text createdAt;
         public TMP_Text updatedAt;
 
-        public RawImage image;
+        public Image image;
         
         public UIButton button;
 

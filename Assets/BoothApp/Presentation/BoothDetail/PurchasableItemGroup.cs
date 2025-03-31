@@ -55,8 +55,9 @@ namespace BoothApp.Presentation.BoothDetail
 
         public void RefreshPurchasableItems()
         {
+            RefreshTrackedItem();
             RemoveUnTrackedItem();
-            AddTrackedItem();
+            AddNewTrackedItem();
         }
 
         #endregion
@@ -92,7 +93,7 @@ namespace BoothApp.Presentation.BoothDetail
             }
         }
 
-        private void AddTrackedItem()
+        private void AddNewTrackedItem()
         {
             var purchasableHash = GetPurchasableItemHash();
             var originalHash = GetOriginalItemHash();
@@ -103,16 +104,36 @@ namespace BoothApp.Presentation.BoothDetail
                     .Find(x => x.itemInfo.hash == exceptedItem);
                 var newItem = maker.MakeNewPurchasableItem();
 
-                newItem.hash = exceptedItem;
-                newItem.itemImage.sprite = ImageLoader.LoadImageWithName(target.itemInfo.imageName);
-                newItem.itemName.text = target.itemInfo.name;
-                newItem.owner = target.itemInfo.owner;
-                newItem.remainAmount.text = selectedBooth.selectedBooth.RemainItemAmount(exceptedItem).ToString();
-                newItem.itemTag = target.itemInfo.itemTag;
+                SetPurchaseAbleItemData(newItem, target);
                 purchasableItems.Add(newItem);
             }
 
             addItemButton.transform.SetAsLastSibling();
+        }
+
+        private void RefreshTrackedItem()
+        {
+            var purchasableHash = GetPurchasableItemHash();
+            var originalHash = GetOriginalItemHash();
+            var intersect = purchasableHash.Intersect(originalHash).ToList();
+            foreach (var item in intersect)
+            {
+                var target = purchasableItems.Find(x => x.hash == item);
+                var original =
+                    boothInfo.originalItemStatus.Find(x => x.itemInfo.hash == item);
+                SetPurchaseAbleItemData(target, original);
+            }
+        }
+
+        private void SetPurchaseAbleItemData(PurchasableItem purchasableItem, BoothItemWithAmountInfo boothItem)
+        {
+            purchasableItem.hash = boothItem.itemInfo.hash;
+            purchasableItem.itemImage.sprite = ImageHub.GetImageWithName(boothItem.itemInfo.imageName);
+            purchasableItem.itemName.text = boothItem.itemInfo.name;
+            purchasableItem.owner = boothItem.itemInfo.owner;
+            purchasableItem.remainAmount.text =
+                selectedBooth.selectedBooth.GetOriginalItemAmount(purchasableItem.hash).ToString();
+            purchasableItem.itemTag = boothItem.itemInfo.itemTag;
         }
 
         #endregion

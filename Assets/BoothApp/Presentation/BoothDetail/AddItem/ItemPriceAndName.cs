@@ -11,6 +11,8 @@ namespace BoothApp.Presentation.BoothDetail.AddItem
         public string ItemName => itemName.text;
         public int ItemPrice => int.Parse(itemPrice.text);
 
+        public bool IsViability => CheckViability();
+
         #endregion
 
         #region Serialize Field
@@ -35,13 +37,15 @@ namespace BoothApp.Presentation.BoothDetail.AddItem
 
         #endregion
         
+        #region Methods
+        
         private void InitInputField()
         {
             itemName.text = "";
             itemPrice.text = "";
         }
 
-        public bool CheckViability()
+        private bool CheckViability()
         {
             if (ItemName == "")
                 return false;
@@ -49,5 +53,7 @@ namespace BoothApp.Presentation.BoothDetail.AddItem
                 return false;
             return true;
         }
+        
+        #endregion
     }
 }

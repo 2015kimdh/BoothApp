@@ -1,15 +1,13 @@
 using System.Collections.Generic;
-using System.Linq;
-using TMPro;
 using UnityEngine;
 
 namespace BoothApp.Presentation.BoothDetail.AddItem
 {
-    public class AddItemOwnerInputField : AddOptionWithInputField
+    public class AddItemTagInputField : AddOptionWithInputField
     {
         #region Property
         protected override List<string> OriginalList 
-            => selectedBooth.selectedBooth.boothInformationInfo.owners;
+            => selectedBooth.selectedBooth.boothInformationInfo.itemTags;
         
         #endregion
     }

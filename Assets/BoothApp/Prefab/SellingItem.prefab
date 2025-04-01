@@ -167,7 +167,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
+  m_fontSize: 36
   m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -629,9 +629,11 @@ MonoBehaviour:
   itemImage: {fileID: 5996795669784591240}
   itemName: {fileID: 3955308590895575188}
   remainAmount: {fileID: 1365293780290352853}
-  tryToPurchaseAmount: {fileID: 4023791214548114337}
+  purchaseAmountText: {fileID: 4023791214548114337}
   itemTag: []
   owner: 
+  hash: 
+  tryToPurchaseAmount: 0
 --- !u!114 &6013646583348739613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1120,7 +1122,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
+  m_fontSize: 10
   m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1331,7 +1333,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
+  m_fontSize: 10
   m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 1

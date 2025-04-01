@@ -16,7 +16,6 @@ namespace BoothApp.Presentation.Android
                 onBackButton.Invoke();
             }
             #endif
-
         }
     }
 }

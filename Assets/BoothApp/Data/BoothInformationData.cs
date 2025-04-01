@@ -14,6 +14,7 @@ namespace BoothApp.Data
         /// 존재하는 아이템 태그들
         /// </summary>
         public List<string> itemTags = new();
+        public List<string> owners = new();
         
         /// <summary>
         /// 최초 아이템 세팅 상태

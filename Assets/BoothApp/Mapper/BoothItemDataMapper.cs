@@ -98,6 +98,9 @@ namespace BoothApp.Mapper
             foreach (var purchasedItemStatus in data.boothInformationData.purchasedItemStatus)
                 info.boothInformationInfo.purchasedItemStatus.Add(purchasedItemStatus.ToInfo());
 
+            info.boothInformationInfo.owners = data.boothInformationData.owners;
+            info.boothInformationInfo.itemTags = data.boothInformationData.itemTags;
+            
             return info;
         }
         
@@ -134,6 +137,9 @@ namespace BoothApp.Mapper
             foreach (var purchasedItemStatus in info.boothInformationInfo.purchasedItemStatus)
                 data.boothInformationData.purchasedItemStatus.Add(purchasedItemStatus.ToData());
 
+            data.boothInformationData.owners = info.boothInformationInfo.owners;
+            data.boothInformationData.itemTags = info.boothInformationInfo.itemTags;
+            
             return data;
         }
     }

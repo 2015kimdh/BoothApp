@@ -3019,6 +3019,7 @@ MonoBehaviour:
       boothName: 
       imageName: 
       itemTags: []
+      owners: []
       originalItemStatus: []
       purchasedItemStatus: []
       purchasedHistory: []
@@ -5066,6 +5067,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 464855953}
+  - component: {fileID: 464855954}
   m_Layer: 0
   m_Name: PurchaseItemOwner
   m_TagString: Untagged
@@ -5094,6 +5096,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -1254}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &464855954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464855952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b03bd5e086049a3a2a8a563732dfdaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropdown: {fileID: 24352168}
+  view: {fileID: 9173249041736813302}
 --- !u!1 &468851230
 GameObject:
   m_ObjectHideFlags: 0
@@ -11032,6 +11048,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1205929234}
+  - component: {fileID: 1205929235}
   m_Layer: 0
   m_Name: PurchaseItemOwner
   m_TagString: Untagged
@@ -11060,6 +11077,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 518}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1205929235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205929233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f00782024bff49259a66c3b6517d5aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputField: {fileID: 1216141757}
+  selectedBooth: {fileID: 307809260}
 --- !u!1 &1206480005
 GameObject:
   m_ObjectHideFlags: 0
@@ -24778,6 +24809,7 @@ GameObject:
   - component: {fileID: 7939425613948297800}
   - component: {fileID: 5877075486220684896}
   - component: {fileID: 6739009454251362432}
+  - component: {fileID: 9173249041736813302}
   m_Layer: 0
   m_Name: View - MakePurchaseItem
   m_TagString: Untagged
@@ -25409,7 +25441,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &8407815953806762129
 GameObject:
   m_ObjectHideFlags: 0
@@ -25753,6 +25785,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &9173249041736813302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7316322220259868595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b701bcff91c42dd93db51c4acf66a80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onViewShow:
+    m_PersistentCalls:
+      m_Calls: []
+  onRefresh:
+    m_PersistentCalls:
+      m_Calls: []
+  itemImage: {fileID: 0}
+  view: {fileID: 7939425613948297800}
+  selectedBooth: {fileID: 307809260}
 --- !u!114 &9205785960775368883
 MonoBehaviour:
   m_ObjectHideFlags: 0

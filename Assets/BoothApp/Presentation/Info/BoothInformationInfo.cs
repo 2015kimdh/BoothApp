@@ -12,6 +12,7 @@ namespace BoothApp.Presentation.Info
         public string imageName;
 
         public List<string> itemTags = new();
+        public List<string> owners = new();
         
         /// <summary>
         /// 아이템 세팅 상태

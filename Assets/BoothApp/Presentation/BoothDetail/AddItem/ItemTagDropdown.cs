@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Doozy.Runtime.UIManager.Components;
@@ -86,7 +85,7 @@ namespace BoothApp.Presentation.BoothDetail.AddItem
             {
                 var target = _itemTagLabels.Find(x => x.label.text == except[i]);
                 _itemTagLabels.Remove(target);
-                Destroy(target);
+                Destroy(target.gameObject);
             }
 
             var needToMake = OriginalTagList.Except(instantiatedList).ToList();
@@ -111,7 +110,10 @@ namespace BoothApp.Presentation.BoothDetail.AddItem
         {
             List<string> selectedTags = new();
             foreach (var item in _itemTagLabels)
-                selectedTags.Add(item.label.text);
+            {
+                if(item.toggle.isOn)
+                    selectedTags.Add(item.label.text);
+            }
 
             view.selectedTags = selectedTags;
         }

@@ -79,24 +79,28 @@ namespace BoothApp.Presentation.BoothDetail.AddItem
                 return false;
             if (ItemPrice < 0)
                 return false;
-            if (ItemAmount < 0)
+            if (ItemAmount < 1)
                 return false;
             return true;
         }
 
         private void SetNameValue()
         {
+            Debug.Log("값 변경 중");
             _itemView.itemName = ItemName;
+            _itemView.namePriceAmountAbility = IsViability;
         }
         
         private void SetPriceValue()
         {
             _itemView.itemPrice = ItemPrice;
+            _itemView.namePriceAmountAbility = IsViability;
         }
         
         private void SetAmountValue()
         {
-            _itemView.itemName = ItemName;
+            _itemView.itemAmount = ItemAmount;
+            _itemView.namePriceAmountAbility = IsViability;
         }
         
         #endregion

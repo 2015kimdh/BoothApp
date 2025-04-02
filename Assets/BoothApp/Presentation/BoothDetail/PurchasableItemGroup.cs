@@ -38,6 +38,7 @@ namespace BoothApp.Presentation.BoothDetail
         private void Start()
         {
             selectedBooth.onSelected.AddListener(RefreshIfSelectedBoothChanged);
+            view.onViewShow.AddListener(RefreshPurchasableItems);
         }
 
         #endregion
@@ -89,7 +90,7 @@ namespace BoothApp.Presentation.BoothDetail
             {
                 var target = purchasableItems.Find(x => x.hash == exceptedItem);
                 purchasableItems.Remove(target);
-                Destroy(target);
+                Destroy(target.gameObject);
             }
         }
 
@@ -128,12 +129,14 @@ namespace BoothApp.Presentation.BoothDetail
         private void SetPurchaseAbleItemData(PurchasableItem purchasableItem, BoothItemWithAmountInfo boothItem)
         {
             purchasableItem.hash = boothItem.itemInfo.hash;
-            purchasableItem.itemImage.sprite = ImageHub.GetImageWithName(boothItem.itemInfo.imageName);
-            purchasableItem.itemName.text = boothItem.itemInfo.name;
-            purchasableItem.owner = boothItem.itemInfo.owner;
+            purchasableItem.SetPurchasableItem(
+                ImageHub.GetImageWithName(boothItem.itemInfo.imageName),
+                boothItem.itemInfo.name,
+                boothItem.itemInfo.itemTag,
+                boothItem.itemInfo.owner);
+            
             purchasableItem.remainAmount.text =
                 selectedBooth.selectedBooth.GetOriginalItemAmount(purchasableItem.hash).ToString();
-            purchasableItem.itemTag = boothItem.itemInfo.itemTag;
         }
 
         #endregion

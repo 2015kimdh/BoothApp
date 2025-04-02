@@ -22,8 +22,8 @@ namespace BoothApp.Presentation.BoothDetail
 
         public PurchasableItem MakeNewPurchasableItem()
         {
-            Instantiate(purchasableItemPrefab,parentObject.transform);
-            return purchasableItemPrefab.GetComponentInChildren<PurchasableItem>();
+            var newItem = Instantiate(purchasableItemPrefab,parentObject.transform);
+            return newItem.GetComponentInChildren<PurchasableItem>();
         }
         
         #endregion

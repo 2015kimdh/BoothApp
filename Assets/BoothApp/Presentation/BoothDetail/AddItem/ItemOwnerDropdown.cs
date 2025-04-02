@@ -66,9 +66,12 @@ namespace BoothApp.Presentation.BoothDetail.AddItem
 
         private void SetValue()
         {
-            view.owner = dropdown.options[dropdown.value].ToString();
+            if (dropdown.value == 0)
+                view.owner = "";
+            else
+                view.owner = dropdown.options[dropdown.value].text;
         }
-        
+
         #endregion
     }
 }

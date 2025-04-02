@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace BoothApp.Presentation.Info
 {
+    [Serializable]
     public class BoothItemInfo
     {
         public string name = "";

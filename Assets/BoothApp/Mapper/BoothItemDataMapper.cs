@@ -12,7 +12,9 @@ namespace BoothApp.Mapper
                 name = data.name,
                 owner = data.owner,
                 price = data.price,
-                imageName = data.imageName
+                imageName = data.imageName,
+                hash = data.hash,
+                itemTag = data.itemTag
             };
         }
 
@@ -23,7 +25,9 @@ namespace BoothApp.Mapper
                 name = info.name,
                 owner = info.owner,
                 price = info.price,
-                imageName = info.imageName
+                imageName = info.imageName,
+                hash = info.hash,
+                itemTag = info.itemTag
             };
         }
 

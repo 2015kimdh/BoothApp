@@ -15,7 +15,7 @@ namespace BoothApp.Presentation.BoothDetail
         public UnityEvent onRefresh;
 
         #endregion
-        
+
         #region Property
 
         public BoothInfo SelectedBooth => selectedBooth.selectedBooth;
@@ -26,21 +26,29 @@ namespace BoothApp.Presentation.BoothDetail
 
         #region Public Field
 
+        public string itemName = "";
+        public int itemPrice = 0;
+        public int amount = 0;
         public Image itemImage;
+        public List<string> selectedTags;
+        public string owner;
 
         #endregion
 
         #region Serialize Field
 
         [SerializeField] private UIView view;
-        [SerializeField]
-        private SelectedBooth selectedBooth;
+        [SerializeField] private SelectedBooth selectedBooth;
 
         #endregion
+
+        #region Method
 
         private void Awake()
         {
             view.OnShowCallback.Event.AddListener(onViewShow.Invoke);
         }
+
+        #endregion
     }
 }

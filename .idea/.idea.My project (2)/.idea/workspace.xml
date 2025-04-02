@@ -5,14 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="757b00b3-7067-410e-bc2c-c7df74a4ffa2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/AddItemTagInputField.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/AddItemTagInputField.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/AddOptionWithInputField.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/AddOptionWithInputField.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/Abstract.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/Abstract/IConditionTextRule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/Abstract/IConditionTextRule.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/Abstract/SameOwnerAvoidRule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/Abstract/SameOwnerAvoidRule.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/Abstract/SameTagAvoidRule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/Abstract/SameTagAvoidRule.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/Abstract/TextFieldEmptyRule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/Abstract/TextFieldEmptyRule.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/InputFieldConditionText.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/InputFieldConditionText.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/ItemTagDropdown.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/ItemTagDropdown.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/ItemTagLabel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/ItemTagLabel.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Util.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Util/MultiSelectDropdown.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Util/MultiSelectDropdown.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/AddItemOwnerInputField.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/AddItemOwnerInputField.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/ItemPriceAndName.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/ItemPriceAndName.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/AddOptionWithInputField.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/AddOptionWithInputField.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/ItemOwnerDropdown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/ItemOwnerDropdown.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/ItemPriceAndName.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/ItemPriceAndNameAmount.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/ItemPriceAndName.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/ItemPriceAndNameAmount.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddNewItemView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddNewItemView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/ComicworldBoothApp.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ComicworldBoothApp.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +42,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/Interface/ConditionTextRule.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchasableItem.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -121,6 +141,7 @@
       <workItem from="1743494956010" duration="570000" />
       <workItem from="1743512707629" duration="6752000" />
       <workItem from="1743530658670" duration="1456000" />
+      <workItem from="1743579978072" duration="14034000" />
     </task>
     <servers />
   </component>

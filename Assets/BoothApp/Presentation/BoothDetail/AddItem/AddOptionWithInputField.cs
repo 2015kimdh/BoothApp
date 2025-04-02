@@ -1,12 +1,20 @@
 using System.Collections.Generic;
 using System.Linq;
+using BoothApp.Utility;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace BoothApp.Presentation.BoothDetail.AddItem
 {
     public abstract class AddOptionWithInputField : MonoBehaviour
     {
+        #region Unity Event
+
+        public UnityEvent onAddSuccess;
+
+        #endregion
+
         #region Serialize Fields
 
         [SerializeField] protected TMP_InputField inputField;
@@ -24,6 +32,23 @@ namespace BoothApp.Presentation.BoothDetail.AddItem
         #endregion
 
         #region Methods
+
+        public void AddItemInOriginal()
+        {
+            if (CheckViability())
+            {
+                OriginalList.Add(inputField.text);
+                selectedBooth.selectedBooth.boothInformationInfo.modifyAt = DateTimeUtil.DateTimeNowToString();
+                InitField();
+                onAddSuccess.Invoke();
+            }
+        }
+
+        public void InitField()
+        {
+            inputField.text = "";
+        }
+
 
         /// <summary>
         /// 현재 입력된 필드의 값이 사용 가능한 조건인지 확인
@@ -45,7 +70,7 @@ namespace BoothApp.Presentation.BoothDetail.AddItem
                 return false;
             return true;
         }
-        
+
         #endregion
     }
 }

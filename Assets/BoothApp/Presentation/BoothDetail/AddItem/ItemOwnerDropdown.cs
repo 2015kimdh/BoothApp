@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -21,7 +22,12 @@ namespace BoothApp.Presentation.BoothDetail.AddItem
 
         #region Methods
 
-        private void RefreshDropdown()
+        private void Awake()
+        {
+            dropdown.onValueChanged.AddListener(delegate { SetValue(); });
+        }
+
+        public void RefreshDropdown()
         {
             dropdown.ClearOptions();
             List<TMP_Dropdown.OptionData> optionData = new();
@@ -58,6 +64,11 @@ namespace BoothApp.Presentation.BoothDetail.AddItem
             optionData.Add(newOptionData);
         }
 
+        private void SetValue()
+        {
+            view.owner = dropdown.options[dropdown.value].ToString();
+        }
+        
         #endregion
     }
 }

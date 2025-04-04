@@ -30,9 +30,10 @@ namespace BoothApp.Presentation.BoothDetail.EditItem
 
         #region Method
 
-        private void Awake()
+        protected override void Awake()
         {
-            onViewShow.AddListener(SetSelectedInfo);
+            base.Awake();
+            selectedItem.onItemSet.AddListener(SetSelectedInfo);
         }
 
         private void SetSelectedInfo()
@@ -50,12 +51,12 @@ namespace BoothApp.Presentation.BoothDetail.EditItem
             itemName = SelectedItemInfo.itemInfo.name;
             itemPrice = SelectedItemInfo.itemInfo.price;
             itemAmount = SelectedItemInfo.amount;
-            itemImage.sprite = SelectedItemInfo.itemInfo.image;
+            itemImage.sprite = ImageHub.GetImageWithName(SelectedItemInfo.itemInfo.imageName);
             selectedTags = ClassCopy.CopyClass(SelectedItemInfo.itemInfo.itemTag);
             owner = SelectedItemInfo.itemInfo.owner;
             _hash = SelectedItemInfo.itemInfo.hash;
             
-            namePriceAmountAbility = false;
+            namePriceAmountAbility = CheckViability();
         }
 
         public void ApplyEditItem()
@@ -101,6 +102,17 @@ namespace BoothApp.Presentation.BoothDetail.EditItem
             info.price = itemPrice;
             info.itemTag = ClassCopy.CopyClass(selectedTags);
             info.hash = _hash;
+        }
+        
+        private bool CheckViability()
+        {
+            if (itemName == "")
+                return false;
+            if (itemPrice < 0)
+                return false;
+            if (itemAmount < 1)
+                return false;
+            return true;
         }
         
         #endregion

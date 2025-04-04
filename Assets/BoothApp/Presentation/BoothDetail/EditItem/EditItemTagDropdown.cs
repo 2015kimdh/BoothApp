@@ -7,19 +7,24 @@ namespace BoothApp.Presentation.BoothDetail.EditItem
     {
         public override void RefreshOnFalse()
         {
+            setDataFlag = false;
             Refresh();
             SetAllToggleFalse();
+            setDataFlag = true;
             SetCurrentTagSelection();
             SetCurrentTagLabel();
         }
 
         private void SetCurrentTagSelection()
         {
-            foreach (var item in view.ItemTags)
+            foreach (var item in view.selectedTags)
             {
                 var result = _itemTagLabels.Find(x => x.label.text == item);
                 if (result != null)
                     result.toggle.isOn = true;
+                else
+                    result.toggle.isOn = false;
+
             }
         }
     }

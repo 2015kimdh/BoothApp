@@ -587,6 +587,7 @@ GameObject:
   - component: {fileID: 6013646583348739613}
   - component: {fileID: 3524031595432960837}
   - component: {fileID: 7680038637175500778}
+  - component: {fileID: 7920730982806030185}
   m_Layer: 0
   m_Name: SellingItem
   m_TagString: Untagged
@@ -1030,6 +1031,20 @@ MonoBehaviour:
       ToCustomValue: 1
       FromOffset: 0
       ToOffset: 0
+--- !u!114 &7920730982806030185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5501194358711187748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 654ecff2af1145dd994cd2edfacf2f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 6013646583348739613}
+  purchasableItem: {fileID: 7961629937711457548}
 --- !u!1 &5514460136802927929
 GameObject:
   m_ObjectHideFlags: 0

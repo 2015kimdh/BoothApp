@@ -7,8 +7,9 @@ namespace BoothApp.Presentation.BoothDetail
     {
         #region Method
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             onViewShow.AddListener(InitVariable);
         }
         

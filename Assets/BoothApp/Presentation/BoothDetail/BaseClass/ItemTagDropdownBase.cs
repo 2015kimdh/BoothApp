@@ -31,6 +31,8 @@ namespace BoothApp.Presentation.BoothDetail.BaseClass
 
         protected List<ItemTagLabel> _itemTagLabels = new();
 
+        protected bool setDataFlag = true;
+        
         protected List<string> OriginalTagList => view.ItemTags;
 
         #endregion
@@ -113,14 +115,16 @@ namespace BoothApp.Presentation.BoothDetail.BaseClass
 
         private void SetTagData()
         {
-            List<string> selectedTags = new();
-            foreach (var item in _itemTagLabels)
+            if (setDataFlag)
             {
-                if (item.toggle.isOn)
-                    selectedTags.Add(item.label.text);
+                List<string> selectedTags = new();
+                foreach (var item in _itemTagLabels)
+                {
+                    if (item.toggle.isOn)
+                        selectedTags.Add(item.label.text);
+                }
+                view.selectedTags = selectedTags;
             }
-
-            view.selectedTags = selectedTags;
         }
 
         protected void SetCurrentTagLabel()

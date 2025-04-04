@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using BoothApp.Presentation.Info;
+using BoothApp.Presentation.View;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace BoothApp.Presentation.BoothDetail
 {
-    public abstract class ItemViewBase : MonoBehaviour
+    public abstract class ItemViewBase : ViewBase
     {
         #region Unity Event
 

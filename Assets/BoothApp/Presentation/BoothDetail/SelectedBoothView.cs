@@ -1,9 +1,10 @@
+using BoothApp.Presentation.View;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace BoothApp.Presentation.BoothDetail
 {
-    public class SelectedBoothView : MonoBehaviour
+    public class SelectedBoothView : ViewBase
     {
         #region Property
 
@@ -37,11 +38,6 @@ namespace BoothApp.Presentation.BoothDetail
         #endregion
         
         #region Method
-
-        private void Start()
-        {
-            
-        }
 
         public void OnViewShow()
         {

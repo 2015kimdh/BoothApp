@@ -6283,8 +6283,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Option A
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 04345c159b5e95b459183c6df6b2bece, type: 2}
+  m_sharedMaterial: {fileID: -8792798636346124698, guid: 04345c159b5e95b459183c6df6b2bece, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10999,7 +10999,7 @@ MonoBehaviour:
   AutoSelectTarget: {fileID: 0}
   Id:
     Category: AppView
-    Name: TryAddNewPurchaseItem
+    Name: EditSelectedItem
     Custom: 0
   TargetOrientation: 0
 --- !u!114 &501506172
@@ -13841,6 +13841,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759789070}
   m_CullTransparentMesh: 1
+--- !u!1 &759904782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 759904783}
+  m_Layer: 0
+  m_Name: UIButtonListener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &759904783
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759904782}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 911.7751, y: 1797.2086, z: -13.745182}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1175073357}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &767184439
 GameObject:
   m_ObjectHideFlags: 0
@@ -19774,6 +19806,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1175073356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1175073357}
+  m_Layer: 0
+  m_Name: ToEditSelectedItemView
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1175073357
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175073356}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 759904783}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1182535997
 GameObject:
   m_ObjectHideFlags: 0
@@ -36483,6 +36546,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1997716362}
   - component: {fileID: 1997716363}
+  - component: {fileID: 1997716364}
   m_Layer: 0
   m_Name: Button - ToModify
   m_TagString: Untagged
@@ -36607,9 +36671,23 @@ MonoBehaviour:
   Cooldown: 0
   DisableWhenInCooldown: 0
   Id:
-    Category: ViewChangeButton
-    Name: ToDeleteBooth
+    Category: None
+    Name: None
     Custom: 0
+--- !u!114 &1997716364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997716361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00efe9a9fa144341890c3e6b50c3e572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetStatus: 2
+  button: {fileID: 1997716363}
 --- !u!1 &2004329689
 GameObject:
   m_ObjectHideFlags: 0
@@ -43267,3 +43345,4 @@ SceneRoots:
   - {fileID: 2132386448}
   - {fileID: 1622289933}
   - {fileID: 156119143}
+  - {fileID: 759904783}

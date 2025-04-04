@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,7 +7,7 @@ namespace BoothApp.Presentation.BoothDetail
     {
         #region Property
 
-        public SelectedBoothViewStatus viewStatus
+        public SelectedBoothViewStatus ViewStatus
         {
             get => _viewStatus;
             set

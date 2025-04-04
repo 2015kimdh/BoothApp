@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace BoothApp.Presentation.BoothDetail.BaseClass
 {
@@ -84,19 +83,19 @@ namespace BoothApp.Presentation.BoothDetail.BaseClass
             return true;
         }
 
-        private void SetNameValue()
+        protected void SetNameValue()
         {
             itemView.itemName = ItemName;
             itemView.namePriceAmountAbility = IsViability;
         }
         
-        private void SetPriceValue()
+        protected void SetPriceValue()
         {
             itemView.itemPrice = ItemPrice;
             itemView.namePriceAmountAbility = IsViability;
         }
         
-        private void SetAmountValue()
+        protected void SetAmountValue()
         {
             itemView.itemAmount = ItemAmount;
             itemView.namePriceAmountAbility = IsViability;

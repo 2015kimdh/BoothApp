@@ -1,10 +1,5 @@
-using System.Collections.Generic;
 using BoothApp.Presentation.Info;
 using BoothApp.Utility;
-using Doozy.Runtime.UIManager.Containers;
-using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
 
 namespace BoothApp.Presentation.BoothDetail
 {
@@ -38,17 +33,6 @@ namespace BoothApp.Presentation.BoothDetail
             selectedBooth.selectedBooth.boothInformationInfo.modifyAt = DateTimeUtil.DateTimeNowToString();
             InitVariable();
             onSuccess.Invoke();
-        }
-
-        private void InitVariable()
-        {
-            itemAmount = 0;
-            itemName = "";
-            itemPrice = 0;
-            selectedTags = new();
-            owner = "";
-            namePriceAmountAbility = false;
-            itemImage.sprite = null;
         }
 
         private void SetDetailInfo(BoothItemInfo info)

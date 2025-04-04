@@ -21,5 +21,11 @@ namespace BoothApp.Presentation.Info
             .Find(x => x.itemInfo.hash == hash).amount;
         public int GetPurchasedItemAmount(string hash) => boothInformationInfo.purchasedItemStatus
             .Find(x => x.itemInfo.hash == hash).amount;
+        
+        public BoothItemWithAmountInfo GetOriginalItem(string hash) => boothInformationInfo.originalItemStatus
+            .Find(x => x.itemInfo.hash == hash);
+        
+        public BoothItemWithAmountInfo GetPurchasedItem(string hash) => boothInformationInfo.purchasedItemStatus
+            .Find(x => x.itemInfo.hash == hash);
     }
 }

@@ -13,7 +13,17 @@ namespace BoothApp.Presentation.BoothDetail.EditItem
 
         #region Private Field
 
-        private BoothItemWithAmountInfo _selectedItem;
+        public BoothItemWithAmountInfo selectedItem
+        {
+            get => selectedItem;
+            private set => selectedItem = value;
+        }
+
+        public BoothItemWithAmountInfo selectedItemPurchased
+        {
+            get => selectedItemPurchased;
+            private set => selectedItemPurchased = value;
+        }
 
         #endregion
 
@@ -21,9 +31,8 @@ namespace BoothApp.Presentation.BoothDetail.EditItem
 
         public void SetSelectedItem(string hash)
         {
-            var result = selectedBooth.OriginalItemStatus
-                .Find(x => x.itemInfo.hash == hash);
-            _selectedItem = result;
+            selectedItem = selectedBooth.selectedBooth.GetOriginalItem(hash);;
+            selectedItemPurchased = selectedBooth.selectedBooth.GetPurchasedItem(hash);
         }
 
         #endregion

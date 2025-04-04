@@ -21,7 +21,7 @@ namespace BoothApp.Presentation.BoothDetail.BaseClass
 
         #region Methods
 
-        private void Awake()
+        protected virtual void Awake()
         {
             dropdown.onValueChanged.AddListener(delegate { SetValue(); });
         }

@@ -44,6 +44,17 @@ namespace BoothApp.Presentation.BoothDetail
 
         #endregion
         
+        protected void InitVariable()
+        {
+            itemAmount = 0;
+            itemName = "";
+            itemPrice = 0;
+            selectedTags = new();
+            owner = "";
+            namePriceAmountAbility = false;
+            itemImage.sprite = null;
+        }
+        
         public void OnShowInvoke()
         {
             onViewShow.Invoke();

@@ -20,5 +20,10 @@ namespace BoothApp.Presentation.Android
             
             onSpriteChange.Invoke(image.sprite);
         }
+
+        public void OnSpriteChangeInvoke()
+        {
+            onSpriteChange.Invoke(image.sprite);
+        }
     }
 }

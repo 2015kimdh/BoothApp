@@ -1,10 +1,10 @@
-using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-namespace BoothApp.Presentation.BoothDetail.AddItem
+namespace BoothApp.Presentation.BoothDetail.BaseClass
 {
-    public class ItemPriceAndNameAmount : MonoBehaviour
+    public abstract class ItemNamePriceAmountBase : MonoBehaviour
     {
         #region Property
 
@@ -38,24 +38,24 @@ namespace BoothApp.Presentation.BoothDetail.AddItem
 
         #region Serialize Field
 
-        [SerializeField] private TMP_InputField itemName;
-        [SerializeField] private TMP_InputField itemPrice;
-        [SerializeField] private TMP_InputField itemAmount;
+        [SerializeField] protected TMP_InputField itemName;
+        [SerializeField] protected TMP_InputField itemPrice;
+        [SerializeField] protected TMP_InputField itemAmount;
 
         #endregion
 
         #region Private Field
 
-        private AddNewItemView _itemView;
+        [SerializeField]
+        protected ItemViewBase itemView;
 
         #endregion
 
         #region MonoBehaviourEvent
 
-        private void Awake()
+        protected virtual void Awake()
         {
-            _itemView = FindObjectOfType<AddNewItemView>();
-            _itemView.onViewShow.AddListener(InitInputField);
+            itemView.onViewShow.AddListener(InitInputField);
             
             itemName.onValueChanged.AddListener(delegate { SetNameValue(); });
             itemPrice.onValueChanged.AddListener(delegate { SetPriceValue(); });
@@ -86,21 +86,20 @@ namespace BoothApp.Presentation.BoothDetail.AddItem
 
         private void SetNameValue()
         {
-            Debug.Log("값 변경 중");
-            _itemView.itemName = ItemName;
-            _itemView.namePriceAmountAbility = IsViability;
+            itemView.itemName = ItemName;
+            itemView.namePriceAmountAbility = IsViability;
         }
         
         private void SetPriceValue()
         {
-            _itemView.itemPrice = ItemPrice;
-            _itemView.namePriceAmountAbility = IsViability;
+            itemView.itemPrice = ItemPrice;
+            itemView.namePriceAmountAbility = IsViability;
         }
         
         private void SetAmountValue()
         {
-            _itemView.itemAmount = ItemAmount;
-            _itemView.namePriceAmountAbility = IsViability;
+            itemView.itemAmount = ItemAmount;
+            itemView.namePriceAmountAbility = IsViability;
         }
         
         #endregion

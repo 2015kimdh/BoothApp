@@ -1,22 +1,21 @@
-using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-namespace BoothApp.Presentation.BoothDetail.AddItem
+namespace BoothApp.Presentation.BoothDetail.BaseClass
 {
-    public class ItemOwnerDropdown : MonoBehaviour
+    public abstract class ItemOwnerDropdownBase : MonoBehaviour
     {
         #region Serialize Field
 
-        [SerializeField] private TMP_Dropdown dropdown;
-        [SerializeField] private AddNewItemView view;
+        [SerializeField] protected TMP_Dropdown dropdown;
+        [SerializeField] protected ItemViewBase view;
 
         #endregion
 
         #region Private Field
 
-        private const string DefaultOwner = "미설정";
+        protected const string DefaultOwner = "미설정";
 
         #endregion
 
@@ -55,7 +54,7 @@ namespace BoothApp.Presentation.BoothDetail.AddItem
             dropdown.value = 0;
         }
 
-        private void AddDropdownOption(List<TMP_Dropdown.OptionData> optionData, string optionName)
+        protected void AddDropdownOption(List<TMP_Dropdown.OptionData> optionData, string optionName)
         {
             TMP_Dropdown.OptionData newOptionData = new()
             {
@@ -64,7 +63,7 @@ namespace BoothApp.Presentation.BoothDetail.AddItem
             optionData.Add(newOptionData);
         }
 
-        private void SetValue()
+        protected void SetValue()
         {
             if (dropdown.value == 0)
                 view.owner = "";

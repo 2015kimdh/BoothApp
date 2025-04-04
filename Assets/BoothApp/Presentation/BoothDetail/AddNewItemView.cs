@@ -8,62 +8,20 @@ using UnityEngine.UI;
 
 namespace BoothApp.Presentation.BoothDetail
 {
-    public class AddNewItemView : MonoBehaviour
+    public class AddNewItemView : ItemViewBase
     {
-        #region Unity Event
-
-        public UnityEvent onViewShow;
-        public UnityEvent onRefresh;
-
-        public UnityEvent onFailToAdd;
-        public UnityEvent onSuccessToAdd;
-
-        #endregion
-
-        #region Property
-
-        public BoothInfo SelectedBooth => selectedBooth.selectedBooth;
-        public List<string> ItemTags => SelectedBooth.boothInformationInfo.itemTags;
-        public List<string> Owners => SelectedBooth.boothInformationInfo.owners;
-
-        #endregion
-
-        #region Serialize Field
-
-        [SerializeField] private SelectedBooth selectedBooth;
-
-        #endregion
-
-        #region Public Field
-
-        public string itemName = "";
-        public int itemPrice = 0;
-        public int itemAmount = 0;
-        public Image itemImage;
-        public List<string> selectedTags;
-        public string owner;
-        public bool namePriceAmountAbility = false;
-
-        #endregion
-
-
         #region Method
 
         private void Awake()
         {
             onViewShow.AddListener(InitVariable);
         }
-
-        public void OnShowInvoke()
-        {
-            onViewShow.Invoke();
-        }
         
         public void AddNewItem()
         {
             if (!namePriceAmountAbility)
             {
-                onFailToAdd.Invoke();
+                onFail.Invoke();
                 return;
             }
 
@@ -79,7 +37,7 @@ namespace BoothApp.Presentation.BoothDetail
                 .boothInformationInfo.originalItemStatus.Add(newItem);
             selectedBooth.selectedBooth.boothInformationInfo.modifyAt = DateTimeUtil.DateTimeNowToString();
             InitVariable();
-            onSuccessToAdd.Invoke();
+            onSuccess.Invoke();
         }
 
         private void InitVariable()

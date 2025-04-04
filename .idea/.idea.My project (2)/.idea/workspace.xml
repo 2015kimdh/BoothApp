@@ -5,19 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="757b00b3-7067-410e-bc2c-c7df74a4ffa2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Utility/ClassCopy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Utility/ClassCopy.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/AddItemOwnerDropdown.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/AddItemPriceAndNameAmount.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/BaseClass.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/BaseClass/ItemNamePriceAmountBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/BaseClass/ItemNamePriceAmountBase.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/BaseClass/ItemOwnerDropdownBase.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/BaseClass/ItemTagDropdownBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/BaseClass/ItemTagDropdownBase.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/EditItem.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/EditItem/EditItemPriceAndNameAmount.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/EditItem/EditItemPriceAndNameAmount.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/EditItem/SelectedItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/EditItem/SelectedItem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/ItemViewBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/ItemViewBase.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Mapper/BoothItemDataMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Mapper/BoothItemDataMapper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Nody/Flow Graph.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Nody/Flow Graph.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Prefab/ItemTag.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Prefab/ItemTag.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/ItemOwnerDropdown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/ItemOwnerDropdown.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/ItemPriceAndNameAmount.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/ItemPriceAndNameAmount.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/AddItemOwnerInputField.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/AddItemOwnerInputField.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/ItemOwnerDropdown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/BaseClass/ItemOwnerDropdownBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/ItemOwnerDropdown.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/AddItemOwnerDropdown.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/ItemPriceAndNameAmount.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/ItemPriceAndNameAmount.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/AddItemPriceAndNameAmount.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/ItemTagDropdown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/ItemTagDropdown.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddNewItemView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddNewItemView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchasableItemGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchasableItemGroup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchasableItemMaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchasableItemMaker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/BoothItemInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/BoothItemInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/SelectedBooth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/SelectedBooth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Doozy/Editor/Data/UIButtonIdDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Doozy/Editor/Data/UIButtonIdDatabase.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Doozy/Editor/Data/UIViewIdDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Doozy/Editor/Data/UIViewIdDatabase.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/ComicworldBoothApp.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ComicworldBoothApp.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,10 +110,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="21624">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="21624" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -129,7 +143,11 @@
       <workItem from="1743512707629" duration="6752000" />
       <workItem from="1743530658670" duration="1456000" />
       <workItem from="1743579978072" duration="15218000" />
-      <workItem from="1743596795594" duration="7554000" />
+      <workItem from="1743596795594" duration="7910000" />
+      <workItem from="1743659345349" duration="1436000" />
+      <workItem from="1743693132710" duration="1288000" />
+      <workItem from="1743698074401" duration="126000" />
+      <workItem from="1743768291615" duration="2939000" />
     </task>
     <servers />
   </component>

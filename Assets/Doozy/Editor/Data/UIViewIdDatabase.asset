@@ -19,6 +19,8 @@ MonoBehaviour:
     - Category: AppView
       Name: DeleteBooth
     - Category: AppView
+      Name: EditSelectedItem
+    - Category: AppView
       Name: Main
     - Category: AppView
       Name: SelectedBooth

@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using System.Linq;
+using BoothApp.Presentation.BoothDetail.AddItem;
 using Doozy.Runtime.UIManager.Components;
+using TMPro;
 using UnityEngine;
 
-namespace BoothApp.Presentation.BoothDetail.AddItem
+namespace BoothApp.Presentation.BoothDetail.BaseClass
 {
-    public class ItemTagDropdown : MonoBehaviour
+    public abstract class ItemTagDropdownBase : MonoBehaviour
     {
         #region Property
 
@@ -15,20 +17,21 @@ namespace BoothApp.Presentation.BoothDetail.AddItem
 
         #region Serialize Field
 
-        [SerializeField] private AddNewItemView view;
+        [SerializeField] protected ItemViewBase view;
 
-        [SerializeField] private GameObject selectionPanel;
-        [SerializeField] private GameObject itemTagPrefab;
-        [SerializeField] private GameObject parentObject;
-        [SerializeField] private UIButton dropDownButton;
+        [SerializeField] protected GameObject selectionPanel;
+        [SerializeField] protected GameObject itemTagPrefab;
+        [SerializeField] protected GameObject parentObject;
+        [SerializeField] protected UIButton dropDownButton;
+        [SerializeField] protected TMP_Text currentTags;
 
         #endregion
 
         #region Private Field
 
-        private List<ItemTagLabel> _itemTagLabels = new();
+        protected List<ItemTagLabel> _itemTagLabels = new();
 
-        private List<string> OriginalTagList => view.ItemTags;
+        protected List<string> OriginalTagList => view.ItemTags;
 
         #endregion
 
@@ -38,9 +41,9 @@ namespace BoothApp.Presentation.BoothDetail.AddItem
         {
             dropDownButton.onClickEvent.AddListener(ShowPanel);
         }
-        
+
         #endregion
-        
+
         #region Public Method
 
         public void Refresh()
@@ -48,12 +51,13 @@ namespace BoothApp.Presentation.BoothDetail.AddItem
             MakeOptions();
         }
 
-        public void RefreshOnFalse()
+        public virtual void RefreshOnFalse()
         {
             Refresh();
             SetAllToggleFalse();
+            SetCurrentTagLabel();
         }
-        
+
         #endregion
 
         #region Private Methods
@@ -96,11 +100,12 @@ namespace BoothApp.Presentation.BoothDetail.AddItem
                 newItem.label.text = needToMake[i];
                 newItem.toggle.isOn = false;
                 newItem.toggle.onValueChanged.AddListener(delegate { SetTagData(); });
+                newItem.toggle.onValueChanged.AddListener(delegate { SetCurrentTagLabel(); });
                 _itemTagLabels.Add(newItem);
             }
         }
 
-        private void SetAllToggleFalse()
+        protected void SetAllToggleFalse()
         {
             foreach (var item in _itemTagLabels)
                 item.toggle.isOn = false;
@@ -111,13 +116,25 @@ namespace BoothApp.Presentation.BoothDetail.AddItem
             List<string> selectedTags = new();
             foreach (var item in _itemTagLabels)
             {
-                if(item.toggle.isOn)
+                if (item.toggle.isOn)
                     selectedTags.Add(item.label.text);
             }
 
             view.selectedTags = selectedTags;
         }
-        
+
+        protected void SetCurrentTagLabel()
+        {
+            currentTags.text = "미설정";
+            for (int i = 0; i < view.selectedTags.Count; i++)
+            {
+                if(i == 0)
+                    currentTags.text = view.selectedTags[i];
+                else
+                    currentTags.text = currentTags.text + "/" + view.selectedTags[i];
+            }
+        }
+
         #endregion
     }
 }

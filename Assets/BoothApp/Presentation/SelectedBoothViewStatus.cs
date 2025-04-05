@@ -5,5 +5,6 @@ namespace BoothApp.Presentation
         Normal,
         Purchase,
         Modify,
+        DeleteItem,
     }
 }

@@ -1,28 +1,28 @@
-using System;
 using BoothApp.Presentation.View;
 using Doozy.Runtime.UIManager.Components;
 using UnityEngine;
+using UnityEngine.Events;
 
-namespace BoothApp.Presentation.BoothDetail
+namespace BoothApp.Presentation.BoothDetail.Button
 {
     public class ViewStatusChangeButton : MonoBehaviour
     {
         [SerializeField] private SelectedBoothViewStatus targetStatus;
         [SerializeField] private UIButton button;
-        private SelectedBoothView view;
+        private SelectedBoothView _view;
 
         private void Start()
         {
-            view = ViewHub.Views.Find(x => x.GetType() == typeof(SelectedBoothView)) as SelectedBoothView;
+            _view = ViewHub.Views.Find(x => x.GetType() == typeof(SelectedBoothView)) as SelectedBoothView;
             button.onClickEvent.AddListener(SetStatus);
         }
 
         private void SetStatus()
         {
-            if (targetStatus == view.ViewStatus)
-                view.ViewStatus = SelectedBoothViewStatus.Normal;
+            if (targetStatus == _view.ViewStatus)
+                _view.ViewStatus = SelectedBoothViewStatus.Normal;
             else
-                view.ViewStatus = targetStatus;
+                _view.ViewStatus = targetStatus;
         }
     }
 }

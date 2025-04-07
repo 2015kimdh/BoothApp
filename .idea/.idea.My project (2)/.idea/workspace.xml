@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="757b00b3-7067-410e-bc2c-c7df74a4ffa2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/Button.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/Button/ChangeButtonColorByStatus.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/Button/ChangeButtonColorByStatus.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/Button/ChangeButtonTextByStatus.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/Button/ChangeButtonTextByStatus.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/Button/SelectedBoothViewStatusText.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/Button/SelectedBoothViewStatusText.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseItem.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/StatusTargetEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/StatusTargetEvent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/ViewStatusChangeButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/Button/ViewStatusChangeButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/ViewStatusChangeButton.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/Button/ViewStatusChangeButton.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/SelectedBoothViewStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/SelectedBoothViewStatus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ComicworldBoothApp.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ComicworldBoothApp.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseItem/PurchaseItemSelectButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseItem/PurchaseItemSelectButton.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +122,7 @@
       <workItem from="1743693132710" duration="1288000" />
       <workItem from="1743698074401" duration="126000" />
       <workItem from="1743768291615" duration="18938000" />
-      <workItem from="1743864202597" duration="4873000" />
+      <workItem from="1743864202597" duration="5156000" />
     </task>
     <servers />
   </component>

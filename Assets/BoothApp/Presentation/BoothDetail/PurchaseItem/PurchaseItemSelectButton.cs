@@ -20,6 +20,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseItem
 
         private PurchaseSelectedItemViewModel _viewModel;
         private SelectedBoothView _selectedBoothView;
+        [SerializeField]
         private float _buttonPressedTime = 0f;
         private Coroutine _timerCoroutine;
 
@@ -54,7 +55,6 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseItem
             {
                 _selectedBoothView.ViewStatus = SelectedBoothViewStatus.Purchase;
                 _timerCoroutine = StartCoroutine(SetTimer());
-                Debug.Log("아이템 클릭 : " + item.name + " 개수 : " + item.TryToPurchaseAmount);
             }
         }
 

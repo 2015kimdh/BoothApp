@@ -1,5 +1,4 @@
 using BoothApp.Presentation.View;
-using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
@@ -39,10 +38,15 @@ namespace BoothApp.Presentation.BoothDetail
         #endregion
         
         #region Method
-
+        
         public void OnViewShow()
         {
             onViewShow.Invoke();
+        }
+
+        public void SetViewStatusToNormal()
+        {
+            ViewStatus = SelectedBoothViewStatus.Normal;
         }
         
         #endregion

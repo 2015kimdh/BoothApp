@@ -20,7 +20,7 @@ namespace BoothApp.Presentation.BoothDetail
 
         #region Property
 
-        private BoothInformationInfo boothInfo => selectedBoothViewModel.selectedBooth.boothInformationInfo;
+        private BoothInformationInfo BoothInfo => selectedBoothViewModel.selectedBooth.boothInformationInfo;
         private string _selectedBoothName = "";
 
         #endregion
@@ -77,7 +77,7 @@ namespace BoothApp.Presentation.BoothDetail
         private List<string> GetOriginalItemHash()
         {
             List<string> originalItemHash = new();
-            foreach (var item in boothInfo.originalItemStatus)
+            foreach (var item in BoothInfo.originalItemStatus)
                 originalItemHash.Add(item.itemInfo.hash);
             return originalItemHash;
         }
@@ -102,7 +102,7 @@ namespace BoothApp.Presentation.BoothDetail
             var except = originalHash.Except(purchasableHash).ToList();
             foreach (var exceptedItem in except)
             {
-                var target = boothInfo.originalItemStatus
+                var target = BoothInfo.originalItemStatus
                     .Find(x => x.itemInfo.hash == exceptedItem);
                 var newItem = maker.MakeNewPurchasableItem();
 
@@ -122,7 +122,7 @@ namespace BoothApp.Presentation.BoothDetail
             {
                 var target = purchasableItems.Find(x => x.hash == item);
                 var original =
-                    boothInfo.originalItemStatus.Find(x => x.itemInfo.hash == item);
+                    BoothInfo.originalItemStatus.Find(x => x.itemInfo.hash == item);
                 SetPurchaseAbleItemData(target, original);
             }
         }
@@ -136,8 +136,8 @@ namespace BoothApp.Presentation.BoothDetail
                 boothItem.itemInfo.itemTag,
                 boothItem.itemInfo.owner);
             
-            purchasableItem.originalAmount.text =
-                selectedBoothViewModel.selectedBooth.GetOriginalItemAmount(purchasableItem.hash).ToString();
+            purchasableItem.OriginalAmount =
+                selectedBoothViewModel.selectedBooth.GetOriginalItemAmount(purchasableItem.hash);
         }
 
         #endregion

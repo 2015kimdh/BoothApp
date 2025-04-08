@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Image = UnityEngine.UI.Image;
 
 namespace BoothApp.Presentation.BoothDetail
@@ -61,7 +60,7 @@ namespace BoothApp.Presentation.BoothDetail
         {
             _selectedBoothViewModel = FindObjectOfType<SelectedBoothViewModel>();
         }
-
+        
         /// <summary>
         /// 생성한 아이템 표시 항목에 설정하는 세부 항목들
         /// </summary>
@@ -81,8 +80,8 @@ namespace BoothApp.Presentation.BoothDetail
         /// 남은 개수 최신화
         /// </summary>
         public void RefreshOriginalAmount() =>
-            _originalAmount = _selectedBoothViewModel.selectedBooth.GetOriginalItemAmount(hash);
-
+            OriginalAmount = _selectedBoothViewModel.selectedBooth.GetOriginalItemAmount(hash);
+        
         #endregion
     }
 }

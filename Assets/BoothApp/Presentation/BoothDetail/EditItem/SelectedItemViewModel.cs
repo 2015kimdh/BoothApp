@@ -4,10 +4,11 @@ using Doozy.Runtime.UIManager;
 using Doozy.Runtime.UIManager.Components;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace BoothApp.Presentation.BoothDetail.EditItem
 {
-    public class SelectedItem : MonoBehaviour
+    public class SelectedItemViewModel : MonoBehaviour
     {
         #region UnityEvent
 
@@ -17,7 +18,7 @@ namespace BoothApp.Presentation.BoothDetail.EditItem
         
         #region Serialize Field
 
-        [SerializeField] private SelectedBooth selectedBooth;
+        [FormerlySerializedAs("selectedBooth")] [SerializeField] private SelectedBoothViewModel selectedBoothViewModel;
 
         #endregion
 
@@ -45,8 +46,8 @@ namespace BoothApp.Presentation.BoothDetail.EditItem
 
         public void SetSelectedItem(string hash)
         {
-            selectedItem = selectedBooth.selectedBooth.GetOriginalItem(hash);
-            selectedItemPurchased = selectedBooth.selectedBooth.GetPurchasedItem(hash);
+            selectedItem = selectedBoothViewModel.selectedBooth.GetOriginalItem(hash);
+            selectedItemPurchased = selectedBoothViewModel.selectedBooth.GetPurchasedItem(hash);
             onItemSet.Invoke();
             SignalStream stream = SignalsService.GetStream(nameof(UISelectable), nameof(UIButton));
             stream.SendSignal(new UIButtonSignalData("ViewChangeButton", "ToEditSelectedItem", ButtonTrigger.Click));

@@ -31,7 +31,7 @@ namespace BoothApp.Presentation.BoothDetail
             
             SelectedBooth
                 .boothInformationInfo.originalItemStatus.Add(newItem);
-            selectedBooth.selectedBooth.boothInformationInfo.modifyAt = DateTimeUtil.DateTimeNowToString();
+            selectedBoothViewModel.selectedBooth.boothInformationInfo.modifyAt = DateTimeUtil.DateTimeNowToString();
             InitVariable();
             onSuccess.Invoke();
         }

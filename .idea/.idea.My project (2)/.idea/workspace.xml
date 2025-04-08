@@ -5,7 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="757b00b3-7067-410e-bc2c-c7df74a4ffa2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseItem/PurchaseSelectedItemViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Mapper/BoothItemDataMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Mapper/BoothItemDataMapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Prefab/BoothItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Prefab/BoothItem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/Abstract/SameOwnerAvoidRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/Abstract/SameOwnerAvoidRule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/Abstract/SameTagAvoidRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/Abstract/SameTagAvoidRule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/AddItemOwnerInputField.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/AddItemOwnerInputField.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/AddItemTagInputField.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/AddItemTagInputField.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/AddOptionWithInputField.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddItem/AddOptionWithInputField.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddNewItemView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/AddNewItemView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/Button/SelectedBoothViewStatusText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/Button/SelectedBoothViewStatusText.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/EditItem/EditItemOwnerDropdown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/EditItem/EditItemOwnerDropdown.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/EditItem/EditItemSelectedButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/EditItem/EditItemSelectedButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/EditItem/EditItemView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/EditItem/EditItemViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/EditItem/EditItemView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/EditItem/EditItemViewModel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/EditItem/SelectedItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/EditItem/SelectedItemViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/EditItem/SelectedItem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/EditItem/SelectedItemViewModel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/ItemViewBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/ItemViewBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchasableItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchasableItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchasableItemGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchasableItemGroup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseItem/PurchaseItemSelectButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseItem/PurchaseItemSelectButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseItem/PurchaseSelectedItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseItem/PurchaseSelectedItem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseItem/PurchaseSelectedItemViewModel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/SelectedBooth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/SelectedBoothViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/SelectedBooth.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/SelectedBoothViewModel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/SelectedBoothNameSetting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/SelectedBoothNameSetting.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/SelectedBoothSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/SelectedBoothSetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/SelectedBoothView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/SelectedBoothView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/BoothInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/BoothInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/BoothItemInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/BoothItemInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/PurchaseItemInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/PurchaseItemInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ComicworldBoothApp.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ComicworldBoothApp.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,6 +154,9 @@
       <workItem from="1743698074401" duration="126000" />
       <workItem from="1743768291615" duration="18938000" />
       <workItem from="1743864202597" duration="5156000" />
+      <workItem from="1744037727647" duration="1506000" />
+      <workItem from="1744065942483" duration="930000" />
+      <workItem from="1744103685340" duration="11911000" />
     </task>
     <servers />
   </component>

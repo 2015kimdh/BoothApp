@@ -1,11 +1,12 @@
 using BoothApp.Presentation.BoothDetail.BaseClass;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace BoothApp.Presentation.BoothDetail.EditItem
 {
     public class EditItemOwnerDropdown : ItemOwnerDropdownBase
     {
-        [SerializeField] private SelectedItem selectedItem;
+        [FormerlySerializedAs("selectedItem")] [SerializeField] private SelectedItemViewModel selectedItemViewModel;
         protected override void Awake()
         {
             base.Awake();
@@ -15,7 +16,7 @@ namespace BoothApp.Presentation.BoothDetail.EditItem
         private void Refresh()
         {
             RefreshDropdown();
-            SetDropdownValue(selectedItem.selectedItem.itemInfo.owner);
+            SetDropdownValue(selectedItemViewModel.selectedItem.itemInfo.owner);
         }
     }
 }

@@ -7,17 +7,17 @@ namespace BoothApp.Presentation.BoothDetail.AddItem.Abstract
     [Serializable]
     public class SameOwnerAvoidRule : IConditionTextRule
     {
-        private SelectedBooth _selectedBooth;
+        private SelectedBoothViewModel _selectedBoothViewModel;
         public bool IsConditionGood(string targetText)
         {
-            if (_selectedBooth == null)
-                _selectedBooth = GameObject.FindObjectOfType<SelectedBooth>();
+            if (_selectedBoothViewModel == null)
+                _selectedBoothViewModel = GameObject.FindObjectOfType<SelectedBoothViewModel>();
             return CheckIsUnique(targetText);
         }
 
         private bool CheckIsUnique(string targetString)
         {
-            var result = _selectedBooth.selectedBooth.boothInformationInfo.owners.Where(x=> x == targetString);
+            var result = _selectedBoothViewModel.selectedBooth.boothInformationInfo.owners.Where(x=> x == targetString);
             if (!result.Any())
                 return true;
             return false;

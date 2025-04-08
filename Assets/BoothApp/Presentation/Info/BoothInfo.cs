@@ -1,4 +1,5 @@
 using System;
+using BoothApp.Utility;
 
 namespace BoothApp.Presentation.Info
 {
@@ -19,13 +20,17 @@ namespace BoothApp.Presentation.Info
 
         public int GetOriginalItemAmount(string hash) => boothInformationInfo.originalItemStatus
             .Find(x => x.itemInfo.hash == hash).amount;
+
         public int GetPurchasedItemAmount(string hash) => boothInformationInfo.purchasedItemStatus
             .Find(x => x.itemInfo.hash == hash).amount;
-        
+
         public BoothItemWithAmountInfo GetOriginalItem(string hash) => boothInformationInfo.originalItemStatus
             .Find(x => x.itemInfo.hash == hash);
-        
+
         public BoothItemWithAmountInfo GetPurchasedItem(string hash) => boothInformationInfo.purchasedItemStatus
             .Find(x => x.itemInfo.hash == hash);
+
+        public void UpdateModifyTime() =>
+            boothInformationInfo.modifyAt = DateTimeUtil.DateTimeNowToString();
     }
 }

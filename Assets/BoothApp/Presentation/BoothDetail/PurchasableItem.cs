@@ -1,28 +1,57 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Image = UnityEngine.UI.Image;
 
 namespace BoothApp.Presentation.BoothDetail
 {
     public class PurchasableItem : MonoBehaviour
     {
+        #region Property
+
+        public int TryToPurchaseAmount
+        {
+            get => _tryToPurchaseAmount;
+            set
+            {
+                if (value <= _originalAmount)
+                {
+                    _tryToPurchaseAmount = value;
+                    purchaseAmountText.text = _tryToPurchaseAmount.ToString();
+                }
+            }
+        }
+
+        public int OriginalAmount
+        {
+            get => _originalAmount;
+            set
+            {
+                _originalAmount = value;
+                originalAmount.text = _originalAmount.ToString();
+            }
+        }
+
+        #endregion
+
         #region Public Fields
 
         public Image itemImage;
         public TMP_Text itemName;
-        public TMP_Text remainAmount;
+        public TMP_Text originalAmount;
         public TMP_Text purchaseAmountText;
         public List<string> itemTag = new();
         public string owner = "";
         public string hash = "";
-        public int tryToPurchaseAmount = 0;
 
         #endregion
 
         #region Private Fields
 
-        private SelectedBooth _selectedBooth;
+        private SelectedBoothViewModel _selectedBoothViewModel;
+        private int _tryToPurchaseAmount = 0;
+        private int _originalAmount = 0;
 
         #endregion
 
@@ -30,7 +59,7 @@ namespace BoothApp.Presentation.BoothDetail
 
         private void Awake()
         {
-            _selectedBooth = FindObjectOfType<SelectedBooth>();
+            _selectedBoothViewModel = FindObjectOfType<SelectedBoothViewModel>();
         }
 
         /// <summary>
@@ -51,8 +80,8 @@ namespace BoothApp.Presentation.BoothDetail
         /// <summary>
         /// 남은 개수 최신화
         /// </summary>
-        public void RefreshRemainAmount() =>
-            remainAmount.text = _selectedBooth.selectedBooth.RemainItemAmount(itemName.text).ToString();
+        public void RefreshOriginalAmount() =>
+            _originalAmount = _selectedBoothViewModel.selectedBooth.GetOriginalItemAmount(hash);
 
         #endregion
     }

@@ -27,7 +27,7 @@ namespace BoothApp.Presentation.BoothDetail
         
         private void SetBoothNameText()
         {
-            boothNameTitle.text = _view.selectedBooth.selectedBooth.boothInformationInfo.boothName;
+            boothNameTitle.text = _view.selectedBoothViewModel.selectedBooth.boothInformationInfo.boothName;
         }
 
         #endregion

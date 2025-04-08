@@ -1,6 +1,7 @@
 using BoothApp.Presentation.View;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace BoothApp.Presentation.BoothDetail
 {
@@ -26,7 +27,7 @@ namespace BoothApp.Presentation.BoothDetail
         #region Public Fields
 
         public UnityEvent onViewShow;
-        public SelectedBooth selectedBooth;
+        [FormerlySerializedAs("selectedBooth")] public SelectedBoothViewModel selectedBoothViewModel;
         public UnityEvent<SelectedBoothViewStatus> onViewStatusChange;
         
         #endregion

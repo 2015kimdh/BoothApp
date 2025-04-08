@@ -3,6 +3,7 @@ using BoothApp.Presentation.Info;
 using BoothApp.Presentation.View;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace BoothApp.Presentation.BoothDetail
@@ -21,7 +22,7 @@ namespace BoothApp.Presentation.BoothDetail
         
         #region Property
 
-        public BoothInfo SelectedBooth => selectedBooth.selectedBooth;
+        public BoothInfo SelectedBooth => selectedBoothViewModel.selectedBooth;
         public List<string> ItemTags => SelectedBooth.boothInformationInfo.itemTags;
         public List<string> Owners => SelectedBooth.boothInformationInfo.owners;
 
@@ -29,7 +30,7 @@ namespace BoothApp.Presentation.BoothDetail
         
         #region Serialize Field
 
-        [SerializeField] protected SelectedBooth selectedBooth;
+        [FormerlySerializedAs("selectedBooth")] [SerializeField] protected SelectedBoothViewModel selectedBoothViewModel;
 
         #endregion
         

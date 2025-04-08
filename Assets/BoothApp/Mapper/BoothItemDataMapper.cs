@@ -55,7 +55,7 @@ namespace BoothApp.Mapper
             {
                 hash = data.hash,
                 amount = data.amount,
-                pricePerPrice = data.pricePerItem
+                pricePerItem = data.pricePerItem
             };
         }
 
@@ -65,7 +65,7 @@ namespace BoothApp.Mapper
             {
                 hash = info.hash,
                 amount = info.amount,
-                pricePerItem = info.pricePerPrice
+                pricePerItem = info.pricePerItem
             };
         }
 

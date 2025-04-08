@@ -1906,7 +1906,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uCD94\uAC00\uD558\uAE30"
+  m_text: "\uC801\uC6A9\uD558\uAE30"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 35ec8327fc2e0f544b666e351c88aa4a, type: 2}
   m_sharedMaterial: {fileID: -6944901443644724939, guid: 35ec8327fc2e0f544b666e351c88aa4a, type: 2}
@@ -2068,7 +2068,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   inputField: {fileID: 947600036}
-  selectedBooth: {fileID: 307809260}
+  selectedBoothViewModel: {fileID: 307809260}
 --- !u!224 &110804055
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4804,7 +4804,7 @@ MonoBehaviour:
   onViewShow:
     m_PersistentCalls:
       m_Calls: []
-  selectedBooth: {fileID: 307809260}
+  selectedBoothViewModel: {fileID: 307809260}
   onViewStatusChange:
     m_PersistentCalls:
       m_Calls: []
@@ -6571,7 +6571,7 @@ GameObject:
   - component: {fileID: 307809260}
   - component: {fileID: 307809262}
   m_Layer: 0
-  m_Name: SelectedBooth
+  m_Name: SelectedBoothViewModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6607,6 +6607,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onDataChanged:
+    m_PersistentCalls:
+      m_Calls: []
   selectedBooth:
     boothInformationInfo:
       boothName: 
@@ -6649,7 +6652,7 @@ MonoBehaviour:
   onItemSet:
     m_PersistentCalls:
       m_Calls: []
-  selectedBooth: {fileID: 307809260}
+  selectedBoothViewModel: {fileID: 307809260}
   _selectedItem:
     itemInfo:
       name: 
@@ -11279,7 +11282,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  selectedBooth: {fileID: 307809260}
+  selectedBoothViewModel: {fileID: 307809260}
   itemName: 
   itemPrice: 0
   itemAmount: 0
@@ -11287,7 +11290,7 @@ MonoBehaviour:
   selectedTags: []
   owner: 
   namePriceAmountAbility: 0
-  selectedItem: {fileID: 307809262}
+  selectedItemViewModel: {fileID: 307809262}
 --- !u!1 &502711556
 GameObject:
   m_ObjectHideFlags: 0
@@ -12115,7 +12118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropdown: {fileID: 1182535998}
   view: {fileID: 501506174}
-  selectedItem: {fileID: 307809262}
+  selectedItemViewModel: {fileID: 307809262}
 --- !u!1 &561483815
 GameObject:
   m_ObjectHideFlags: 0
@@ -21756,7 +21759,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   inputField: {fileID: 1216141757}
-  selectedBooth: {fileID: 307809260}
+  selectedBoothViewModel: {fileID: 307809260}
 --- !u!114 &1205929236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22779,7 +22782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maker: {fileID: 1243082899}
-  selectedBooth: {fileID: 307809260}
+  selectedBoothViewModel: {fileID: 307809260}
   view: {fileID: 233044926}
   addItemButton: {fileID: 1191473686}
   purchasableItems: []
@@ -24820,6 +24823,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1364298079}
+  - component: {fileID: 1364298080}
   m_Layer: 0
   m_Name: PurchaseItem
   m_TagString: Untagged
@@ -24846,6 +24850,57 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1364298080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364298078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78f1686fbba04ce59a543aab299bda72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onSetFailedByAmount:
+    m_PersistentCalls:
+      m_Calls: []
+  onSetFailedByWrongHash:
+    m_PersistentCalls:
+      m_Calls: []
+  onSetSuccess:
+    m_PersistentCalls:
+      m_Calls: []
+  onPurchase:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 225089356}
+        m_TargetAssemblyTypeName: BoothApp.Presentation.BoothDataPresenter, Assembly-CSharp
+        m_MethodName: SaveDataAtDisk
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1243082900}
+        m_TargetAssemblyTypeName: BoothApp.Presentation.BoothDetail.PurchasableItemGroup,
+          Assembly-CSharp
+        m_MethodName: RefreshPurchasableItems
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  selectedBoothViewModel: {fileID: 307809260}
+  purchaseItemInfos: []
 --- !u!1 &1370729467
 GameObject:
   m_ObjectHideFlags: 0
@@ -25862,7 +25917,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   inputField: {fileID: 1613114977}
-  selectedBooth: {fileID: 307809260}
+  selectedBoothViewModel: {fileID: 307809260}
 --- !u!114 &1407942808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27606,7 +27661,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   inputField: {fileID: 1329947957}
-  selectedBooth: {fileID: 307809260}
+  selectedBoothViewModel: {fileID: 307809260}
 --- !u!114 &1563863404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31269,6 +31324,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 501506167}
     m_Modifications:
+    - target: {fileID: 127536331384187107, guid: 7e95dcc2b61ef1148b3db91cb6fabe16, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2597447075803933940, guid: 7e95dcc2b61ef1148b3db91cb6fabe16, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -31359,7 +31418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4441624476735404228, guid: 7e95dcc2b61ef1148b3db91cb6fabe16, type: 3}
       propertyPath: m_text
-      value: "\uD488\uBAA9 \uC0DD\uC131 \uC131\uACF5!"
+      value: "\uD488\uBAA9 \uD3B8\uC9D1 \uC131\uACF5!"
       objectReference: {fileID: 0}
     - target: {fileID: 6974751614801782626, guid: 7e95dcc2b61ef1148b3db91cb6fabe16, type: 3}
       propertyPath: m_Name
@@ -37871,7 +37930,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5103756376669721559, guid: 546c770abe1708648a620bff97e69d75, type: 3}
       propertyPath: m_text
-      value: "\uD488\uBAA9 \uC0DD\uC131 \uC2E4\uD328!"
+      value: "\uD488\uBAA9 \uD3B8\uC9D1 \uC2E4\uD328!"
       objectReference: {fileID: 0}
     - target: {fileID: 5251082077007641476, guid: 546c770abe1708648a620bff97e69d75, type: 3}
       propertyPath: m_Pivot.x
@@ -37963,7 +38022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6684675402322444073, guid: 546c770abe1708648a620bff97e69d75, type: 3}
       propertyPath: m_text
-      value: "\uD488\uBAA9 \uC0DD\uC131\uC5D0 \uC2E4\uD328\uD588\uC2B5\uB2C8\uB2E4.\\n\n\uB2E4\uC74C\uC758
+      value: "\uD488\uBAA9 \uD3B8\uC9D1\uC5D0 \uC2E4\uD328\uD588\uC2B5\uB2C8\uB2E4.\\n\n\uB2E4\uC74C\uC758
         \uC870\uAC74\uC774 \uB9DE\uB294\uC9C0 \uD655\uC778\uD574\uBCF4\uC138\uC694.\\n\n*
         \uD488\uBAA9 \uC774\uB984 \uBBF8\uC785\uB825\\n* \uAC00\uACA9 \uBBF8\uC785\uB825\\n*
         \uAC1C\uC218 \uBBF8\uC785\uB825 (\uCD5C\uC18C 1\uAC1C \uC785\uB825 \uD544\uC694)"
@@ -43483,7 +43542,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  selectedBooth: {fileID: 307809260}
+  selectedBoothViewModel: {fileID: 307809260}
   itemName: 
   itemPrice: 0
   itemAmount: 0

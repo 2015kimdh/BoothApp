@@ -4,6 +4,7 @@ using BoothApp.Utility;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace BoothApp.Presentation.BoothDetail.AddItem
 {
@@ -18,7 +19,7 @@ namespace BoothApp.Presentation.BoothDetail.AddItem
         #region Serialize Fields
 
         [SerializeField] protected TMP_InputField inputField;
-        [SerializeField] protected SelectedBooth selectedBooth;
+        [FormerlySerializedAs("selectedBooth")] [SerializeField] protected SelectedBoothViewModel selectedBoothViewModel;
 
         #endregion
 
@@ -38,7 +39,7 @@ namespace BoothApp.Presentation.BoothDetail.AddItem
             if (CheckViability())
             {
                 OriginalList.Add(inputField.text);
-                selectedBooth.selectedBooth.boothInformationInfo.modifyAt = DateTimeUtil.DateTimeNowToString();
+                selectedBoothViewModel.selectedBooth.boothInformationInfo.modifyAt = DateTimeUtil.DateTimeNowToString();
                 InitField();
                 onAddSuccess.Invoke();
             }

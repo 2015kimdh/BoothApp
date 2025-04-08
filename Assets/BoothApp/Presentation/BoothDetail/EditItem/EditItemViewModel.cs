@@ -2,23 +2,24 @@ using System;
 using BoothApp.Presentation.Info;
 using BoothApp.Utility;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace BoothApp.Presentation.BoothDetail.EditItem
 {
-    public class EditItemView : ItemViewBase
+    public class EditItemViewModel : ItemViewBase
     {
         #region Serialize Field
 
         /// <summary>
         /// 선택된 아이템에 대한 정보
         /// </summary>
-        [SerializeField] private SelectedItem selectedItem;
+        [FormerlySerializedAs("selectedItem")] [SerializeField] private SelectedItemViewModel selectedItemViewModel;
 
         #endregion
 
         #region Property
 
-        private BoothItemWithAmountInfo SelectedItemInfo => selectedItem.selectedItem;
+        private BoothItemWithAmountInfo SelectedItemInfo => selectedItemViewModel.selectedItem;
 
         #endregion
         
@@ -33,7 +34,7 @@ namespace BoothApp.Presentation.BoothDetail.EditItem
         protected override void Awake()
         {
             base.Awake();
-            selectedItem.onItemSet.AddListener(SetSelectedInfo);
+            selectedItemViewModel.onItemSet.AddListener(SetSelectedInfo);
         }
 
         private void SetSelectedInfo()
@@ -71,13 +72,13 @@ namespace BoothApp.Presentation.BoothDetail.EditItem
             SetDetailInfo(SelectedItemInfo.itemInfo);
             SelectedItemInfo.amount = itemAmount;
 
-            if (selectedItem.selectedItemPurchased != null)
+            if (selectedItemViewModel.selectedItemPurchased != null)
             {
-                SetItemImage(selectedItem.selectedItemPurchased.itemInfo);
-                SetDetailInfo(selectedItem.selectedItemPurchased.itemInfo);
+                SetItemImage(selectedItemViewModel.selectedItemPurchased.itemInfo);
+                SetDetailInfo(selectedItemViewModel.selectedItemPurchased.itemInfo);
             }
 
-            selectedBooth.selectedBooth.boothInformationInfo.modifyAt = DateTimeUtil.DateTimeNowToString();
+            selectedBoothViewModel.selectedBooth.boothInformationInfo.modifyAt = DateTimeUtil.DateTimeNowToString();
             onSuccess.Invoke();
         }
         

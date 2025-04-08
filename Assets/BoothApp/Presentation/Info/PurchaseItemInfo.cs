@@ -1,4 +1,5 @@
 using System;
+using UnityEngine.Serialization;
 
 namespace BoothApp.Presentation.Info
 {
@@ -7,6 +8,6 @@ namespace BoothApp.Presentation.Info
     {
         public string hash = "";
         public int amount = 0;
-        public int pricePerPrice = 0;
+        public int pricePerItem = 0;
     }
 }

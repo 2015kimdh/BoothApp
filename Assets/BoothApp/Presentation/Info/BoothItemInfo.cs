@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using BoothApp.Utility;
 using UnityEngine;
 
 namespace BoothApp.Presentation.Info
@@ -14,5 +15,10 @@ namespace BoothApp.Presentation.Info
         public string imageName;
         public Sprite image;
         public string hash = "";
+
+        public BoothItemInfo()
+        {
+            
+        }
     }
 }

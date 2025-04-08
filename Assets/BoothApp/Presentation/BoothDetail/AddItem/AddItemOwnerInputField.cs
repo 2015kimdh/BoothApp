@@ -6,7 +6,7 @@ namespace BoothApp.Presentation.BoothDetail.AddItem
     {
         #region Property
         protected override List<string> OriginalList 
-            => selectedBooth.selectedBooth.boothInformationInfo.owners;
+            => selectedBoothViewModel.selectedBooth.boothInformationInfo.owners;
         
         #endregion
     }

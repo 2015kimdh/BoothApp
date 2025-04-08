@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 namespace BoothApp.Presentation.BoothDetail
 {
-    public class SelectedBooth : MonoBehaviour
+    public class SelectedBoothViewModel : MonoBehaviour
     {
         #region Property
 
@@ -22,6 +22,7 @@ namespace BoothApp.Presentation.BoothDetail
         
         public UnityEvent<string> onSelected;
         public UnityEvent onSelectedVoid;
+        public UnityEvent onDataChanged;
 
         public BoothInfo selectedBooth = new();
 

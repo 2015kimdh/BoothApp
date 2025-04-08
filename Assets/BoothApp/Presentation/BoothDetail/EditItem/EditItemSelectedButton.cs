@@ -16,7 +16,7 @@ namespace BoothApp.Presentation.BoothDetail.EditItem
         #region Private Field
 
         private SelectedBoothView _view;
-        private SelectedItem _selectedItem;
+        private SelectedItemViewModel _selectedItemViewModel;
         private const SelectedBoothViewStatus TargetStatus = SelectedBoothViewStatus.Modify;
 
         #endregion
@@ -25,7 +25,7 @@ namespace BoothApp.Presentation.BoothDetail.EditItem
 
         private void Awake()
         {
-            _selectedItem = FindObjectOfType<SelectedItem>();
+            _selectedItemViewModel = FindObjectOfType<SelectedItemViewModel>();
             _view = ViewHub.Views.Find(x => x.GetType() == typeof(SelectedBoothView)) as SelectedBoothView;
             button.onClickEvent.AddListener(SetMyData);
         }
@@ -34,7 +34,7 @@ namespace BoothApp.Presentation.BoothDetail.EditItem
         {
             if (_view.ViewStatus != TargetStatus)
                 return;
-            _selectedItem.SetSelectedItem(purchasableItem.hash);
+            _selectedItemViewModel.SetSelectedItem(purchasableItem.hash);
         }
 
         #endregion

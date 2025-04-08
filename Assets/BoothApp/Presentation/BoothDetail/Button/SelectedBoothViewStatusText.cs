@@ -25,7 +25,7 @@ namespace BoothApp.Presentation.BoothDetail.Button
             switch (status)
             {
                 case SelectedBoothViewStatus.Normal:
-                    text.text = _view.selectedBooth.selectedBooth.boothInformationInfo.boothName;
+                    text.text = _view.selectedBoothViewModel.selectedBooth.boothInformationInfo.boothName;
                     break;
                 case SelectedBoothViewStatus.Modify:
                     text.text = modifyModeString;

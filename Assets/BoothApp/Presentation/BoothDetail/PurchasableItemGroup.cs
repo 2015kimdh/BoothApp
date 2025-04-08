@@ -3,6 +3,7 @@ using System.Linq;
 using BoothApp.Presentation.Info;
 using BoothApp.Utility;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace BoothApp.Presentation.BoothDetail
 {
@@ -11,7 +12,7 @@ namespace BoothApp.Presentation.BoothDetail
         #region Serialize Field
 
         [SerializeField] private PurchasableItemMaker maker;
-        [SerializeField] private SelectedBooth selectedBooth;
+        [FormerlySerializedAs("selectedBooth")] [SerializeField] private SelectedBoothViewModel selectedBoothViewModel;
         [SerializeField] private SelectedBoothView view;
         [SerializeField] private GameObject addItemButton;
 
@@ -19,7 +20,7 @@ namespace BoothApp.Presentation.BoothDetail
 
         #region Property
 
-        private BoothInformationInfo boothInfo => selectedBooth.selectedBooth.boothInformationInfo;
+        private BoothInformationInfo boothInfo => selectedBoothViewModel.selectedBooth.boothInformationInfo;
         private string _selectedBoothName = "";
 
         #endregion
@@ -37,7 +38,7 @@ namespace BoothApp.Presentation.BoothDetail
 
         private void Start()
         {
-            selectedBooth.onSelected.AddListener(RefreshIfSelectedBoothChanged);
+            selectedBoothViewModel.onSelected.AddListener(RefreshIfSelectedBoothChanged);
             view.onViewShow.AddListener(RefreshPurchasableItems);
         }
 
@@ -135,8 +136,8 @@ namespace BoothApp.Presentation.BoothDetail
                 boothItem.itemInfo.itemTag,
                 boothItem.itemInfo.owner);
             
-            purchasableItem.remainAmount.text =
-                selectedBooth.selectedBooth.GetOriginalItemAmount(purchasableItem.hash).ToString();
+            purchasableItem.originalAmount.text =
+                selectedBoothViewModel.selectedBooth.GetOriginalItemAmount(purchasableItem.hash).ToString();
         }
 
         #endregion

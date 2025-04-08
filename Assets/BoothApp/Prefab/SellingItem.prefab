@@ -629,12 +629,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemImage: {fileID: 5996795669784591240}
   itemName: {fileID: 3955308590895575188}
-  remainAmount: {fileID: 1365293780290352853}
+  originalAmount: {fileID: 1365293780290352853}
   purchaseAmountText: {fileID: 4023791214548114337}
   itemTag: []
   owner: 
   hash: 
-  tryToPurchaseAmount: 0
 --- !u!114 &6013646583348739613
 MonoBehaviour:
   m_ObjectHideFlags: 0

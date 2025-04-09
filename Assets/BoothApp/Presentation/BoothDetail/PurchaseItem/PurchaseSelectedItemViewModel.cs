@@ -39,6 +39,13 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseItem
         /// <returns></returns>
         public bool SetPurchaseItemInfo(string hash, int amount)
         {
+            if (amount == 0)
+            {
+                CancelPurchaseItemInfo(hash);
+                onSetSuccess.Invoke();
+                return true;
+            }
+
             var target = GetSelectedItemFromOriginal(hash);
 
             if (target == null)

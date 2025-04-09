@@ -25,6 +25,13 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseItem
         {
             _viewModel = FindObjectOfType<PurchaseSelectedItemViewModel>();
             _viewModel.onSetSuccess.AddListener(SetActiveText);
+            _viewModel.onPurchase.AddListener(SetActiveText);
+        }
+
+        private void OnDestroy()
+        {
+            _viewModel.onSetSuccess.RemoveListener(SetActiveText);
+            _viewModel.onPurchase.RemoveListener(SetActiveText);
         }
 
         private void SetActiveText()

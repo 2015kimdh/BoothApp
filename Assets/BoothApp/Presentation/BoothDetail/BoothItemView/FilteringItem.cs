@@ -1,9 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using BoothApp.Presentation.Info;
-using UnityEngine;
 
-namespace BoothApp.Presentation.BoothDetail.PurchaseItem
+namespace BoothApp.Presentation.BoothDetail.BoothItemView
 {
     public static class FilteringItem
     {

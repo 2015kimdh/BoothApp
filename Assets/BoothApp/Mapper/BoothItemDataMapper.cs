@@ -104,6 +104,8 @@ namespace BoothApp.Mapper
 
             info.boothInformationInfo.owners = data.boothInformationData.owners;
             info.boothInformationInfo.itemTags = data.boothInformationData.itemTags;
+            info.boothInformationInfo.selectedOwners = data.boothInformationData.owners;
+            info.boothInformationInfo.selectedTags = data.boothInformationData.selectedTags;
             
             return info;
         }
@@ -143,6 +145,8 @@ namespace BoothApp.Mapper
 
             data.boothInformationData.owners = info.boothInformationInfo.owners;
             data.boothInformationData.itemTags = info.boothInformationInfo.itemTags;
+            data.boothInformationData.selectedOwners = info.boothInformationInfo.owners;
+            data.boothInformationData.selectedTags = info.boothInformationInfo.selectedTags;
             
             return data;
         }

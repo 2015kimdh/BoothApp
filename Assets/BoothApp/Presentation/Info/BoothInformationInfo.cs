@@ -15,6 +15,12 @@ namespace BoothApp.Presentation.Info
         public List<string> owners = new();
         
         /// <summary>
+        /// 필터링 설정 저장용
+        /// </summary>
+        public List<string> selectedTags = new();
+        public List<string> selectedOwners = new();
+        
+        /// <summary>
         /// 아이템 세팅 상태
         /// </summary>
         public List<BoothItemWithAmountInfo> originalItemStatus = new();

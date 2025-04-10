@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace BoothApp.Presentation.BoothDetail.PurchaseItem
+namespace BoothApp.Presentation.BoothDetail.BoothItemView
 {
     public class ItemFilterer : MonoBehaviour
     {

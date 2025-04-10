@@ -12,6 +12,12 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseItem
     /// </summary>
     public class PurchaseSelectedItemViewModel : MonoBehaviour
     {
+        #region Property
+
+        public List<PurchaseItemInfo> PurchaseItemInfos => purchaseItemInfos;
+
+        #endregion
+        
         #region Unity Event
 
         public UnityEvent onSetFailedByAmount;

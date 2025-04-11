@@ -971,14 +971,46 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
   Behaviours:
-    Behaviours: []
+    Behaviours:
+    - EventName: PointerClick
+      Runners: []
+      Event:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 2109340824}
+            m_TargetAssemblyTypeName: Doozy.Runtime.UIManager.Containers.UIContainer,
+              Assembly-CSharp
+            m_MethodName: Show
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+      BehaviourName: 4
+      Receiver:
+        ConnectionMode: 1
+        SignalProviderId:
+          Type: 0
+          Category: Pointer
+          Name: Click
+        ProviderReference: {fileID: 0}
+        StreamId:
+          Category: None
+          Name: None
+          Custom: 0
+      Cooldown: 0
+      Selectable: {fileID: 40001257}
     SignalSource: {fileID: 40001255}
     Selectable: {fileID: 40001257}
   Cooldown: 0
   DisableWhenInCooldown: 0
   Id:
-    Category: ViewChangeButton
-    Name: ToCreateBooth
+    Category: None
+    Name: None
     Custom: 0
 --- !u!1 &50437745
 GameObject:
@@ -1395,10 +1427,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 69727918}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 439107efc6b94179aea51ef525c0b583, type: 3}
+  m_Script: {fileID: 11500000, guid: 7467dff5b50d44779baa8a323cfc2fe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  view: {fileID: 9173249041736813302}
   selectionPanel: {fileID: 61356033}
   itemTagPrefab: {fileID: 2777495647722813563, guid: 255c82bec57272440a68cebf62595aa8, type: 3}
   parentObject: {fileID: 1507364303}
@@ -4808,6 +4839,7 @@ RectTransform:
   - {fileID: 12790716}
   - {fileID: 1364298079}
   - {fileID: 436668303}
+  - {fileID: 777339950}
   m_Father: {fileID: 2067298889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -9743,6 +9775,18 @@ PrefabInstance:
       propertyPath: inputField
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7545413238941845884, guid: 17826d13e9450704da0c2bda1809d754, type: 3}
+      propertyPath: Behaviours.Behaviours.Array.data[0].Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 777339951}
+    - target: {fileID: 7545413238941845884, guid: 17826d13e9450704da0c2bda1809d754, type: 3}
+      propertyPath: Behaviours.Behaviours.Array.data[0].Event.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InitFilter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545413238941845884, guid: 17826d13e9450704da0c2bda1809d754, type: 3}
+      propertyPath: Behaviours.Behaviours.Array.data[0].Event.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BoothApp.Presentation.BoothDetail.BoothItemView.ItemFilterer, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7581981629841329201, guid: 17826d13e9450704da0c2bda1809d754, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -9760,8 +9804,44 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7629495283342102434, guid: 17826d13e9450704da0c2bda1809d754, type: 3}
+      propertyPath: Behaviours.Behaviours.Array.data[0].Event.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7629495283342102434, guid: 17826d13e9450704da0c2bda1809d754, type: 3}
+      propertyPath: Behaviours.Behaviours.Array.data[0].Event.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7629495283342102434, guid: 17826d13e9450704da0c2bda1809d754, type: 3}
       propertyPath: Behaviours.Behaviours.Array.data[0].Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 777339951}
+    - target: {fileID: 7629495283342102434, guid: 17826d13e9450704da0c2bda1809d754, type: 3}
+      propertyPath: Behaviours.Behaviours.Array.data[0].Event.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2109340824}
+    - target: {fileID: 7629495283342102434, guid: 17826d13e9450704da0c2bda1809d754, type: 3}
+      propertyPath: Behaviours.Behaviours.Array.data[0].Event.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7629495283342102434, guid: 17826d13e9450704da0c2bda1809d754, type: 3}
+      propertyPath: Behaviours.Behaviours.Array.data[0].Event.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FilterSet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7629495283342102434, guid: 17826d13e9450704da0c2bda1809d754, type: 3}
+      propertyPath: Behaviours.Behaviours.Array.data[0].Event.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Hide
+      objectReference: {fileID: 0}
+    - target: {fileID: 7629495283342102434, guid: 17826d13e9450704da0c2bda1809d754, type: 3}
+      propertyPath: Behaviours.Behaviours.Array.data[0].Event.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BoothApp.Presentation.BoothDetail.BoothItemView.ItemFilterer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7629495283342102434, guid: 17826d13e9450704da0c2bda1809d754, type: 3}
+      propertyPath: Behaviours.Behaviours.Array.data[0].Event.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Doozy.Runtime.UIManager.Containers.UIContainer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7629495283342102434, guid: 17826d13e9450704da0c2bda1809d754, type: 3}
+      propertyPath: Behaviours.Behaviours.Array.data[0].Event.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -16346,6 +16426,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &777339949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 777339950}
+  - component: {fileID: 777339951}
+  m_Layer: 0
+  m_Name: ItemFilter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &777339950
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777339949}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 233044922}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &777339951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777339949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 295b5cc122e049cabe5cec618329e029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemGroup: {fileID: 1243082900}
+  selectedBoothViewModel: {fileID: 307809260}
+  ownerDropdown: {fileID: 2066966297}
+  tagDropdown: {fileID: 69727920}
+  presenter: {fileID: 225089356}
 --- !u!1 &777785338
 GameObject:
   m_ObjectHideFlags: 0
@@ -40128,10 +40261,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2066966295}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 439107efc6b94179aea51ef525c0b583, type: 3}
+  m_Script: {fileID: 11500000, guid: 7467dff5b50d44779baa8a323cfc2fe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  view: {fileID: 9173249041736813302}
   selectionPanel: {fileID: 630582907}
   itemTagPrefab: {fileID: 2777495647722813563, guid: 255c82bec57272440a68cebf62595aa8, type: 3}
   parentObject: {fileID: 339864498}
@@ -40980,6 +41112,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108215912}
   m_CullTransparentMesh: 1
+--- !u!114 &2109340824 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4157312921889110715, guid: 17826d13e9450704da0c2bda1809d754, type: 3}
+  m_PrefabInstance: {fileID: 436668302}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bdd92761f8f457190f4bab9efcf67bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2111332042
 GameObject:
   m_ObjectHideFlags: 0

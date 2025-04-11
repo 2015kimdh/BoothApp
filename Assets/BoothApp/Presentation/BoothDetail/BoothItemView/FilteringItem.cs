@@ -8,6 +8,8 @@ namespace BoothApp.Presentation.BoothDetail.BoothItemView
     {
         public static List<BoothItemWithAmountInfo> FilteringWithTag(List<BoothItemWithAmountInfo> original, List<string> tag)
         {
+            if (tag.Count == 0)
+                return original;
             List<BoothItemWithAmountInfo> result = new();
             foreach (var item in original)
             {
@@ -19,6 +21,8 @@ namespace BoothApp.Presentation.BoothDetail.BoothItemView
         
         public static List<BoothItemWithAmountInfo> FilteringWithOwner(List<BoothItemWithAmountInfo> original, List<string> owner)
         {
+            if (owner.Count == 0)
+                return original;
             List<BoothItemWithAmountInfo> result = new();
             foreach (var item in original)
             {

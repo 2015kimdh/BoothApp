@@ -41,6 +41,17 @@ namespace BoothApp.Presentation.BoothDetail.BoothItemView
 
         #endregion
 
+        #region Public Method
+
+        public void Refresh(List<string> original, List<string> selected)
+        {
+            MakeOptions(original);
+            SetSelectedTagBySaveInfo(selected);
+            SetCurrentTagLabel();
+        }
+
+        #endregion
+        
         #region Private Methods
 
         private void ShowPanel()
@@ -70,18 +81,34 @@ namespace BoothApp.Presentation.BoothDetail.BoothItemView
                 var newItem = Instantiate(itemTagPrefab, parentObject.transform).GetComponent<ItemTagLabel>();
                 newItem.label.text = needToMake[i];
                 newItem.toggle.isOn = false;
-                newItem.toggle.onValueChanged.AddListener(delegate { SetTagData(); });
                 newItem.toggle.onValueChanged.AddListener(delegate { SetCurrentTagLabel(); });
                 _itemTagLabels.Add(newItem);
             }
         }
 
-        protected void SetAllToggleFalse()
+        public void SetAllToggleFalse()
         {
             foreach (var item in _itemTagLabels)
                 item.toggle.isOn = false;
         }
 
+        protected void SetSelectedTagBySaveInfo(List<string> saveInfo)
+        {
+            if (saveInfo.Count == 0)
+            {
+                SetAllToggleFalse();
+                return;
+            }
+
+            foreach (var item in _itemTagLabels)
+            {
+                if (saveInfo.Contains(item.label.text))
+                    item.toggle.isOn = true;
+                else
+                    item.toggle.isOn = false;
+            }
+        }
+        
         private List<string> SetTagData()
         {
             List<string> selectedTags = new();

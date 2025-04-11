@@ -3,6 +3,7 @@ using System.Linq;
 using BoothApp.Presentation.Info;
 using BoothApp.Utility;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 namespace BoothApp.Presentation.BoothDetail
@@ -17,7 +18,7 @@ namespace BoothApp.Presentation.BoothDetail
         [SerializeField] private GameObject addItemButton;
 
         #endregion
-
+        
         #region Property
 
         private BoothInformationInfo BoothInfo => selectedBoothViewModel.selectedBooth.boothInformationInfo;
@@ -25,6 +26,12 @@ namespace BoothApp.Presentation.BoothDetail
 
         #endregion
 
+        #region Unity Event
+
+        public UnityEvent onRefresh;
+
+        #endregion
+        
         #region Public Fields
 
         /// <summary>
@@ -34,6 +41,12 @@ namespace BoothApp.Presentation.BoothDetail
 
         #endregion
 
+        #region Private Field
+
+        private string _selectedBoothCreatedAt = "";
+
+        #endregion
+        
         #region MonoBehaviour Events
 
         private void Start()
@@ -48,10 +61,11 @@ namespace BoothApp.Presentation.BoothDetail
 
         public void RefreshIfSelectedBoothChanged(string selectedBoothName)
         {
-            if (selectedBoothName != _selectedBoothName)
+            if (selectedBoothName != _selectedBoothName || _selectedBoothCreatedAt != BoothInfo.createdAt)
             {
                 RefreshPurchasableItems();
                 _selectedBoothName = selectedBoothName;
+                _selectedBoothCreatedAt = BoothInfo.createdAt;
             }
         }
 
@@ -60,6 +74,7 @@ namespace BoothApp.Presentation.BoothDetail
             RefreshTrackedItem();
             RemoveUnTrackedItem();
             AddNewTrackedItem();
+            onRefresh.Invoke();
         }
 
         #endregion

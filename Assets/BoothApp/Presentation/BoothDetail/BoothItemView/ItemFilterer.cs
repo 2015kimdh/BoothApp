@@ -1,5 +1,9 @@
+using System;
 using System.Collections.Generic;
+using BoothApp.Presentation.Info;
+using BoothApp.Utility;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace BoothApp.Presentation.BoothDetail.BoothItemView
 {
@@ -9,29 +13,73 @@ namespace BoothApp.Presentation.BoothDetail.BoothItemView
 
         [SerializeField] private PurchasableItemGroup itemGroup;
         [SerializeField] private SelectedBoothViewModel selectedBoothViewModel;
+        [SerializeField] private ItemTagDropdownSetter ownerDropdown;
+        [SerializeField] private ItemTagDropdownSetter tagDropdown;
+        [SerializeField] private BoothDataPresenter presenter;
         
         #endregion
 
+        #region UnityEvent
+
+        public UnityEvent<int> onFilterSetWithTagAmount;
+
+        #endregion
+        
+        #region Property
+
+        private BoothInformationInfo SelectedBooth => selectedBoothViewModel.selectedBooth.boothInformationInfo;
+
+        #endregion
+        
         #region Method
 
-        public void SetItemTagFilter(List<string> tag, List<string> owner)
+        private void Start()
         {
-            if (tag.Count == 0 && owner.Count == 0)
+            itemGroup.onRefresh.AddListener(OnRefresh);
+        }
+
+        public void OnRefresh()
+        {
+            ownerDropdown.Refresh(SelectedBooth.owners, SelectedBooth.selectedOwners);
+            tagDropdown.Refresh(SelectedBooth.itemTags, SelectedBooth.selectedTags);
+            SetItemTagFilter(SelectedBooth.selectedTags, SelectedBooth.selectedOwners);
+        }
+
+        public void FilterSet()
+        {
+            SetItemTagFilter(tagDropdown.SelectedTag, ownerDropdown.SelectedTag);
+            SelectedBooth.selectedOwners = ClassCopy.CopyClass(ownerDropdown.SelectedTag);
+            SelectedBooth.selectedTags = ClassCopy.CopyClass(tagDropdown.SelectedTag);
+            SelectedBooth.modifyAt = DateTimeUtil.DateTimeNowToString();
+            presenter.SaveDataAtDisk();
+        }
+
+        public void InitFilter()
+        {
+            ownerDropdown.SetAllToggleFalse();
+            tagDropdown.SetAllToggleFalse();
+        }
+        
+        private void SetItemTagFilter(List<string> itemTag, List<string> owner)
+        {
+            if (itemTag.Count == 0 && owner.Count == 0)
             {
                 foreach (var target in itemGroup.purchasableItems)
                     target.gameObject.SetActive(true);
+                onFilterSetWithTagAmount.Invoke(itemTag.Count + owner.Count);
                 return;
             }
 
-            var result = FilteringItem.FilteringWithTag(selectedBoothViewModel.OriginalItemStatus, tag);
+            var result = FilteringItem.FilteringWithTag(selectedBoothViewModel.OriginalItemStatus, itemTag);
             result = FilteringItem.FilteringWithOwner(result, owner);
             foreach (var target in itemGroup.purchasableItems)
             {
                 if (result.Find(x => x.itemInfo.hash == target.hash) == null)
-                    target.gameObject.SetActive(true);
-                else
                     target.gameObject.SetActive(false);
+                else
+                    target.gameObject.SetActive(true);
             }
+            onFilterSetWithTagAmount.Invoke(itemTag.Count + owner.Count);
         }
 
         #endregion

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using BoothApp.Presentation.Info;
 using BoothApp.Utility;
@@ -23,7 +22,7 @@ namespace BoothApp.Presentation.BoothDetail.BoothItemView
 
         #region UnityEvent
 
-        public UnityEvent<int> onFilterSetWithTagAmount;
+        public UnityEvent<int, bool> onFilterSetWithTagAmount;
 
         #endregion
 
@@ -72,7 +71,7 @@ namespace BoothApp.Presentation.BoothDetail.BoothItemView
                     target.gameObject.SetActive(true);
                 }
 
-                onFilterSetWithTagAmount.Invoke(itemTag.Count + owner.Count);
+                onFilterSetWithTagAmount.Invoke(itemTag.Count + owner.Count, soldOutFilterToggle.isOn);
                 return;
             }
 
@@ -93,7 +92,7 @@ namespace BoothApp.Presentation.BoothDetail.BoothItemView
                 }
             }
 
-            onFilterSetWithTagAmount.Invoke(itemTag.Count + owner.Count);
+            onFilterSetWithTagAmount.Invoke(itemTag.Count + owner.Count, soldOutFilterToggle.isOn);
         }
 
         #endregion

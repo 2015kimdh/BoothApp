@@ -7,9 +7,9 @@ namespace BoothApp.Presentation.BoothDetail.BoothItemView
     {
         [SerializeField] private Image mark;
 
-        public void SetMark(int tagAmount)
+        public void SetMark(int tagAmount, bool soldOutFilter)
         {
-            mark.gameObject.SetActive(tagAmount != 0);
+            mark.gameObject.SetActive(tagAmount != 0 || soldOutFilter);
         }
     }
 }

@@ -33,7 +33,7 @@ namespace BoothApp.Presentation.BoothDetail
 
         #region Private Fields
 
-        private SelectedBoothViewStatus _viewStatus = SelectedBoothViewStatus.Normal;
+        private SelectedBoothViewStatus _viewStatus = SelectedBoothViewStatus.Init;
 
         #endregion
         

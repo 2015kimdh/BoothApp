@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using BoothApp.Presentation.Info;
 using BoothApp.Utility;
+using Doozy.Runtime.UIManager.Components;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -16,7 +17,8 @@ namespace BoothApp.Presentation.BoothDetail.BoothItemView
         [SerializeField] private ItemTagDropdownSetter ownerDropdown;
         [SerializeField] private ItemTagDropdownSetter tagDropdown;
         [SerializeField] private BoothDataPresenter presenter;
-        
+        [SerializeField] private UIToggle soldOutFilterToggle;
+
         #endregion
 
         #region UnityEvent
@@ -24,13 +26,13 @@ namespace BoothApp.Presentation.BoothDetail.BoothItemView
         public UnityEvent<int> onFilterSetWithTagAmount;
 
         #endregion
-        
+
         #region Property
 
         private BoothInformationInfo SelectedBooth => selectedBoothViewModel.selectedBooth.boothInformationInfo;
 
         #endregion
-        
+
         #region Method
 
         private void Start()
@@ -58,14 +60,18 @@ namespace BoothApp.Presentation.BoothDetail.BoothItemView
         {
             ownerDropdown.SetAllToggleFalse();
             tagDropdown.SetAllToggleFalse();
+            soldOutFilterToggle.isOn = false;
         }
-        
+
         private void SetItemTagFilter(List<string> itemTag, List<string> owner)
         {
-            if (itemTag.Count == 0 && owner.Count == 0)
+            if (itemTag.Count == 0 && owner.Count == 0 && soldOutFilterToggle.isOn == false)
             {
                 foreach (var target in itemGroup.purchasableItems)
+                {
                     target.gameObject.SetActive(true);
+                }
+
                 onFilterSetWithTagAmount.Invoke(itemTag.Count + owner.Count);
                 return;
             }
@@ -77,8 +83,16 @@ namespace BoothApp.Presentation.BoothDetail.BoothItemView
                 if (result.Find(x => x.itemInfo.hash == target.hash) == null)
                     target.gameObject.SetActive(false);
                 else
-                    target.gameObject.SetActive(true);
+                {
+                    // 품절 상품 체크
+                    if (soldOutFilterToggle.isOn &&
+                        selectedBoothViewModel.selectedBooth.GetOriginalItem(target.hash).amount == 0)
+                        target.gameObject.SetActive(false);
+                    else
+                        target.gameObject.SetActive(true);
+                }
             }
+
             onFilterSetWithTagAmount.Invoke(itemTag.Count + owner.Count);
         }
 

@@ -15,7 +15,7 @@ namespace BoothApp.Presentation.BoothDetail.AddItem
         public UnityEvent onAddSuccess;
 
         #endregion
-
+        
         #region Serialize Fields
 
         [SerializeField] protected TMP_InputField inputField;

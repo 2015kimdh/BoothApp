@@ -4,6 +4,8 @@ using System.Linq;
 using BoothApp.Presentation.Info;
 using BoothApp.Utility;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace BoothApp.Presentation
 {
@@ -12,6 +14,7 @@ namespace BoothApp.Presentation
         private BoothDataPresenter _presenter;
         public List<BoothColumn> boothColumns = new();
         [SerializeField] private BoothColumnMaker columnMaker;
+        public UnityEvent onRefresh;
 
         private void Awake()
         {
@@ -64,6 +67,7 @@ namespace BoothApp.Presentation
 
             RefreshOldData();
             ArrayBoothItemByCreatedAt();
+            onRefresh.Invoke();
         }
 
         private void RefreshOldData()

@@ -20,10 +20,11 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseItem
 
         private PurchaseSelectedItemViewModel _viewModel;
         private SelectedBoothView _selectedBoothView;
-        [SerializeField]
-        private float _buttonPressedTime = 0f;
+        [SerializeField] private float _buttonPressedTime = 0f;
         private Coroutine _timerCoroutine;
 
+        private bool _isLongClicked = false;
+        
         #endregion
 
         #region MonoBehaviourEvent
@@ -34,8 +35,9 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseItem
             _viewModel = FindObjectOfType<PurchaseSelectedItemViewModel>();
             _viewModel.onPurchase.AddListener(item.RefreshOriginalAmount);
             _selectedBoothView.onViewStatusChange.AddListener(SetZeroTryAmount);
-            button.onPointerDownEvent.AddListener(ClickSelectButton);
-            button.onPointerUpEvent.AddListener(SelectButtonUp);
+            button.onPointerDownEvent.AddListener(() => { _isLongClicked = false; });
+            button.onLongClickEvent.AddListener(SelectedItemDeselection);
+            button.onClickEvent.AddListener(SelectButtonClick);
         }
 
         private void OnDestroy()
@@ -47,14 +49,13 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseItem
         #endregion
 
         #region Method
-
+        
         private void ClickSelectButton()
         {
             if (_selectedBoothView.ViewStatus == SelectedBoothViewStatus.Normal ||
                 _selectedBoothView.ViewStatus == SelectedBoothViewStatus.Purchase)
             {
                 _selectedBoothView.ViewStatus = SelectedBoothViewStatus.Purchase;
-                _timerCoroutine = StartCoroutine(SetTimer());
             }
         }
 
@@ -62,21 +63,17 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseItem
         {
             item.TryToPurchaseAmount = 0;
             _viewModel.CancelPurchaseItemInfo(item.hash);
+            _isLongClicked = true;
         }
 
-        private void SelectButtonUp()
+        private void SelectButtonClick()
         {
+            ClickSelectButton();
             if (_selectedBoothView.ViewStatus == SelectedBoothViewStatus.Purchase)
             {
-                if (_buttonPressedTime < deselectItemTime)
-                {
+                if(_isLongClicked == false)
                     AddTryToPurchaseAmount();
-                }
-
-                StopCoroutine(_timerCoroutine);
             }
-
-            _buttonPressedTime = 0;
         }
 
         private void AddTryToPurchaseAmount()
@@ -85,7 +82,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseItem
             _viewModel.SetPurchaseItemInfo(item.hash, item.TryToPurchaseAmount);
         }
 
-        
+
         private void SetZeroTryAmount(SelectedBoothViewStatus status)
         {
             if (status != SelectedBoothViewStatus.Purchase)
@@ -94,7 +91,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseItem
                 _viewModel.CancelPurchaseItemInfo(item.hash);
             }
         }
-        
+
         #endregion
 
         #region IEnumerator
@@ -114,7 +111,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseItem
                 yield return null;
             }
         }
-        
+
         #endregion
     }
 }

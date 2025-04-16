@@ -18,7 +18,7 @@ namespace BoothApp.Presentation.BoothDetail.DeleteItem
 
         #region Private Field
 
-        private DeletedSelectedItemViewModel _deletedSelectedItemViewModel;
+        private DeleteSelectedItemViewModel _deleteSelectedItemViewModel;
         private SelectedBoothView _selectedBoothView;
 
         private bool _isSelected = false;
@@ -29,17 +29,17 @@ namespace BoothApp.Presentation.BoothDetail.DeleteItem
 
         private void Awake()
         {
-            _deletedSelectedItemViewModel = FindObjectOfType<DeletedSelectedItemViewModel>();
+            _deleteSelectedItemViewModel = FindObjectOfType<DeleteSelectedItemViewModel>();
             _selectedBoothView = ViewHub.Views.Find(x => x.GetType() == typeof(SelectedBoothView)) as SelectedBoothView;
             _selectedBoothView.onViewStatusChange.AddListener(EventBinding);
             button.onClickEvent.AddListener(ButtonOperation);
-            _deletedSelectedItemViewModel.onSelectItem.AddListener(SetSelectedStatus);
+            _deleteSelectedItemViewModel.onSelectItem.AddListener(SetSelectedStatus);
         }
 
         private void OnDestroy()
         {
             _selectedBoothView.onViewStatusChange.RemoveListener(EventBinding);
-            _deletedSelectedItemViewModel.onSelectItem.RemoveListener(SetSelectedStatus);
+            _deleteSelectedItemViewModel.onSelectItem.RemoveListener(SetSelectedStatus);
         }
 
         #endregion
@@ -60,7 +60,7 @@ namespace BoothApp.Presentation.BoothDetail.DeleteItem
 
         private void SetSelectedStatus()
         {
-            _isSelected = _deletedSelectedItemViewModel.CheckIsSelected(purchasableItem);
+            _isSelected = _deleteSelectedItemViewModel.CheckIsSelected(purchasableItem);
             selectedMark.SetActive(_isSelected);
         }
 
@@ -69,9 +69,9 @@ namespace BoothApp.Presentation.BoothDetail.DeleteItem
             if (_selectedBoothView.ViewStatus == SelectedBoothViewStatus.DeleteItem)
             {
                 if (!_isSelected)
-                    _deletedSelectedItemViewModel.AddSelection(purchasableItem);
+                    _deleteSelectedItemViewModel.AddSelection(purchasableItem);
                 else
-                    _deletedSelectedItemViewModel.RemoveSelection(purchasableItem);
+                    _deleteSelectedItemViewModel.RemoveSelection(purchasableItem);
             }
         }
 

@@ -8,7 +8,7 @@ using UnityEngine.Events;
 
 namespace BoothApp.Presentation.BoothDetail.DeleteItem
 {
-    public class DeletedSelectedItemViewModel : MonoBehaviour
+    public class DeleteSelectedItemViewModel : MonoBehaviour
     {
         #region Unity Event
 
@@ -32,6 +32,8 @@ namespace BoothApp.Presentation.BoothDetail.DeleteItem
 
         #region Property
 
+        public List<string> SelectedItemName => SelectedItemNames();
+        public int SelectedItemCount => selectedItems.Count;
         private BoothInfo SelectedBooth => selectedBoothViewModel.selectedBooth;
 
         #endregion
@@ -100,6 +102,14 @@ namespace BoothApp.Presentation.BoothDetail.DeleteItem
         {
             if(status != SelectedBoothViewStatus.DeleteItem)
                 InitSelection();
+        }
+
+        private List<string> SelectedItemNames()
+        {
+            List<string> itemNameList = new();
+            for (int i = 0; i < selectedItems.Count; i++)
+                itemNameList.Add(selectedItems[i].itemName.text);
+            return itemNameList;
         }
         
         #endregion

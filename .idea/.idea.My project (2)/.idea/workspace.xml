@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="757b00b3-7067-410e-bc2c-c7df74a4ffa2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/DeleteItem.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/DeleteItem/DeletedSelectedItemViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/DeleteItem/DeletedSelectedItemViewModel.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/DeleteItem/SelectDeleteItemButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/DeleteItem/SelectDeleteItemButton.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/SelectedBoothView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/SelectedBoothView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/SelectedBoothViewStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/SelectedBoothViewStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Prefab/SellingItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Prefab/SellingItem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/DeleteItem/DeletedSelectedItemViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/DeleteItem/DeletedSelectedItemViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/EditItem/EditItemViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/EditItem/EditItemViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ComicworldBoothApp.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ComicworldBoothApp.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,6 +141,7 @@
       <workItem from="1744377014908" duration="10352000" />
       <workItem from="1744391583783" duration="1133000" />
       <workItem from="1744447891797" duration="9615000" />
+      <workItem from="1744782027193" duration="5041000" />
     </task>
     <servers />
   </component>

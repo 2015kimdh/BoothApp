@@ -72,6 +72,7 @@ namespace BoothApp.Presentation.BoothDetail.EditItem
             SetDetailInfo(SelectedItemInfo.itemInfo);
             SelectedItemInfo.amount = itemAmount;
 
+            // 수정한 아이템이 판매 이력이 있을 경우 판매되었던 기록에도 수정 사항 적용
             if (selectedItemViewModel.selectedItemPurchased != null)
             {
                 SetItemImage(selectedItemViewModel.selectedItemPurchased.itemInfo);

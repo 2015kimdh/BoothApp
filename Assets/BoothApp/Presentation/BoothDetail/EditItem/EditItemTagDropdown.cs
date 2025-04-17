@@ -24,7 +24,6 @@ namespace BoothApp.Presentation.BoothDetail.EditItem
                     result.toggle.isOn = true;
                 else
                     result.toggle.isOn = false;
-
             }
         }
     }

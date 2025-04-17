@@ -50,6 +50,16 @@ namespace BoothApp.Presentation.BoothDetail.BoothItemView
             SetCurrentTagLabel();
         }
 
+        /// <summary>
+        /// 목록 생성만 하고 모두 선택 해제
+        /// </summary>
+        public void RefreshOnly(List<string> original)
+        {
+            MakeOptions(original);
+            SetAllToggleFalse();
+            SetCurrentTagLabel();
+        }
+        
         #endregion
         
         #region Private Methods

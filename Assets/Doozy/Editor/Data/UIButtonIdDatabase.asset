@@ -20,6 +20,8 @@ MonoBehaviour:
       Name: TryAddNewItem
     - Category: None
       Name: None
+    - Category: PopupShowButton
+      Name: ToDeleteTagPopup
     - Category: ViewChangeButton
       Name: ToCreateBooth
     - Category: ViewChangeButton

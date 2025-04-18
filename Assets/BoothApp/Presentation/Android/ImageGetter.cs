@@ -1,3 +1,4 @@
+using System.Collections;
 using BoothApp.Utility;
 using UnityEngine;
 using UnityEngine.Events;
@@ -16,13 +17,18 @@ namespace BoothApp.Presentation.Android
         public void GetImage()
         {
             imageGetter.imageComponent = image;
-            StartCoroutine(imageGetter.GetImageFromGallery());
-            
-            onSpriteChange.Invoke(image.sprite);
+            StartCoroutine(GetImageRoutine());
         }
 
         public void OnSpriteChangeInvoke()
         {
+            onSpriteChange.Invoke(image.sprite);
+        }
+
+        IEnumerator GetImageRoutine()
+        {
+            Coroutine coroutine = StartCoroutine(imageGetter.GetImageFromGallery());
+            yield return coroutine;
             onSpriteChange.Invoke(image.sprite);
         }
     }

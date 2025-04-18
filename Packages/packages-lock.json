@@ -89,6 +89,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.mobile.android-logcat": {
+      "version": "1.4.5",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.unity.nuget.newtonsoft-json": {
       "version": "3.2.1",
       "depth": 0,
@@ -176,7 +183,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "4d27475bed66d56aca8b7d585b98fe503525e593"
+      "hash": "f8f591e50932855733803c6f0f270319cdb4da4c"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",

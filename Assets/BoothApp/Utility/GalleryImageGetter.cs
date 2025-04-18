@@ -15,9 +15,26 @@ namespace BoothApp.Utility
 
         public IEnumerator GetImageFromGallery()
         {
+            bool galleryImageGetDone = false;
             bool successToGet = true;
             string image1 = "";
             Debug.Log("이미지 가져오기");
+
+            var checkResult =
+                NativeGallery.CheckPermission(NativeGallery.PermissionType.Read, NativeGallery.MediaType.Image);
+
+            if (checkResult == false)
+            {
+                yield return NativeGallery.RequestPermissionAsync(NativeGallery.PermissionType.Read,
+                    NativeGallery.MediaType.Image);
+                checkResult =
+                    NativeGallery.CheckPermission(NativeGallery.PermissionType.Read, NativeGallery.MediaType.Image);
+                if (checkResult == false)
+                {
+                    onFailToGet.Invoke();
+                    yield break;
+                }
+            }
 
             NativeGallery.GetImageFromGallery((image) =>
             {
@@ -26,6 +43,7 @@ namespace BoothApp.Utility
                     successToGet = false;
                     return;
                 }
+
                 FileInfo selectedImage = new FileInfo(image);
                 image1 = image;
                 if (selectedImage.Length > FileSizeLimit)
@@ -33,7 +51,12 @@ namespace BoothApp.Utility
                     Debug.Log("이미지 가져오기 실패 = " + selectedImage.Length);
                     successToGet = false;
                 }
+
+                galleryImageGetDone = true;
             });
+
+            yield return new WaitUntil(() => galleryImageGetDone);
+            
             if (!successToGet)
             {
                 onFailToGet.Invoke();
@@ -50,7 +73,9 @@ namespace BoothApp.Utility
 
         public void LoadImage(string path)
         {
+            Debug.Log("파일 읽기");
             byte[] fileData = File.ReadAllBytes(path);
+            //Texture2D fileData = NativeGallery.LoadImageAtPath(path, FileSizeLimit);
             string fileName = Path.GetFileName(path).Split('.')[0];
 
             if (!Directory.Exists(DataPath.ImagePath))
@@ -58,8 +83,12 @@ namespace BoothApp.Utility
                 Directory.CreateDirectory(DataPath.ImagePath);
             }
 
-            Texture2D tex = new Texture2D(0, 0);
+            Texture2D tex = new Texture2D(2, 2, TextureFormat.RGBA32, false);
+            
+            //Texture2D tex = new Texture2D(0, 0);
+            Debug.Log("이미지 로드");
             tex.LoadImage(fileData);
+            Debug.Log("이미지 리사이징");
             tex = ResizeTexture(tex, tex.width / 4, tex.height / 4);
             tex.name = fileName + DateTimeUtil.DateTimeStringForFileName(DateTime.Now);
             File.WriteAllBytes(

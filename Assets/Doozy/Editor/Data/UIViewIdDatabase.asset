@@ -23,6 +23,8 @@ MonoBehaviour:
     - Category: AppView
       Name: Main
     - Category: AppView
+      Name: PurchaseHistory
+    - Category: AppView
       Name: SelectedBooth
     - Category: AppView
       Name: TryAddNewPurchaseItem

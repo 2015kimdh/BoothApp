@@ -31,4 +31,6 @@ MonoBehaviour:
     - Category: ViewChangeButton
       Name: ToMain
     - Category: ViewChangeButton
+      Name: ToPurchaseHistory
+    - Category: ViewChangeButton
       Name: ToSelecetedBooth

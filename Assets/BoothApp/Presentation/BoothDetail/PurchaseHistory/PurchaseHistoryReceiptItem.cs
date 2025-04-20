@@ -41,7 +41,14 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
         
         #region Method
 
-        public void DependencyInject(SelectedBoothViewModel viewModel)
+        public void SetDataAndUI(SelectedBoothViewModel viewModel, PurchaseReceiptInfo info)
+        {
+            receiptInfo = info;
+            DependencyInject(viewModel);
+            SetUI();
+        }
+        
+        private void DependencyInject(SelectedBoothViewModel viewModel)
         {
             _viewModel = viewModel;
         }

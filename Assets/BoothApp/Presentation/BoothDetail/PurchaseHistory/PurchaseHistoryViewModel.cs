@@ -25,7 +25,8 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
 
         #region Property
 
-        public BoothInfo SelectedBooth => selectedBoothViewModel.selectedBooth; 
+        public BoothInfo SelectedBooth => selectedBoothViewModel.selectedBooth;
+        public SelectedBoothViewModel SelectedBoothViewModel => selectedBoothViewModel;
         public List<PurchaseReceiptInfo> PurchaseHistory => SelectedBooth.boothInformationInfo.purchasedHistory;
 
         #endregion

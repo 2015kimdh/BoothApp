@@ -14,7 +14,8 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
         [SerializeField] private TMP_Text purchasedAt;
         [SerializeField] private TMP_Text purchasedItemList;
         [SerializeField] private TMP_Text purchaseCost;
-
+        [SerializeField] private TMP_Text receiptIndex;
+        
         #endregion
 
         #region Public Field
@@ -23,34 +24,39 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
         /// 표시를 위한 기본적인 데이터 집합
         /// </summary>
         public PurchaseReceiptInfo receiptInfo;
-
+        public PurchaseHistoryViewModel purchaseHistoryViewModel;
+        
         #endregion
 
         #region Private Field
 
         private readonly int _maxDisplayAmount = 3;
-        private SelectedBoothViewModel _viewModel;
 
         #endregion
 
         #region Property
 
-        private BoothInfo SelectedBooth => _viewModel.selectedBooth;
-
+        private BoothInfo SelectedBooth => purchaseHistoryViewModel.SelectedBooth;
+        
         #endregion
         
         #region Method
 
-        public void SetDataAndUI(SelectedBoothViewModel viewModel, PurchaseReceiptInfo info)
+        public void SetIndex(int index)
+        {
+            receiptIndex.text = "No." + index;
+        }
+        
+        public void SetDataAndUI(PurchaseHistoryViewModel viewModel, PurchaseReceiptInfo info)
         {
             receiptInfo = info;
             DependencyInject(viewModel);
             SetUI();
         }
         
-        private void DependencyInject(SelectedBoothViewModel viewModel)
+        private void DependencyInject(PurchaseHistoryViewModel viewModel)
         {
-            _viewModel = viewModel;
+            purchaseHistoryViewModel = viewModel;
         }
 
         public void SetUI()

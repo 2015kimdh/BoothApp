@@ -1,9 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using BoothApp.Presentation.Info;
 using UnityEngine;
-using UnityEngine.Pool;
+using UnityEngine.Serialization;
 
 namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
 {
@@ -14,7 +13,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
         [SerializeField] private PurchaseHistoryViewModel viewModel;
         [SerializeField] private PurchaseHistoryView view;
         [SerializeField] private PurchaseReceiptItemMaker maker;
-        [SerializeField] private LayoutGroupForcedRebuild rebuilder;
+        [FormerlySerializedAs("rebuilder")] [SerializeField] private LayoutGroupForcedRebuild reBuilder;
         
         #endregion
 
@@ -44,7 +43,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
             ReleaseUnTracked();
             MakeItems();
             SetSiblingOderByTime();
-            rebuilder.ForceRebuildLayout();
+            reBuilder.ForceRebuildLayout();
         }
         
         private void RefreshReceiptList()
@@ -63,6 +62,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
             for (int i = 0; i < sorted.Count(); i++)
             {
                 sorted[i].gameObject.transform.SetSiblingIndex(i);
+                sorted[i].SetIndex(sorted.Count() - i);
             }
         }
         
@@ -72,7 +72,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
             foreach (var receiptInfo in needToMake)
             {
                 var newOne = maker.pool.Get();
-                newOne.SetDataAndUI(viewModel.SelectedBoothViewModel, receiptInfo);
+                newOne.SetDataAndUI(viewModel, receiptInfo);
                 receipts.Add(newOne);
             }
         }

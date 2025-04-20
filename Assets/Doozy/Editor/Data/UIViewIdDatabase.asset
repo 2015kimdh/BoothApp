@@ -25,6 +25,8 @@ MonoBehaviour:
     - Category: AppView
       Name: PurchaseHistory
     - Category: AppView
+      Name: PurchaseReceiptDetail
+    - Category: AppView
       Name: SelectedBooth
     - Category: AppView
       Name: TryAddNewPurchaseItem

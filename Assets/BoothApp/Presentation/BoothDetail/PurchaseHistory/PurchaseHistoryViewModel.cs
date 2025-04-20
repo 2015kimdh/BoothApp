@@ -29,6 +29,17 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
         public SelectedBoothViewModel SelectedBoothViewModel => selectedBoothViewModel;
         public List<PurchaseReceiptInfo> PurchaseHistory => SelectedBooth.boothInformationInfo.purchasedHistory;
 
+        public PurchaseHistoryReceiptItem SelectedItem
+        {
+            get => _selectedItem;
+        }
+        
+        #endregion
+
+        #region Private Fields
+
+        private PurchaseHistoryReceiptItem _selectedItem;
+
         #endregion
         
         #region Method
@@ -52,6 +63,11 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
             PurchaseHistory.Remove(targetReceipt);
             SelectedBooth.boothInformationInfo.modifyAt = DateTimeUtil.DateTimeNowToString();
             presenter.SaveDataAtDisk();
+        }
+
+        public void SetSelectedItem(PurchaseHistoryReceiptItem item)
+        {
+            _selectedItem = item;
         }
         
         #endregion

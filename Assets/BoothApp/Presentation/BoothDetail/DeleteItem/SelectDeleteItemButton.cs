@@ -1,8 +1,6 @@
-using System;
 using BoothApp.Presentation.View;
 using Doozy.Runtime.UIManager.Components;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace BoothApp.Presentation.BoothDetail.DeleteItem
 {

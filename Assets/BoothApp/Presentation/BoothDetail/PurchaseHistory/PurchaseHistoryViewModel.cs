@@ -51,6 +51,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
         {
             var target = PurchaseHistory.Find(x => x.purchasedAt == purchasedAt);
             PurchaseHistory.Remove(target);
+            RemoveItemAmountFromPurchasedItem(target);
             SelectedBooth.boothInformationInfo.modifyAt = DateTimeUtil.DateTimeNowToString();
             presenter.SaveDataAtDisk();
         }
@@ -61,6 +62,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
         public void DeletePurchaseHistory(PurchaseReceiptInfo targetReceipt)
         {
             PurchaseHistory.Remove(targetReceipt);
+            RemoveItemAmountFromPurchasedItem(targetReceipt);
             SelectedBooth.boothInformationInfo.modifyAt = DateTimeUtil.DateTimeNowToString();
             presenter.SaveDataAtDisk();
         }
@@ -70,6 +72,21 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
             _selectedItem = item;
         }
         
+        #endregion
+
+        #region Private Method
+
+        private void RemoveItemAmountFromPurchasedItem(PurchaseReceiptInfo receiptInfo)
+        {
+            foreach (var item in receiptInfo.items)
+            {
+                var purchasedItem = SelectedBooth.GetPurchasedItem(item.hash);
+                purchasedItem.amount -= item.amount;
+                if (purchasedItem.amount <= 0)
+                    SelectedBooth.boothInformationInfo.purchasedItemStatus.Remove(purchasedItem);
+            }
+        }
+
         #endregion
     }
 }

@@ -28,18 +28,23 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
 
         #region Private Fields
 
-        private PurchaseHistoryViewStatus _viewStatus;
+        private PurchaseHistoryViewStatus _viewStatus = PurchaseHistoryViewStatus.Init;
 
         #endregion
 
         private void Start()
         {
-            _viewStatus = PurchaseHistoryViewStatus.Normal;
+            ViewStatus = PurchaseHistoryViewStatus.Normal;
         }
         
         public void OnViewShow()
         {
             onViewShow.Invoke();
+        }
+        
+        public void SetViewStatusToNormal()
+        {
+            ViewStatus = PurchaseHistoryViewStatus.Normal;
         }
     }
 }

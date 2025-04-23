@@ -11,17 +11,17 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
     public class PurchaseHistoryViewModel : MonoBehaviour
     {
         #region
-        
-        [Header("기록 삭제 이후 호출")]
-        public UnityEvent onDelete;
-        
+
+        [Header("기록 삭제 이후 호출")] public UnityEvent onDelete;
+
         #endregion
-        
+
         #region Serialize Field
 
         [SerializeField] private SelectedBoothViewModel selectedBoothViewModel;
 
         [SerializeField] private BoothDataPresenter presenter;
+
         #endregion
 
         #region Property
@@ -34,7 +34,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
         {
             get => _selectedItem;
         }
-        
+
         #endregion
 
         #region Private Fields
@@ -42,7 +42,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
         private PurchaseHistoryReceiptItem _selectedItem;
 
         #endregion
-        
+
         #region Method
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
             presenter.SaveDataAtDisk();
             onDelete.Invoke();
         }
-        
+
         /// <summary>
         /// 결제 결과 대상으로 찾는 함수
         /// </summary>
@@ -69,7 +69,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
             presenter.SaveDataAtDisk();
             onDelete.Invoke();
         }
-        
+
         /// <summary>
         /// 결제 결과 대상으로 찾는 함수
         /// </summary>
@@ -79,7 +79,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
             SelectedBooth.boothInformationInfo.purchasedHistory = remain;
             foreach (var target in targetReceipts)
                 RemoveItemAmountFromPurchasedItem(target);
-            
+
             SelectedBooth.boothInformationInfo.modifyAt = DateTimeUtil.DateTimeNowToString();
             presenter.SaveDataAtDisk();
             onDelete.Invoke();
@@ -89,20 +89,39 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
         {
             _selectedItem = item;
         }
-        
+
         #endregion
 
         #region Private Method
-
+        
         private void RemoveItemAmountFromPurchasedItem(PurchaseReceiptInfo receiptInfo)
         {
             foreach (var item in receiptInfo.items)
             {
                 var purchasedItem = SelectedBooth.GetPurchasedItem(item.hash);
-                purchasedItem.amount -= item.amount;
-                if (purchasedItem.amount <= 0)
+                if (purchasedItem == null)
+                    continue;
+                var itemAmount = GetTotalAmount(purchasedItem.itemInfo);
+                if (itemAmount <= 0)
                     SelectedBooth.boothInformationInfo.purchasedItemStatus.Remove(purchasedItem);
             }
+        }
+
+        private void RemoveItemAmountFromPurchasedItem(BoothItemWithAmountInfo itemInfo)
+        {
+            var itemAmount = GetTotalAmount(itemInfo.itemInfo);
+            if (itemAmount <= 0)
+                SelectedBooth.boothInformationInfo.purchasedItemStatus.Remove(itemInfo);
+        }
+
+        private int GetTotalAmount(BoothItemInfo item)
+        {
+            var filteredList = PurchaseHistory
+                .SelectMany(x => x.items)
+                .Where(x => x.hash == item.hash)
+                .ToList();
+            
+            return filteredList.Select(x => x.amount).Sum();
         }
 
         #endregion

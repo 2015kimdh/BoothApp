@@ -1,26 +1,23 @@
 using System.Collections.Generic;
-using System.Linq;
-using BoothApp.Presentation.BoothDetail.PurchaseHistory;
 using BoothApp.Presentation.Info;
 using UnityEngine;
 
-namespace BoothApp.Presentation.BoothDetail.PurchaseReceiptDetail
+namespace BoothApp.Presentation.BoothDetail.PurchaseHistory.PurchaseHistoryByItem
 {
-    public class ReceiptDetailItemGroup : MonoBehaviour
+    public class TotalInvoiceItemGroup : MonoBehaviour
     {
         #region Serialize Fields
 
-        [SerializeField] private PurchaseHistoryViewModel viewModel;
-        [SerializeField] private PurchaseReceiptDetailView view;
-        [SerializeField] private ReceiptDetailItemMaker maker;
+        [SerializeField] private PurchaseHistoryByItemViewModel viewModel;
+        [SerializeField] private TotalInvoiceItemMaker maker;
         [SerializeField] private LayoutGroupForcedRebuild reBuilder;
-        
+
         #endregion
-        
+
         #region Public Fields
 
-        public List<ReceiptDetailItem> items = new();
-
+        public List<TotalInvoiceItem> items = new();
+        
         #endregion
 
         #region Property
@@ -31,11 +28,6 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseReceiptDetail
         
         #region Method
 
-        private void Awake()
-        {
-            view.onViewShow.AddListener(Refresh);
-        }
-
         private void Refresh()
         {
             RefreshItemList();
@@ -45,8 +37,8 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseReceiptDetail
 
         private void RefreshItemList()
         {
-            var selectedItem = viewModel.SelectedItem;
-            var gap = items.Count() - selectedItem.receiptInfo.items.Count;
+            var purchasedItems = SelectedBooth.boothInformationInfo.purchasedItemStatus;
+            var gap = items.Count - purchasedItems.Count;
             if (gap > 0)
             {
                 for (int i = 0; i < gap; i++)
@@ -62,11 +54,12 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseReceiptDetail
 
         private void SetItemList()
         {
+            var purchasedItems = SelectedBooth.boothInformationInfo.purchasedItemStatus;
             for (int i = 0; i < items.Count; i++)
             {
-                var receipt = viewModel.SelectedItem.receiptInfo;
-                var purchasedItem = SelectedBooth.GetPurchasedItem(receipt.items[i].hash);
-                items[i].SetUI(purchasedItem.itemInfo, receipt.items[i]);
+                int totalInvoice = viewModel.GetTotalInvoice(purchasedItems[i].itemInfo);
+                int totalAmount = viewModel.GetTotalInvoice(purchasedItems[i].itemInfo);
+                items[i].SetUI(purchasedItems[i].itemInfo, totalInvoice, totalAmount);
             }
         }
 

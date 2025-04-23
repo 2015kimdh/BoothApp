@@ -1,0 +1,73 @@
+using System.Collections.Generic;
+using System.Linq;
+using BoothApp.Presentation.Info;
+using UnityEngine;
+
+namespace BoothApp.Presentation.BoothDetail.PurchaseHistory.PurchaseHistoryByItem
+{
+    public class PurchaseHistoryByItemViewModel : MonoBehaviour
+    {
+        #region Serialize Field
+
+        /// <summary>
+        /// 판매된 물품들을 가져오기 위해
+        /// </summary>
+        [SerializeField] private SelectedBoothViewModel selectedBoothViewModel;
+
+        #endregion
+
+        #region Property
+
+        public BoothInfo SelectedBooth => selectedBoothViewModel.selectedBooth;
+        public SelectedBoothViewModel SelectedBoothViewModel => selectedBoothViewModel;
+        public List<PurchaseReceiptInfo> PurchaseHistory => SelectedBooth.boothInformationInfo.purchasedHistory;
+
+        public TotalInvoiceItem SelectedItem
+        {
+            get => _selectedItem;
+        }
+
+        #endregion
+
+        #region Private Fields
+
+        private TotalInvoiceItem _selectedItem;
+
+        #endregion
+
+        #region Public Method
+
+        public void SetSelectedItem(TotalInvoiceItem item)
+        {
+            _selectedItem = item;
+        }
+
+        public int GetTotalInvoice(BoothItemInfo item)
+        {
+            var filteredList = PurchaseHistory
+                .SelectMany(x => x.items)
+                .Where(x => x.hash == item.hash)
+                .ToList();
+            return filteredList.Select(x => x.pricePerItem * x.amount).Sum();
+        }
+
+        public int GetTotalAmount(BoothItemInfo item)
+        {
+            var filteredList = PurchaseHistory
+                .SelectMany(x => x.items)
+                .Where(x => x.hash == item.hash)
+                .ToList();
+            return filteredList.Select(x => x.amount).Sum();
+        }
+
+        public List<PurchaseReceiptInfo> GetListOfReceipt(BoothItemInfo item)
+        {
+            return PurchaseHistory
+                .Where(x =>
+                    x.items.Find(r => r.hash == item.hash) != null)
+                .ToList();
+        }
+
+        #endregion
+    }
+}

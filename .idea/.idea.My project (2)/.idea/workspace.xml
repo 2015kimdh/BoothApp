@@ -5,15 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="757b00b3-7067-410e-bc2c-c7df74a4ffa2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/DeleteReceipt/PurchaseHistoryDetailViewDeleteReceiptButton.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/DeleteReceipt/PurchaseHistoryDetailViewDeleteReceiptButton.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/DeleteReceipt/SelectedReceiptIndexToDeleteContextViewer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/DeleteReceipt/SelectedReceiptIndexToDeleteContextViewer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/PurchaseHistoryByItemViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/PurchaseHistoryByItemViewModel.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/TotalInvoiceItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/TotalInvoiceItem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/TotalInvoiceItemGroup.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/TotalInvoiceItemGroup.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/TotalInvoiceItemMaker.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/TotalInvoiceItemMaker.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/DeleteReceipt/DeleteSelectedReceiptViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/DeleteReceipt/DeleteSelectedReceiptViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryReceiptItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryReceiptItem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Utility/DateTimeUtil.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Utility/DateTimeUtil.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseReceiptDetail/ReceiptDetailItemGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseReceiptDetail/ReceiptDetailItemGroup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/ComicworldBoothApp.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ComicworldBoothApp.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +28,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/70471b9615aa4ecfa3ed1abb95b7383210fc00/96/36fd7c87/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/76d17f1c102a41f4af9bd87013f8530e4000/30/91fd773f/ImageConversion.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cb81df0c49c643b1a04d9fc6ccca2433175400/52/e64b8133/IObjectPool`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/BoothItemView/ItemTagDropdownSetter.cs" root0="FORCE_HIGHLIGHTING" />
@@ -97,10 +101,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="10684">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="10684" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -154,7 +158,7 @@
       <workItem from="1745036685132" duration="682000" />
       <workItem from="1745123292009" duration="20427000" />
       <workItem from="1745302909389" duration="8334000" />
-      <workItem from="1745381051494" duration="9703000" />
+      <workItem from="1745381051494" duration="20408000" />
     </task>
     <servers />
   </component>

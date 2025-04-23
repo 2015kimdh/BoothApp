@@ -135,7 +135,7 @@ MonoBehaviour:
   CanBeDeleted: 1
   Passthrough: 0
   ClearGraphHistory: 0
-  Position: {x: 1010, y: 445}
+  Position: {x: 977.78174, y: 427.06296}
   OnEnterShowViews:
   - Id:
       Category: AppView
@@ -224,7 +224,7 @@ MonoBehaviour:
   CanBeDeleted: 1
   Passthrough: 0
   ClearGraphHistory: 0
-  Position: {x: 622, y: 432}
+  Position: {x: 610, y: 405}
   OnEnterShowViews:
   - Id:
       Category: AppView
@@ -575,8 +575,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02761efe598a45c98fa1baf4d446c6a7, type: 3}
   m_Name: Flow Graph
   m_EditorClassIdentifier: 
-  EditorPosition: {x: -428, y: -93, z: 0}
-  EditorScale: {x: 1, y: 1, z: 1}
+  EditorPosition: {x: -299, y: -338, z: 0}
+  EditorScale: {x: 1.520875, y: 1.520875, z: 1}
   Id: ea293b6a-6ebf-4d8a-b247-e798b15d7a25
   GraphName: Flow Graph
   GraphDescription: 

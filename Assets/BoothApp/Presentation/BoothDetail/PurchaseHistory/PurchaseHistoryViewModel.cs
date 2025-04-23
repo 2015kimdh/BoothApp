@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using BoothApp.Presentation.Info;
 using BoothApp.Utility;
 using UnityEngine;
@@ -54,6 +55,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
             RemoveItemAmountFromPurchasedItem(target);
             SelectedBooth.boothInformationInfo.modifyAt = DateTimeUtil.DateTimeNowToString();
             presenter.SaveDataAtDisk();
+            onDelete.Invoke();
         }
         
         /// <summary>
@@ -65,6 +67,22 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
             RemoveItemAmountFromPurchasedItem(targetReceipt);
             SelectedBooth.boothInformationInfo.modifyAt = DateTimeUtil.DateTimeNowToString();
             presenter.SaveDataAtDisk();
+            onDelete.Invoke();
+        }
+        
+        /// <summary>
+        /// 결제 결과 대상으로 찾는 함수
+        /// </summary>
+        public void DeletePurchaseHistory(List<PurchaseReceiptInfo> targetReceipts)
+        {
+            var remain = PurchaseHistory.Except(targetReceipts).ToList();
+            SelectedBooth.boothInformationInfo.purchasedHistory = remain;
+            foreach (var target in targetReceipts)
+                RemoveItemAmountFromPurchasedItem(target);
+            
+            SelectedBooth.boothInformationInfo.modifyAt = DateTimeUtil.DateTimeNowToString();
+            presenter.SaveDataAtDisk();
+            onDelete.Invoke();
         }
 
         public void SetSelectedItem(PurchaseHistoryReceiptItem item)

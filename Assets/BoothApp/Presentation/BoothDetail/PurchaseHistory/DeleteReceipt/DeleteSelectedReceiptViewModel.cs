@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using BoothApp.Presentation.Info;
 using BoothApp.Utility;
 using UnityEngine;
@@ -31,7 +32,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory.DeleteReceipt
         #region Property
 
         public int SelectedReceiptCount => selectedReceipt.Count;
-        
+        public List<PurchaseHistoryReceiptItem> SelectedReceipt => selectedReceipt;
         private BoothInfo SelectedBooth => viewModel.SelectedBooth;
 
         #endregion
@@ -48,8 +49,8 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory.DeleteReceipt
         /// </summary>
         public void DeleteSelectedReceipt()
         {
-            foreach (var target in selectedReceipt)
-                viewModel.DeletePurchaseHistory(target.receiptInfo);
+            var targets = selectedReceipt.Select(item => item.receiptInfo).ToList();
+            viewModel.DeletePurchaseHistory(targets);
 
             InitSelection();
             onDelete.Invoke();

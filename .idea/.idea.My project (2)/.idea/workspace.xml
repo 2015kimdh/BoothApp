@@ -5,22 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="757b00b3-7067-410e-bc2c-c7df74a4ffa2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/DeleteReceipt.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/DeleteReceipt/DeleteReceiptItemButtonInteractionControl.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/DeleteReceipt/DeleteReceiptItemButtonInteractionControl.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/DeleteReceipt/DeleteSelectedReceiptViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/DeleteReceipt/DeleteSelectedReceiptViewModel.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/DeleteReceipt/SelectDeleteReceiptButton.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/DeleteReceipt/SelectDeleteReceiptButton.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryViewStatusChangeButton.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryViewStatusChangeButton.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryViewStatusTargetEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryViewStatusTargetEvent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/DeleteReceipt/PurchaseHistoryDetailViewDeleteReceiptButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/DeleteReceipt/PurchaseHistoryDetailViewDeleteReceiptButton.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/DeleteReceipt/SelectedReceiptIndexToDeleteContextViewer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/DeleteReceipt/SelectedReceiptIndexToDeleteContextViewer.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Prefab/ReceiptItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Prefab/ReceiptItem.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/DeleteItem/SelectDeleteItemButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/DeleteItem/SelectDeleteItemButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/DeleteReceipt/DeleteSelectedReceiptViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/DeleteReceipt/DeleteSelectedReceiptViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryReceiptItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryReceiptItem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Utility/DateTimeUtil.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Utility/DateTimeUtil.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/ComicworldBoothApp.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ComicworldBoothApp.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,6 +154,7 @@
       <workItem from="1745036685132" duration="682000" />
       <workItem from="1745123292009" duration="20427000" />
       <workItem from="1745302909389" duration="8334000" />
+      <workItem from="1745381051494" duration="9703000" />
     </task>
     <servers />
   </component>

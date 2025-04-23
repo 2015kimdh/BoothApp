@@ -31,19 +31,20 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
         #region Private Field
 
         private readonly int _maxDisplayAmount = 3;
-
+        private int _receiptIndex = 0;
         #endregion
 
         #region Property
 
         private BoothInfo SelectedBooth => purchaseHistoryViewModel.SelectedBooth;
-        
+        public int ReceiptIndex => _receiptIndex;
         #endregion
         
         #region Method
 
         public void SetIndex(int index)
         {
+            _receiptIndex = index;
             receiptIndex.text = "No." + index;
         }
         

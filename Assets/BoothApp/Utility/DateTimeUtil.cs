@@ -21,7 +21,7 @@ namespace BoothApp.Utility
         
         public static string DateTimeStringForPurchaseHistoryItem(DateTime time)
         {
-            return time.ToString("yyyy.MM.dd'T'HH:mm:ss");
+            return time.ToString("yyyy.MM.dd' T'HH'시'mm'분'ss'초'");
         }
     }
 }

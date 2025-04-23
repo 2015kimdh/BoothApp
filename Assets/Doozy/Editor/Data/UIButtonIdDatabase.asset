@@ -29,6 +29,8 @@ MonoBehaviour:
     - Category: ViewChangeButton
       Name: ToEditSelectedItem
     - Category: ViewChangeButton
+      Name: ToItemTotalInvoiceView
+    - Category: ViewChangeButton
       Name: ToMain
     - Category: ViewChangeButton
       Name: ToPurchaseHistory

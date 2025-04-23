@@ -21,6 +21,8 @@ MonoBehaviour:
     - Category: AppView
       Name: EditSelectedItem
     - Category: AppView
+      Name: ItemTotalInvoiceView
+    - Category: AppView
       Name: Main
     - Category: AppView
       Name: PurchaseHistory

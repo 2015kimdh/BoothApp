@@ -8,7 +8,8 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory.PurchaseHistoryByIte
     {
         #region Serialize Fields
 
-        [SerializeField] private PurchaseHistoryByItemViewModel viewModel;
+        [SerializeField] private PurchaseHistoryByItemViewModel purchaseHistoryByItemViewModel;
+        [SerializeField] private PurchaseHistoryViewModel purchaseHistoryViewModel;
         [SerializeField] private TotalInvoiceItemMaker maker;
         [SerializeField] private LayoutGroupForcedRebuild reBuilder;
 
@@ -22,13 +23,18 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory.PurchaseHistoryByIte
 
         #region Property
 
-        private BoothInfo SelectedBooth => viewModel.SelectedBooth;
+        private BoothInfo SelectedBooth => purchaseHistoryByItemViewModel.SelectedBooth;
 
         #endregion
         
         #region Method
-
-        private void Refresh()
+        
+        private void Awake()
+        {
+            purchaseHistoryViewModel.onDelete.AddListener(Refresh);
+        }
+        
+        public void Refresh()
         {
             RefreshItemList();
             SetItemList();
@@ -57,8 +63,8 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory.PurchaseHistoryByIte
             var purchasedItems = SelectedBooth.boothInformationInfo.purchasedItemStatus;
             for (int i = 0; i < items.Count; i++)
             {
-                int totalInvoice = viewModel.GetTotalInvoice(purchasedItems[i].itemInfo);
-                int totalAmount = viewModel.GetTotalInvoice(purchasedItems[i].itemInfo);
+                int totalInvoice = purchaseHistoryByItemViewModel.GetTotalInvoice(purchasedItems[i].itemInfo);
+                int totalAmount = purchaseHistoryByItemViewModel.GetTotalAmount(purchasedItems[i].itemInfo);
                 items[i].SetUI(purchasedItems[i].itemInfo, totalInvoice, totalAmount);
             }
         }

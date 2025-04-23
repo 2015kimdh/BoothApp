@@ -5,18 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="757b00b3-7067-410e-bc2c-c7df74a4ffa2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/PurchaseHistoryByItemViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/PurchaseHistoryByItemViewModel.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/TotalInvoiceItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/TotalInvoiceItem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/TotalInvoiceItemGroup.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/TotalInvoiceItemGroup.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/TotalInvoiceItemMaker.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/TotalInvoiceItemMaker.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseReceiptDetail/ReceiptDetailItemGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseReceiptDetail/ReceiptDetailItemGroup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Nody/Flow Graph.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Nody/Flow Graph.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/TotalInvoiceItemGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/TotalInvoiceItemGroup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Doozy/Editor/Data/UIButtonIdDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Doozy/Editor/Data/UIButtonIdDatabase.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Doozy/Editor/Data/UIViewIdDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Doozy/Editor/Data/UIViewIdDatabase.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/ComicworldBoothApp.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ComicworldBoothApp.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -158,7 +151,7 @@
       <workItem from="1745036685132" duration="682000" />
       <workItem from="1745123292009" duration="20427000" />
       <workItem from="1745302909389" duration="8334000" />
-      <workItem from="1745381051494" duration="20408000" />
+      <workItem from="1745381051494" duration="23121000" />
     </task>
     <servers />
   </component>

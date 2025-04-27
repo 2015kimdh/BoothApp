@@ -27,12 +27,10 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
             pool = new ObjectPool<PurchaseHistoryReceiptItem>(Create, actionOnGet:Get,actionOnRelease:Release);
         }
 
-        public PurchaseHistoryReceiptItem MakeItem(PurchaseReceiptInfo receiptInfo)
+        public PurchaseHistoryReceiptItem MakeItem()
         {
             var receiptItem = Instantiate(itemPrefab).GetComponent<PurchaseHistoryReceiptItem>();
-            receiptItem.receiptInfo = receiptInfo;
-            receiptItem.SetUI();
-            receiptItem.gameObject.transform.parent = prefabParent;
+            receiptItem.gameObject.transform.SetParent(prefabParent);
             return receiptItem;
         }
         

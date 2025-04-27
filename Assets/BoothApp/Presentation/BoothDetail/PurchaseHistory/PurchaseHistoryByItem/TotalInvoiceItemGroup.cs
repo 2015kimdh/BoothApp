@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using BoothApp.Presentation.Info;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace BoothApp.Presentation.BoothDetail.PurchaseHistory.PurchaseHistoryByItem
 {
@@ -21,6 +22,12 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory.PurchaseHistoryByIte
         
         #endregion
 
+        #region Unity Event
+
+        public UnityEvent onRefresh;
+
+        #endregion
+        
         #region Property
 
         private BoothInfo SelectedBooth => purchaseHistoryByItemViewModel.SelectedBooth;
@@ -39,6 +46,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory.PurchaseHistoryByIte
             RefreshItemList();
             SetItemList();
             reBuilder.ForceRebuildLayout();
+            onRefresh.Invoke();
         }
 
         private void RefreshItemList()

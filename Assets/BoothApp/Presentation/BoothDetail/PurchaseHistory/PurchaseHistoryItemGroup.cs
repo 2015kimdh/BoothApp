@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using BoothApp.Presentation.Info;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
@@ -23,6 +24,12 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
 
         #endregion
 
+        #region Unity Event
+
+        public UnityEvent onRefresh;
+
+        #endregion
+        
         #region Private Fields
 
         private List<PurchaseReceiptInfo> _receiptInfos = new();
@@ -44,6 +51,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
             MakeItems();
             SetSiblingOderByTime();
             reBuilder.ForceRebuildLayout();
+            onRefresh.Invoke();
         }
         
         private void RefreshReceiptList()
@@ -71,7 +79,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
             var needToMake = _receiptInfos.Except(receipts.Select(item => item.receiptInfo).ToList());
             foreach (var receiptInfo in needToMake)
             {
-                var newOne = maker.pool.Get();
+                var newOne = maker.MakeItem();
                 newOne.SetDataAndUI(viewModel, receiptInfo);
                 receipts.Add(newOne);
             }
@@ -82,10 +90,9 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
             var remove = receipts.Select(item => item.receiptInfo).Except(_receiptInfos).ToList();
             var removeObject = receipts.Where(item => remove.Contains(item.receiptInfo)).ToList();
             foreach (var target in removeObject)
-            {
-                maker.pool.Release(target);
                 receipts.Remove(target);
-            }
+            for (int i = 0; i < removeObject.Count; i++)
+                Destroy(removeObject[0].gameObject);
         }
         
         #endregion

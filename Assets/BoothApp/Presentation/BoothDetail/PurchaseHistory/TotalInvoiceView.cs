@@ -13,6 +13,8 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
 
         [SerializeField] private TMP_Text invoiceText;
 
+        [SerializeField] private PurchaseHistoryItemGroup itemGroup;
+
         #endregion
 
         #region Method
@@ -27,13 +29,18 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
             invoiceText.text = ((int)Calculate()).ToString();
         }
 
+        // 활성화 된 객체들만 계산함
         private float Calculate()
         {
-            return viewModel.PurchaseHistory
-                .SelectMany(receipt => receipt.items)
+            var activeItem = itemGroup.receipts.Where(x => x.gameObject.activeInHierarchy).ToList();
+            return activeItem.SelectMany(receipt => receipt.receiptInfo.items)
                 .Sum(item => item.pricePerItem * item.amount);
+            
+            // return viewModel.PurchaseHistory
+            //     .SelectMany(receipt => receipt.items)
+            //     .Sum(item => item.pricePerItem * item.amount);
         }
-        
+
         #endregion
     }
 }

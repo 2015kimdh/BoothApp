@@ -21,6 +21,11 @@ namespace BoothApp.Data
         /// </summary>
         public List<string> selectedTags = new();
         public List<string> selectedOwners = new();
+
+        /// <summary>
+        /// 영수증 뷰에서 사용할 필터 정보
+        /// </summary>
+        public PurchaseHistoryFilterAttributeData purchaseHistoryFilterAttribute = new();
         
         /// <summary>
         /// 최초 아이템 세팅 상태

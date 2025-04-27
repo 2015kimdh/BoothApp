@@ -69,6 +69,28 @@ namespace BoothApp.Mapper
             };
         }
 
+        public static PurchaseHistoryFilterAttributeInfo ToInfo(this PurchaseHistoryFilterAttributeData data)
+        {
+            return new PurchaseHistoryFilterAttributeInfo()
+            {
+                limit1 = data.limit1,
+                limit2 = data.limit2,
+                selectedOwner = data.selectedOwner,
+                selectedItemTags = data.selectedItemTags
+            };
+        }
+
+        public static PurchaseHistoryFilterAttributeData ToData(this PurchaseHistoryFilterAttributeInfo info)
+        {
+            return new PurchaseHistoryFilterAttributeData()
+            {
+                limit1 = info.limit1,
+                limit2 = info.limit2,
+                selectedOwner = info.selectedOwner,
+                selectedItemTags = info.selectedItemTags
+            };
+        }
+
         public static BoothInfo ToInfo(this BoothData data)
         {
             BoothInfo info = new();
@@ -97,7 +119,7 @@ namespace BoothApp.Mapper
             // 원본 판매 목록 매핑
             foreach (var originalItemStatus in data.boothInformationData.originalItemStatus)
                 info.boothInformationInfo.originalItemStatus.Add(originalItemStatus.ToInfo());
-            
+
             // 판매된 목록 매핑
             foreach (var purchasedItemStatus in data.boothInformationData.purchasedItemStatus)
                 info.boothInformationInfo.purchasedItemStatus.Add(purchasedItemStatus.ToInfo());
@@ -106,10 +128,13 @@ namespace BoothApp.Mapper
             info.boothInformationInfo.itemTags = data.boothInformationData.itemTags;
             info.boothInformationInfo.selectedOwners = data.boothInformationData.selectedOwners;
             info.boothInformationInfo.selectedTags = data.boothInformationData.selectedTags;
-            
+
+            info.boothInformationInfo.purchaseHistoryFilterAttribute =
+                data.boothInformationData.purchaseHistoryFilterAttribute.ToInfo();
+
             return info;
         }
-        
+
         public static BoothData ToData(this BoothInfo info)
         {
             BoothData data = new();
@@ -138,7 +163,7 @@ namespace BoothApp.Mapper
             // 원본 판매 목록 매핑
             foreach (var originalItemStatus in info.boothInformationInfo.originalItemStatus)
                 data.boothInformationData.originalItemStatus.Add(originalItemStatus.ToData());
-            
+
             // 판매된 목록 매핑
             foreach (var purchasedItemStatus in info.boothInformationInfo.purchasedItemStatus)
                 data.boothInformationData.purchasedItemStatus.Add(purchasedItemStatus.ToData());
@@ -147,7 +172,10 @@ namespace BoothApp.Mapper
             data.boothInformationData.itemTags = info.boothInformationInfo.itemTags;
             data.boothInformationData.selectedOwners = info.boothInformationInfo.selectedOwners;
             data.boothInformationData.selectedTags = info.boothInformationInfo.selectedTags;
-            
+
+            data.boothInformationData.purchaseHistoryFilterAttribute =
+                info.boothInformationInfo.purchaseHistoryFilterAttribute.ToData();
+
             return data;
         }
     }

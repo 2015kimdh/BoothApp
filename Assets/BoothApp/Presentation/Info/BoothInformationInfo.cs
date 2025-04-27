@@ -21,6 +21,11 @@ namespace BoothApp.Presentation.Info
         public List<string> selectedOwners = new();
         
         /// <summary>
+        /// 영수증 뷰에서 사용할 필터 정보
+        /// </summary>
+        public PurchaseHistoryFilterAttributeInfo purchaseHistoryFilterAttribute = new();
+        
+        /// <summary>
         /// 아이템 세팅 상태
         /// </summary>
         public List<BoothItemWithAmountInfo> originalItemStatus = new();

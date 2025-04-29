@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -21,7 +20,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
 
         private void Awake()
         {
-            viewModel.onDelete.AddListener(SetInvoice);
+            itemGroup.onRefresh.AddListener(SetInvoice);
         }
 
         public void SetInvoice()

@@ -29,7 +29,8 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
 
         public PurchaseHistoryReceiptItem MakeItem()
         {
-            var receiptItem = Instantiate(itemPrefab).GetComponent<PurchaseHistoryReceiptItem>();
+            var newItem = Instantiate(itemPrefab, prefabParent);
+            var receiptItem = newItem.GetComponent<PurchaseHistoryReceiptItem>();
             receiptItem.gameObject.transform.SetParent(prefabParent);
             return receiptItem;
         }

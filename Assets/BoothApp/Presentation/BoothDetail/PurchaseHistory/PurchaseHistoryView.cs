@@ -1,5 +1,4 @@
 using BoothApp.Presentation.View;
-using UnityEngine;
 using UnityEngine.Events;
 
 namespace BoothApp.Presentation.BoothDetail.PurchaseHistory

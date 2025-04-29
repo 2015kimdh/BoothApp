@@ -89,7 +89,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
         {
             _selectedItem = item;
         }
-
+        
         #endregion
 
         #region Private Method

@@ -19,6 +19,11 @@ namespace BoothApp.Utility
             return DateTime.Now.ToString("yyyyMMddHHmmss");
         }
         
+        public static string DateTimeToString(DateTime time)
+        {
+            return time.ToString("yyyy-MM-ddTHH\\:mm\\:sszzz");
+        }
+        
         public static string DateTimeStringForPurchaseHistoryItem(DateTime time)
         {
             return time.ToString("yyyy.MM.dd' T'HH'시'mm'분'ss'초'");

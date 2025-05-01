@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using BoothApp.Presentation.BoothDetail.BoothItemView;
 using BoothApp.Presentation.Info;
 using UnityEngine;
 
@@ -21,6 +22,9 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory.PurchaseHistoryByIte
         public BoothInfo SelectedBooth => selectedBoothViewModel.selectedBooth;
         public SelectedBoothViewModel SelectedBoothViewModel => selectedBoothViewModel;
         public List<PurchaseReceiptInfo> PurchaseHistory => SelectedBooth.boothInformationInfo.purchasedHistory;
+
+        public PurchaseHistoryFilterAttributeInfo FilterAttribute =>
+            SelectedBooth.boothInformationInfo.purchaseHistoryFilterAttribute;
 
         public TotalInvoiceItem SelectedItem
         {
@@ -50,10 +54,28 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory.PurchaseHistoryByIte
                 .ToList();
             return filteredList.Select(x => x.pricePerItem * x.amount).Sum();
         }
+        
+        public int GetTotalInvoice(List<PurchaseReceiptInfo> original, BoothItemInfo item)
+        {
+            var filteredList = original
+                .SelectMany(x => x.items)
+                .Where(x => x.hash == item.hash)
+                .ToList();
+            return filteredList.Select(x => x.pricePerItem * x.amount).Sum();
+        }
 
         public int GetTotalAmount(BoothItemInfo item)
         {
             var filteredList = PurchaseHistory
+                .SelectMany(x => x.items)
+                .Where(x => x.hash == item.hash)
+                .ToList();
+            return filteredList.Select(x => x.amount).Sum();
+        }
+        
+        public int GetTotalAmount(List<PurchaseReceiptInfo> original, BoothItemInfo item)
+        {
+            var filteredList = original
                 .SelectMany(x => x.items)
                 .Where(x => x.hash == item.hash)
                 .ToList();
@@ -66,6 +88,28 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory.PurchaseHistoryByIte
                 .Where(x =>
                     x.items.Find(r => r.hash == item.hash) != null)
                 .ToList();
+        }
+
+        public List<PurchaseReceiptInfo> GetListOfReceipt(List<PurchaseReceiptInfo> original, BoothItemInfo item)
+        {
+            return original
+                .Where(x =>
+                    x.items.Find(r => r.hash == item.hash) != null)
+                .ToList();
+        }
+        
+        public List<PurchaseReceiptInfo> GetFilteredListOfReceipt()
+        {
+            var filteredList =
+                FilteringItem.FilteringReceiptByDate(PurchaseHistory,
+                    FilterAttribute.limit1, FilterAttribute.limit2);
+            filteredList =
+                FilteringItem.FilteringReceiptByItemTags(SelectedBooth.boothInformationInfo.purchasedItemStatus,
+                    filteredList,FilterAttribute.selectedItemTags);
+            filteredList=
+                FilteringItem.FilteringReceiptByOwners(SelectedBooth.boothInformationInfo.purchasedItemStatus,
+                    filteredList,FilterAttribute.selectedOwner);
+            return filteredList;
         }
 
         #endregion

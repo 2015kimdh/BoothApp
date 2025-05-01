@@ -5,14 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="757b00b3-7067-410e-bc2c-c7df74a4ffa2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/Filter/ItemFiltererForPurchaseHistoryByItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/Filter/ItemTagFilterMarker.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/Filter/ItemTagFilterMarker.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/TotalInvoiceByItemView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/TotalInvoiceByItemView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/TotalInvoiceItemView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/TotalInvoiceItemView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/ImageGarbageCollector.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/ImageGarbageCollector.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/BoothItemView/FilteringItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/BoothItemView/FilteringItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/ItemFiltererForPurchaseHistoryByItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/ItemFiltererForPurchaseHistoryByItem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/Filter/ItemFiltererForPurchaseHistoryByItem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Data/PurchaseHistoryFilterAttributeData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Data/PurchaseHistoryFilterAttributeData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/Filter/ItemFiltererForPurchaseHistoryByItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/Filter/ItemFiltererForPurchaseHistoryByItem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/PurchaseHistoryByItemViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/PurchaseHistoryByItemViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/TotalInvoiceItemGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseHistoryByItem/TotalInvoiceItemGroup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/PurchaseHistoryFilterAttributeInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/Info/PurchaseHistoryFilterAttributeInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/ComicworldBoothApp.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ComicworldBoothApp.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +165,7 @@
       <workItem from="1745765552367" duration="2121000" />
       <workItem from="1745915075546" duration="20866000" />
       <workItem from="1746007558497" duration="6093000" />
-      <workItem from="1746092466535" duration="5981000" />
+      <workItem from="1746092466535" duration="16986000" />
     </task>
     <servers />
   </component>

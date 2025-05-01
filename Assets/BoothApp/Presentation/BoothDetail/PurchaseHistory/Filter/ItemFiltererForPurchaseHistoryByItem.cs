@@ -9,7 +9,7 @@ using UnityEngine.Events;
 
 namespace BoothApp.Presentation.BoothDetail.PurchaseHistory.Filter
 {
-    public class ItemFiltererForPurchaseHistoryByItem
+    public class ItemFiltererForPurchaseHistoryByItem : MonoBehaviour
     {
         #region Serialize Field
 
@@ -51,9 +51,6 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory.Filter
             tagDropdown.Refresh(_itemTagsInPurchase, FilterAttribute.selectedItemTags);
             SelectedBooth.UpdateModifyTime();
             presenter.SaveDataAtDisk();
-            onFilterSetWithTagAmount.Invoke(
-                FilterAttribute.selectedOwner.Count + FilterAttribute.selectedItemTags.Count);
-            onFilterSet.Invoke();
         }
 
         public void FilterSet()

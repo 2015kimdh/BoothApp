@@ -25,7 +25,28 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory.PurchaseHistoryByIte
 
         public PurchaseHistoryFilterAttributeInfo FilterAttribute =>
             SelectedBooth.boothInformationInfo.purchaseHistoryFilterAttribute;
+        public List<BoothItemWithAmountInfo> PurchasedItemStatus =>
+            SelectedBooth.boothInformationInfo.purchasedItemStatus;
+        public List<PurchaseReceiptInfo> FilteredReceipt
+        {
+            get
+            {
+                var purchasedItems = PurchasedItemStatus;
 
+                var filteredReceipt = FilteringItem.FilteringReceiptByDate(
+                    PurchaseHistory,
+                    FilterAttribute.limit1,
+                    FilterAttribute.limit2);
+
+                filteredReceipt = FilteringItem.FilteringReceiptByOwners(purchasedItems, filteredReceipt,
+                    FilterAttribute.selectedOwner);
+
+                filteredReceipt = FilteringItem.FilteringReceiptByItemTags(purchasedItems, filteredReceipt,
+                    FilterAttribute.selectedItemTags);
+                return filteredReceipt;
+            }
+        }
+        
         public TotalInvoiceItem SelectedItem
         {
             get => _selectedItem;

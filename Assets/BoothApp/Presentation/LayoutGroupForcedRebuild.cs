@@ -10,7 +10,8 @@ namespace BoothApp.Presentation
 
         public void ForceRebuildLayout()
         {
-            StartCoroutine(ForceRebuild());
+            if (this.gameObject.activeInHierarchy)
+                StartCoroutine(ForceRebuild());
         }
 
         private IEnumerator ForceRebuild()

@@ -17,6 +17,7 @@ namespace BoothApp.Presentation.LoadedImageHub
         public List<Sprite> test = new();
         private void Awake()
         {
+            Application.targetFrameRate = 60;
             GetImagesInStorage();
         }
 

@@ -1,5 +1,3 @@
-using System;
-using BoothApp.Presentation.Info;
 using UnityEngine;
 using UnityEngine.Pool;
 

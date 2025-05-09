@@ -1,5 +1,5 @@
 ## 자체 제작 부스 앱
-[최신 빌드 주소](https://github.com/2015kimdh/BoothApp/releases/tag/BugFixBuild)
+[최신 빌드 주소]([https://github.com/2015kimdh/BoothApp/releases/tag/BugFixBuild](https://github.com/2015kimdh/BoothApp/releases/tag/BugFixBuildVer0.1.2))
 ### 사용 가능 환경
 - 안드로이드 기기 (iOS 미지원)
 - 갤럭시 노트 20 울트라를 기준으로 UI 배치

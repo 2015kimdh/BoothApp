@@ -1,4 +1,4 @@
-using System;
+using BoothApp.Presentation.LoopScroll.Implement;
 using BoothApp.Presentation.View;
 using Doozy.Runtime.Signals;
 using Doozy.Runtime.UIManager;
@@ -12,6 +12,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
         #region Serialize Fields
 
         [SerializeField] private UIButton button;
+        [SerializeField] private PurchaseHistoryReceiptItemLoopScroll itemLoopScroll;
         [SerializeField] private PurchaseHistoryReceiptItem item;
 
         #endregion
@@ -29,7 +30,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
 
         private void Awake()
         {
-            _viewModel = item.purchaseHistoryViewModel;
+            _viewModel = FindObjectOfType<PurchaseHistoryViewModel>();
             _view = ViewHub.Views.Find(x => x.GetType() == typeof(PurchaseHistoryView)) as PurchaseHistoryView;
             button.onClickEvent.AddListener(ToDetailView);
         }
@@ -38,15 +39,19 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
         {
             if (_view.ViewStatus == _targetStatus)
             {
-                if(_viewModel == null)
-                    _viewModel = item.purchaseHistoryViewModel;
-
-                _viewModel.SetSelectedItem(item);
+                _viewModel.SetSelectedItem(Mapping());
                 SignalStream stream = SignalsService.GetStream(nameof(UISelectable), nameof(UIButton));
                 stream.SendSignal(new UIButtonSignalData("ViewChangeButton", "ToPurchaseHistoryDetail", ButtonTrigger.Click));
             }
         }
 
+        private PurchaseHistoryReceiptItem Mapping()
+        {
+            item.receiptInfo = itemLoopScroll.receiptData.receiptInfo;
+            item.purchaseHistoryViewModel = _viewModel;
+            return item;
+        }
+        
         #endregion
     }
 }

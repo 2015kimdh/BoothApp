@@ -5,23 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="757b00b3-7067-410e-bc2c-c7df74a4ffa2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseReceiptItemGroupLoopScrollVer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseReceiptItemGroupLoopScrollVer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/LoopScroll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/LoopScroll/ILoopScrollItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/LoopScroll/ILoopScrollItem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/LoopScroll/Implement.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/LoopScroll/Implement/PurchaseHistoryReceiptData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/LoopScroll/Implement/PurchaseHistoryReceiptData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/LoopScroll/Implement/PurchaseHistoryReceiptItemLoopScroll.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/LoopScroll/Implement/PurchaseHistoryReceiptItemLoopScroll.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/LoopScroll/Implement/PurchaseHistoryReceiptScrollView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/LoopScroll/Implement/PurchaseHistoryReceiptScrollView.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/LoopScroll/LoopScrollView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/LoopScroll/LoopScrollView.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.My project (2)/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseReceiptItemMaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseReceiptItemMaker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/LoadedImageHub/LoadAllImageInStorage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/LoadedImageHub/LoadAllImageInStorage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Prefab/ReceiptItemLoopScroll.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Prefab/ReceiptItemLoopScroll.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/DeleteReceipt/DeleteSelectedReceiptViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/DeleteReceipt/DeleteSelectedReceiptViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/DeleteReceipt/SelectDeleteReceiptButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/DeleteReceipt/SelectDeleteReceiptButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/DeleteReceipt/SelectedReceiptIndexToDeleteContextViewer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/DeleteReceipt/SelectedReceiptIndexToDeleteContextViewer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseReceiptItemGroupLoopScrollVer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseReceiptItemGroupLoopScrollVer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseReceiptSelectButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/PurchaseReceiptSelectButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/TotalInvoiceView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/BoothDetail/PurchaseHistory/TotalInvoiceView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/LoopScroll/Implement/PurchaseHistoryReceiptItemLoopScroll.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/LoopScroll/Implement/PurchaseHistoryReceiptItemLoopScroll.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BoothApp/Presentation/LoopScroll/LoopScrollView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BoothApp/Presentation/LoopScroll/LoopScrollView.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,10 +103,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="9760">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="9760" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -175,7 +168,9 @@
       <workItem from="1746007558497" duration="6093000" />
       <workItem from="1746092466535" duration="19078000" />
       <workItem from="1746133176113" duration="6885000" />
-      <workItem from="1746682942545" duration="11260000" />
+      <workItem from="1746682942545" duration="11997000" />
+      <workItem from="1746805925784" duration="65000" />
+      <workItem from="1746806001687" duration="2427000" />
     </task>
     <servers />
   </component>

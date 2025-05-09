@@ -17,10 +17,17 @@ namespace BoothApp.Presentation.LoopScroll.Implement
         [SerializeField] private TMP_Text receiptIndex;
         
         #endregion
+
+        #region Property
+
+        public PurchaseHistoryReceiptData receiptData = new();
+
+        #endregion
         
         public void UpdateItem(PurchaseHistoryReceiptData data, int index)
         {
             receiptIndex.text = "No." + data.ReceiptIndex;
+            receiptData = data;
             SetUI(data);
         }
         

@@ -1778,6 +1778,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 5973263437058026544}
+  itemLoopScroll: {fileID: 1942107648655581470}
   item: {fileID: 8875284954909147655}
 --- !u!114 &3011516322692519390
 MonoBehaviour:
@@ -1791,7 +1792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701436051f6f480b89eb97f74ab3107d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  receiptItem: {fileID: 8875284954909147655}
+  receiptItem: {fileID: 1942107648655581470}
   button: {fileID: 5973263437058026544}
   selectedMark: {fileID: 6491669064415739226}
 --- !u!114 &1942107648655581470
@@ -1810,3 +1811,7 @@ MonoBehaviour:
   purchasedItemList: {fileID: 4589341158578874781}
   purchaseCost: {fileID: 7949882356708440039}
   receiptIndex: {fileID: 8973812970044600899}
+  receiptData:
+    receiptInfo:
+      items: []
+    purchaseHistoryViewModel: {fileID: 0}

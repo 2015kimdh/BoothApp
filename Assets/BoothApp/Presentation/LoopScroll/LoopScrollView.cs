@@ -26,6 +26,12 @@ namespace BoothApp.Presentation.LoopScroll
 
         #endregion
 
+        #region Property
+
+        public ScrollRect ScrollRect => scrollRect;
+
+        #endregion
+        
         #region MonoBehaviour Event
 
         private void Start()

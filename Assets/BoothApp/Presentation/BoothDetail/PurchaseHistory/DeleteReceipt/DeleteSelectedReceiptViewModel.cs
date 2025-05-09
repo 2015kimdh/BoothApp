@@ -25,14 +25,14 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory.DeleteReceipt
 
         [SerializeField] private PurchaseHistoryView view;
         [SerializeField] private PurchaseHistoryViewModel viewModel;
-        [SerializeField] private List<PurchaseHistoryReceiptItem> selectedReceipt;
+        [SerializeField] private List<PurchaseReceiptInfo> selectedReceipt;
 
         #endregion
 
         #region Property
 
         public int SelectedReceiptCount => selectedReceipt.Count;
-        public List<PurchaseHistoryReceiptItem> SelectedReceipt => selectedReceipt;
+        public List<PurchaseReceiptInfo> SelectedReceipt => selectedReceipt;
         private BoothInfo SelectedBooth => viewModel.SelectedBooth;
 
         #endregion
@@ -49,14 +49,14 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory.DeleteReceipt
         /// </summary>
         public void DeleteSelectedReceipt()
         {
-            var targets = selectedReceipt.Select(item => item.receiptInfo).ToList();
+            var targets = selectedReceipt.ToList();
             viewModel.DeletePurchaseHistory(targets);
 
             InitSelection();
             onDelete.Invoke();
         }
         
-        public void AddSelection(PurchaseHistoryReceiptItem itSelf)
+        public void AddSelection(PurchaseReceiptInfo itSelf)
         {
             if (!selectedReceipt.Contains(itSelf))
             {
@@ -65,7 +65,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory.DeleteReceipt
             }
         }
 
-        public void RemoveSelection(PurchaseHistoryReceiptItem itSelf)
+        public void RemoveSelection(PurchaseReceiptInfo itSelf)
         {
             if (selectedReceipt.Contains(itSelf))
             {
@@ -80,7 +80,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory.DeleteReceipt
             onSelectReceipt.Invoke();
         }
         
-        public bool CheckIsSelected(PurchaseHistoryReceiptItem itSelf)
+        public bool CheckIsSelected(PurchaseReceiptInfo itSelf)
         {
             return selectedReceipt.Contains(itSelf);
         }

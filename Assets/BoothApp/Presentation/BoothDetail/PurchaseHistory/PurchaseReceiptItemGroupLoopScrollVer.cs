@@ -32,6 +32,11 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory
         private PurchaseHistoryFilterAttributeInfo FilterAttributeInfo =>
             SelectedBooth.boothInformationInfo.purchaseHistoryFilterAttribute;
 
+        public LoopScrollView<PurchaseHistoryReceiptData> ScrollView => scrollView;
+        public PurchaseHistoryViewModel ViewModel => viewModel;
+        
+        public List<PurchaseHistoryReceiptData> FilteredData => FilteringReceiptByDate(Mapping(_receiptInfos));
+        
         #endregion
 
         #region Private Fields

@@ -1,4 +1,5 @@
 using System;
+using BoothApp.Utility;
 using TMPro;
 using UnityEngine;
 
@@ -22,7 +23,7 @@ namespace BoothApp.Presentation.BoothDetail.PurchaseHistory.DeleteReceipt
             {
                 if (i != 0)
                     contents += "<br>";
-                contents += viewModel.SelectedReceipt[i].ReceiptIndex;
+                contents += DateTimeUtil.DateTimeStringForPurchaseHistoryItem(viewModel.SelectedReceipt[i].purchasedAt);
             }
 
             text.text = contents;
